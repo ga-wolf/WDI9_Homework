@@ -9,7 +9,7 @@
 - Hit the pull request button
 - Make sure the destination for the pull request is set to my repository
 - Tell me the following things in the comment:
-    + How did you feel (out of 10)?
+    + How difficult did you find this (out of 10)? 0 being no problems at all, 10 being impossible
     + Was there anything that you struggled with?
     + Is there anything that you'd like some further information on?
     + Roughly, how long did it take?
