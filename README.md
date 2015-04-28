@@ -25,4 +25,6 @@
     + How did you feel (out of 10)?
     + Was there anything that you struggled with?
     + Is there anything that you'd like some further information on?
-    + Roughly how long it took
+    + Roughly, how long did it take?
+
+If you don't mention anything in the comments, i'll assume you had no problems at all with it!
