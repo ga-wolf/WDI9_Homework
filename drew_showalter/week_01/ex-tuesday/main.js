@@ -145,6 +145,7 @@ var notBad = function(textual) {
 	var notB = textual.search("not");
 	var nBad = textual.search("bad");
 	if ((nBad >= 0) && (notB >= 0)) {
+		//i should remember to say >= -1 instead of 0 (because not or bad could exist at zero), and to check for nBad being before notB ... and do ...something... with that
 		var finalText = textual.substr(0,notB) + "good" + textual.substr(nBad + 3);
 	} else {
 		finalText = textual;
