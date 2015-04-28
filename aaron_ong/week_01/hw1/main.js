@@ -112,6 +112,7 @@ console.log("")
 console.log("FIX START")
 console.log(fixStart("testingthisout"));
 console.log(fixStart("sisterstringers"));
+console.log(fixStart("babble"));
 
 
 // Verbing
@@ -165,3 +166,28 @@ console.log(notBad('This movie is bad!'));
 //   notBad('This dinner is not that bad!'): 'This dinner is good!'
 //   notBad('This movie is not so bad!'): 'This movie is good!'
 //   notBad('This dinner is bad!'): 'This dinner is bad!'
+
+// Multiples of 3 and 5
+// Problem 1
+// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+// Find the sum of all the multiples of 3 or 5 below 1000.
+
+
+var multiples3And5 = function(numberUpTo) {
+	var countUp = 0;
+	arrayOf3And5 = [];
+	while (countUp < numberUpTo) {
+		countUp += 1;
+		if (countUp % 3 == 0 || countUp % 5 == 0) {
+			arrayOf3And5.push(countUp);
+		}
+	}
+	console.log(arrayOf3And5);	
+	console.log("There are exactly " + arrayOf3And5.length + " in this array");	
+}
+
+console.log("")
+console.log("EXTRA Multiples of 3 and 5")
+multiples3And5(15);
+multiples3And5(50);
