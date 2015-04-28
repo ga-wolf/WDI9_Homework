@@ -107,7 +107,7 @@ console.log(mixUp('dog','dinner'));
 var fixStart = function(string) {
 	firstChar = string.charAt(0);
 	RegFirstChar = new RegExp(firstChar, 'g');
-	return firstChar + string.slice(1).replace(RegFirstChar, "*");
+	return firstChar + string.slice(1).replace(/(t)/g, "*");
 }
 console.log("");
 console.log("FIX START");
@@ -151,7 +151,7 @@ console.log(verbing("go"));
 // If it doesn't find 'not' and 'bad' in the right sequence (or at all), just return the original sentence.
 // For example:
 var notBad = function(sentence) {
-	if (sentence.indexOf("not") > -1 && sentence.indexOf("bad") > -1) {
+	if (sentence.indexOf("not") > -1 && sentence.indexOf("bad") > -1 && sentence.indexOf("not") < sentence.indexOf("bad")) {
 		return sentence.replace(sentence.slice(sentence.indexOf("not")),"good!");
 	}
 	else {
