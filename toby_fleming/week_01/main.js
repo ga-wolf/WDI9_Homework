@@ -38,17 +38,15 @@ var calculator = function(number) {
 	var halfNum = halfNumber(number);
 	var squareNum = squareNumber(halfNum);
 	var area = areaOfCircle(squareNum);
-	area / squareNum * 100;
+	var percentage = area / squareNum * 100;
+
+	console.log('Percentage is ' + percentage + '%');
+	return percentage;
 }
 
 var DrEvil = function(amount) {
-	var pinky = false;
-	if (amount === 1000000) {
-		pinky = true;
-	}
-
 	var result = amount + ' dollars';
-	if (pinky) {
+	if (amount === 1000000) {
 		result += ' (pinky)';
 	}
 
