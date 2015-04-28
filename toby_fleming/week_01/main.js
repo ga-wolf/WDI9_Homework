@@ -41,3 +41,72 @@ var calculator = function(number) {
 	area / squareNum * 100;
 }
 
+var DrEvil = function(amount) {
+	var pinky = false;
+	if (amount === 1000000) {
+		pinky = true;
+	}
+
+	var result = amount + ' dollars';
+	if (pinky) {
+		result += ' (pinky)';
+	}
+
+	return result;
+}
+
+var mixUp = function(str1, str2) {
+	var str1Result = str2.slice(0, 2) + str1.slice(2);
+	var str2Result = str1.slice(0, 2) + str2.slice(2);
+
+	return str1Result + ' ' + str2Result;
+}
+
+//May need refining
+var fixStart = function(string) {
+	var firstLetter = string[0];
+	var result = firstLetter;
+
+	for (var i = 1; i < string.length; i++) {
+		if (string[i] === firstLetter) {
+			result += '*';
+		} else {
+			result += string[i];
+		}
+	}
+
+	return result;
+}
+
+var verbing = function(string) {
+	var length = string.length;
+	var result = string;
+
+	if (length >= 3) {
+		if (string.slice(-3) === 'ing') {
+			result += 'ly';
+		} else {
+			result += 'ing';
+		}
+	} 
+
+	return result;
+}
+
+var notBad = function(string) {
+	var notIndex = string.indexOf('not');
+	var badIndex = string.indexOf('bad');
+
+	if (notIndex < 0 || badIndex < 0 || notIndex > badIndex) {
+		return string;
+	}
+
+	var result = string.slice(0, notIndex) + 'good';
+	for (var i = badIndex + 3; i < string.length; i++) {
+		result += string[i];
+	}
+
+	return result;
+}
+
+
