@@ -10,26 +10,29 @@ function halfNumber(number){
 	return halfnum;
 }
 
-function percentOf(n, b){
+function percentOf(a, b){
 	percentage = b/a*100;
 	console.log(a + " is " + percentage + " of " + b);
 	return percentage;
 }
 
 function areaOfCircle(radius){
-	area = Math.PI()*(radius*radius);
-	console.log("The area for a circle with radius" + radius.tofixed(2) + " is " + area.tofixed(2));
-	return area.tofixed(2);
+	area = Math.PI*(radius*radius);
+	console.log("The area for a circle with radius" + radius.toFixed(2) + " is " + area.toFixed(2));
+	return area.toFixed(2);
 }
 
 function grandMaster(number){
 	var part1 = halfNumber(number);
-	var part2 = squareNumbeR(part1);
+	var part2 = squareNumber(part1);
 	var part3 = areaOfCircle(part2);
-	var part4 = percentOf(part2, part3)
+	var part4 = percentOf(part3, part2)
 	console.log(part4);
 	return part4;
 }
+
+grandMaster(2);
+
 function drEvil(num){
 	if(num===1000000){
 		console.log(num + " dollars (pinky)");
