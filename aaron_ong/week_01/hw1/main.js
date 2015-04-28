@@ -32,7 +32,7 @@ var areaOfCircle = function(radius) {
 	console.log("The are for a circle with radius " + radius + " is " + result);
 	return result
 }
-
+console.log("")
 console.log("CALCULATOR PART 1")
 squareNumber(testNumber);
 halfNumber(testNumber);
@@ -54,6 +54,7 @@ var aLotOfMaths = function(number) {
 	step3 = areaOfCircle(step2);
 	return percentOf(step3, step2);
 }
+console.log("")
 console.log("CALCULATOR PART 2")
 aLotOfMaths(testNumber)
 
@@ -76,7 +77,7 @@ var DrEvil = function (number) {
 	else
 		return number + " dollars (pinky)";
 }
-
+console.log("")
 console.log("DR EVIL");
 
 console.log(DrEvil(10));
@@ -90,7 +91,7 @@ console.log(DrEvil(241002030));
 var mixUp = function(str1, str2) {
 	return str2.slice(0,2) + str1.slice(2) + " " + str1.slice(0,2) + str2.slice(2);
 }
-
+console.log("")
 console.log("MIX UP");
 
 console.log(mixUp('wet','dog'));
@@ -107,7 +108,7 @@ var fixStart = function(string) {
 	RegFirstChar = new RegExp(firstChar, 'g');
 	return firstChar + string.slice(1).replace(RegFirstChar, "*");
 }
-
+console.log("")
 console.log("FIX START")
 console.log(fixStart("testingthisout"));
 console.log(fixStart("sisterstringers"));
@@ -131,11 +132,11 @@ var verbing = function(string) {
 	else if (string.indexOf("ing") > -1) {
 		return string + "ly";
 	}
-	else
-		return { string
+	else {
+		return string;
 	}
 }
-
+console.log("")
 console.log("VERBING")
 console.log(verbing("laughing"));
 console.log(verbing("play"));
@@ -147,6 +148,19 @@ console.log(verbing("go"));
 // If the 'bad' follows the 'not', then it should replace the whole 'not'...'bad' substring with 'good' and return the result.
 // If it doesn't find 'not' and 'bad' in the right sequence (or at all), just return the original sentence.
 // For example:
+var notBad = function(sentence) {
+	if (sentence.indexOf("not") > -1 && sentence.indexOf("bad") > -1) {
+		return sentence.replace(sentence.slice(sentence.indexOf("not")),"good!");
+	}
+	else {
+		return sentence	
+	}
+}
+console.log("")
+console.log("NOT BAD")
+console.log(notBad('This dinner is not that bad!'));
+console.log(notBad('This movie is not so bad!'));
+console.log(notBad('This movie is bad!'));
 
 //   notBad('This dinner is not that bad!'): 'This dinner is good!'
 //   notBad('This movie is not so bad!'): 'This movie is good!'
