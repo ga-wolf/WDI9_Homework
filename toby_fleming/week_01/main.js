@@ -62,18 +62,10 @@ var mixUp = function(str1, str2) {
 	return str1Result + ' ' + str2Result;
 }
 
-//May need refining
 var fixStart = function(string) {
 	var firstLetter = string[0];
-	var result = firstLetter;
-
-	for (var i = 1; i < string.length; i++) {
-		if (string[i] === firstLetter) {
-			result += '*';
-		} else {
-			result += string[i];
-		}
-	}
+	var re = new RegExp(firstLetter, 'g');
+	var result = firstLetter + string.slice(1).replace(re, '*');
 
 	return result;
 }
@@ -92,6 +84,12 @@ var verbing = function(string) {
 
 	return result;
 }
+
+
+
+
+
+
 
 var notBad = function(string) {
 	var notIndex = string.indexOf('not');
