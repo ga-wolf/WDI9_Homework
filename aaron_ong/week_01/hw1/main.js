@@ -10,30 +10,30 @@ var testNumber = 5.56;
 
 var squareNumber = function(number) {
 	result = number * number;
-	result = result.toFixed(2)
+	result = result.toFixed(2);
 	console.log("The result of squaring the number " + number + " is " + result);
 	return result;
 }
 var halfNumber = function(number) {
 	result = number / 2;
-	result = result.toFixed(2)
+	result = result.toFixed(2);
 	console.log("Half of " + number + " is " + result);
 	return result;
 }
 var percentOf = function(n1, n2) {
 	result = n1 / n2 * 100;
-	result = result.toFixed(2)
+	result = result.toFixed(2);
 	console.log(n1 + " is " + result + "% of " + n2);
-	return result
+	return result;
 }
 var areaOfCircle = function(radius) {
 	result = 3.14 * radius * radius;
-	result = result.toFixed(2)
+	result = result.toFixed(2);
 	console.log("The are for a circle with radius " + radius + " is " + result);
-	return result
+	return result;
 }
-console.log("")
-console.log("CALCULATOR PART 1")
+console.log("");
+console.log("CALCULATOR PART 1");
 squareNumber(testNumber);
 halfNumber(testNumber);
 percentOf(testNumber,10);
@@ -54,9 +54,9 @@ var aLotOfMaths = function(number) {
 	step3 = areaOfCircle(step2);
 	return percentOf(step3, step2);
 }
-console.log("")
-console.log("CALCULATOR PART 2")
-aLotOfMaths(testNumber)
+console.log("");
+console.log("CALCULATOR PART 2");
+aLotOfMaths(testNumber);
 
 
 // Strings
@@ -77,7 +77,7 @@ var DrEvil = function (number) {
 	else
 		return number + " dollars (pinky)";
 }
-console.log("")
+console.log("");
 console.log("DR EVIL");
 
 console.log(DrEvil(10));
@@ -91,7 +91,7 @@ console.log(DrEvil(241002030));
 var mixUp = function(str1, str2) {
 	return str2.slice(0,2) + str1.slice(2) + " " + str1.slice(0,2) + str2.slice(2);
 }
-console.log("")
+console.log("");
 console.log("MIX UP");
 
 console.log(mixUp('wet','dog'));
@@ -109,8 +109,8 @@ var fixStart = function(string) {
 	RegFirstChar = new RegExp(firstChar, 'g');
 	return firstChar + string.slice(1).replace(RegFirstChar, "*");
 }
-console.log("")
-console.log("FIX START")
+console.log("");
+console.log("FIX START");
 console.log(fixStart("testingthisout"));
 console.log(fixStart("sisterstringers"));
 console.log(fixStart("babble"));
@@ -138,8 +138,8 @@ var verbing = function(string) {
 		return string;
 	}
 }
-console.log("")
-console.log("VERBING")
+console.log("");
+console.log("VERBING");
 console.log(verbing("laughing"));
 console.log(verbing("play"));
 console.log(verbing("cry"));
@@ -155,11 +155,11 @@ var notBad = function(sentence) {
 		return sentence.replace(sentence.slice(sentence.indexOf("not")),"good!");
 	}
 	else {
-		return sentence	
+		return sentence;	
 	}
 }
-console.log("")
-console.log("NOT BAD")
+console.log("");
+console.log("NOT BAD");
 console.log(notBad('This dinner is not that bad!'));
 console.log(notBad('This movie is not so bad!'));
 console.log(notBad('This movie is bad!'));
@@ -193,8 +193,8 @@ var multiples3And5 = function(numberUpTo) {
 	console.log("There are exactly " + arrayOf3And5.length + " numbers in this array");	
 }
 
-console.log("")
-console.log("EXTRA Multiples of 3 and 5")
+console.log("");
+console.log("EXTRA Multiples of 3 and 5");
 multiples3And5(15);
 multiples3And5(1000);
 
@@ -223,8 +223,8 @@ var fibonaci = function(numberUpTo) {
 	console.log("Sum of aray for even fibonacis up to " + numberUpTo + " is " + sumOfArray)
 }
 
-console.log("")
-console.log("EXTRA Even Fibonaci numbers")
+console.log("");
+console.log("EXTRA Even Fibonaci numbers");
 fibonaci(100);
 fibonaci(4000000);
 
