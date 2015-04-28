@@ -184,10 +184,30 @@ var multiples3And5 = function(numberUpTo) {
 		}
 	}
 	console.log(arrayOf3And5);	
-	console.log("There are exactly " + arrayOf3And5.length + " in this array");	
+	console.log("There are exactly " + arrayOf3And5.length + " numbers in this array");	
 }
 
 console.log("")
 console.log("EXTRA Multiples of 3 and 5")
 multiples3And5(15);
 multiples3And5(50);
+
+
+var fibonaci = function(numberUpTo) {
+	arrayOfFibonaci = [1,2];
+	arrayOfEvenFibonaci = [];
+	while (arrayOfFibonaci.slice(-1) < numberUpTo) {
+		newNumber = (parseInt(arrayOfFibonaci.slice(-1))) + parseInt((arrayOfFibonaci.slice(-2,-1)));
+		arrayOfFibonaci.push(newNumber);
+		if (newNumber % 2 === 0) {
+			arrayOfEvenFibonaci.push(newNumber);
+		}
+	}
+	console.log(arrayOfFibonaci);
+	console.log("There are exactly " + arrayOfEvenFibonaci.length + " even Fibonaci numbers out of " + arrayOfFibonaci.length + " Fibonaci with the highest number being less than " + numberUpTo);
+}
+
+console.log("")
+console.log("EXTRA Even Fibonaci numbers")
+fibonaci(100);
+fibonaci(3000);
