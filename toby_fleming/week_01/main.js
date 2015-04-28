@@ -85,18 +85,14 @@ var verbing = function(string) {
 
 var notBad = function(string) {
 	var re = new RegExp('not.*bad', '');
-	var matchStart = string.search(re);
+	var matchIdx = string.search(re);
 
-	if (matchStart < 0) {
+	if (matchIdx < 0) {
 		return string;
 	}
 
-	//Worth explaining...  
-	//match will return an array as there may be multiple matches.  We are only interested in the first match in this case.
-	var length = string.match(re)[0].length;
-
-	var matchEnd = matchStart + length;
-	var result = string.slice(0, matchStart) + 'good' + string.slice(matchEnd);
+	var match = string.match(re)[0];
+	var result = string.replace(match, 'good');
 
 	return result;
 }
