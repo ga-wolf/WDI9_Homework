@@ -77,7 +77,8 @@ var mixUp = function(a, b) {
 	var str2 = a.slice(2);
 	var str3 = b.slice(0, 2);
 	var str4 = b.slice(2);
-	console.log(str3 + str2 + ' ' + str1 + str4)
+	var result = str3 + str2 + ' ' + str1 + str4
+	console.log(result);
 }
 
 mixUp('middle', 'man')
@@ -89,9 +90,9 @@ console.log(' ')
 var fixStart = function(word) {
 	var firstLetter = word.slice(0, 1);
 	var completeStr = word.slice(1);
-	var re = new RegExp(firstLetter, 'g');
+	var re = new RegExp(firstLetter, 'g'); // all magic
 	var str = word
-	var newstr = completeStr.replace(re, '*');
+	var newstr = completeStr.replace(firstLetter, '*');
 	console.log(firstLetter + newstr)
 
 }
@@ -105,7 +106,7 @@ console.log(' ')
 var verbing = function(word) {
 
 	var lastThree = word.slice(-3)
-	if (word.length < 3){
+	if (word.length < 3) {
 		console.log(word)
 	} else {
 		if (lastThree === 'ing') {
@@ -125,21 +126,19 @@ verbing('go')
 console.log(' ')
 
 var notBad = function(thing) {
-	var notIndex = thing.indexOf('not')
-	var badIndex = thing.indexOf('bad')
-	if (badIndex <= 0 || notIndex <= 0) {
-	    console.log(thing)
+	var notIndex = thing.indexOf('not');          
+	var badIndex = thing.indexOf('bad');  
+	if (badIndex === -1 || notIndex === -1) {
+	    console.log(thing);
 	} else if (badIndex > notIndex) {
     	var str = thing;
-    	var replaceIndex1 = notIndex
-    	var replaceIndex2 = badIndex + 3
-        var replaceArea = str.substring(replaceIndex1, replaceIndex2)
-        // replaceArea will be replaced by good
-        var re = new RegExp(replaceArea, 'g');
-        var newstr = str.replace(re, 'good')
-    	console.log(newstr)
+    	var replaceIndex1 = notIndex;
+    	var replaceIndex2 = badIndex + 3;
+        var replaceArea = str.substring(replaceIndex1, replaceIndex2) 		  
+        var newstr = str.replace(replaceArea, 'good')
+    	console.log(newstr);
 	} else {
-	    console.log(thing)
+	    console.log(thing);
 	}
 }
 
