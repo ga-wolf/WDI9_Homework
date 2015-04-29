@@ -99,3 +99,39 @@ function notBad(str){
 }
 
 notBad("This class is not bad");
+notBad("This class is bad but not");
+notBad("This class is good");
+
+// OPTIONAL HOMEWORk
+// Fibonacci 
+
+// function fibonacci(number){
+// 	var fibArray = new Array();
+// 	for(var i=1;i<=number;i++){
+// 		for(var j=i+i; j <= number; j++){
+// 			var k = i+j;
+			
+// 			fibArray.push(k);
+			
+// 		}
+// 	}
+// 	console.log(fibArray);
+// 	// for(i=1, i<=fibArray.length-1; i++){
+// 	// 		j = fibArray(i) + fibArray(i+1);
+// 	// }
+// 	// return k;
+// }
+// fibonacci(10);
+//I FUCKED UP. 
+
+var countDown = function (count){
+
+	if(count > 0){
+		console.log(count);
+		countDown(count-1);
+	} else {
+		console.log("blastoff");
+	}
+}
+countDown(20);
+
