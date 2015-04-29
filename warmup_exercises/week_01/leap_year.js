@@ -19,5 +19,6 @@
 // - We want a custom function called isLeapYear
 
 // Bonus!
+// - Ask the user what number they want to test
 // - Add the is Leap Year function to the number prototype...  Don't be too concerned about this.
 // - Watch a whole heap of information about leap years... http://www.youtube.com/watch?v=xX96xng7sAE
