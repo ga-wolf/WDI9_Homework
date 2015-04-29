@@ -1,48 +1,78 @@
 /*
-Homework: The Word Guesser
-You'll create a simple word guessing game where the user gets infinite tries to guess the word (like Hangman without the hangman, or like Wheel of Fortune without the wheel and fortune).
-
-Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), and one to hold the current guessed letters (e.g. it would start with '', '', '_' and end with 'F', 'O', 'X').
-Write a function called guessLetter that will:
-Take one argument, the guessed letter.
-Iterate through the word letters and see if the guessed letter is in there.
-If the guessed letter matches a word letter, changed the guessed letters array to reflect that.
-When it's done iterating, it should log the current guessed letters ('F__') and congratulate the user if they found a new letter.
-It should also figure out if there are any more letters that need to be guessed, and if not, it should congratulate the user for winning the game.
-Pretend you don't know the word, and call guessLetter multiple times with various letters to check that your program works.
+Game of Hangman:
+Call hangman() in the console to begin.  Would have called it for you but it
+doesn't let you open the console once the first prompt appears.
 */
 
-var guessedLetters = [];
+var word = [];	//'T', 'O', 'B', 'Y'
+var mask = [];	//'-', '-', '-', '-'
+
+var lettersRevealed = 0;
+var guessedLetters = [];	//Both correct and incorrect guesses
+var guessesLeft = 6;
 
 var guessLetter = function(letter) {
 	var found = false;
 
+	letter = letter.toUpperCase();
+
+	//Check to see if letter has previously been guessed.  If it has do not
+	//continue.  Otherwise add it to the list and move on..
+	if (guessedLetters.indexOf(letter) >= 0) {
+		return;
+	} else {
+		guessedLetters.push(letter);
+	}
+
+	//Iterate through the word to try and find a match.  If a match is found
+	//increment lettersRevealed and update mask appropriately.
 	for (var i = 0; i < word.length; i++) {
 		if (letter === word[i]) {
 			found = true;
-			guessedLetters.push(letter);
+			mask[i] = letter;
+			lettersRevealed++;
 		}
 	}
 
 	if (found) {
 		console.log('Congratulations!  You guessed ' + letter + ' correctly');
+	} else {
+		guessesLeft--;
 	}
-	console.log('Guessed letters: ' + guessedLetters.join(', ') + '\n\n');
+
+	console.log('Guesses left: ' + guessesLeft + '\n\n');
 }
 
-var wordGuesser = function() {
+var createMask = function() {
+	for (var i = 0; i < word.length; i++) {
+		if (word[i] === ' ') {
+			mask[i] = '_';
+			guessedLetters++;
+		} else {
+			mask[i] = '-';
+		}
+	}
+}
+
+var hangman = function() {
 	console.log('----------------------------');
-	console.log('GUESSING GAME');
+	console.log('HANGMAN');
 	console.log('----------------------------');
 
-	console.log('Player 1: enter a word:');
-	word = prompt().split('');
-	console.log('*' + word.length + ' letter word entered*\n\n');
+	//Ask user for word
+	console.log('Player 1: Enter A Word or Phrase:');
+	word = prompt().toUpperCase().split('');
+	createMask();
 
-	console.log('Player 2: start guessing');
-	while (word.length !== guessedLetters.length) {
+	console.log('Player 2: Start Guessing:');
+	while (word.length !== lettersRevealed && guessesLeft) {
+		console.log('Word: ' + mask.join(''));
 		guessLetter(prompt());
 	}
 
-	console.log('Congratulations!  You WON!');
-}();
+	if (!guessesLeft) {
+		console.log('YOU LOSE!!!!!!!!!');
+	} else {
+		console.log('Congratulations You WON!  The word was ' + word.join(''));
+	}
+};
