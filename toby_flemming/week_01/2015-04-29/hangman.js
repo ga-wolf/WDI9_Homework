@@ -4,8 +4,8 @@ Call hangman() in the console to begin.  Would have called it for you but it
 doesn't let you open the console once the first prompt appears.
 */
 
-var word = [];	//'T', 'O', 'B', 'Y'
-var mask = [];	//'-', '-', '-', '-'
+var word = [];	// [ 'S', 'O', 'M', 'E', ' ', 'T', 'E', 'X', 'T' ]
+var mask = [];	// [ '-', '-', '-', '-', '_', '-', '-', '-', '-' ]
 
 var lettersRevealed = 0;
 var guessedLetters = [];	//Both correct and incorrect guesses
@@ -47,7 +47,7 @@ var createMask = function() {
 	for (var i = 0; i < word.length; i++) {
 		if (word[i] === ' ') {
 			mask[i] = '_';
-			guessedLetters++;
+			lettersRevealed++;
 		} else {
 			mask[i] = '-';
 		}
@@ -62,6 +62,7 @@ var hangman = function() {
 	//Ask user for word
 	console.log('Player 1: Enter A Word or Phrase:');
 	word = prompt().toUpperCase().split('');
+
 	createMask();
 
 	console.log('Player 2: Start Guessing:');
