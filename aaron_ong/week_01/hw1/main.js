@@ -228,3 +228,27 @@ console.log("EXTRA Even Fibonaci numbers");
 fibonaci(100);
 fibonaci(4000000);
 
+
+var fibonaci1 = function(numberUpTo) {
+	arrayOfFibonaci = [1,2];
+	arrayOfEvenFibonaci = [];
+	var sumOfArray = 2;
+	var lastLoc = arrayOfFibonaci.length - 1
+	var secondLastLoc = lastLoc - 1
+	while (arrayOfFibonaci.slice(-1) < numberUpTo) {
+		newNumber = arrayOfFibonaci[lastLoc] + arrayOfFibonaci[secondLastLoc];
+		arrayOfFibonaci.push(newNumber);
+		if (newNumber % 2 === 0) {
+			arrayOfEvenFibonaci.push(newNumber);
+			sumOfArray += newNumber;
+		}
+	}
+	console.log(arrayOfFibonaci);
+	console.log("There are exactly " + arrayOfEvenFibonaci.length + " even Fibonaci numbers out of " + arrayOfFibonaci.length + " Fibonaci with the highest number being less than " + numberUpTo);
+	console.log("Sum of aray for even fibonacis up to " + numberUpTo + " is " + sumOfArray)
+}
+
+console.log("");
+console.log("EXTRA Even Fibonaci numbers");
+fibonaci1(100);
+fibonaci1(4000000);
