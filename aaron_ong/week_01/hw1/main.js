@@ -107,7 +107,7 @@ console.log(mixUp('dog','dinner'));
 var fixStart = function(string) {
 	firstChar = string.charAt(0);
 	RegFirstChar = new RegExp(firstChar, 'g');
-	return firstChar + string.slice(1).replace(RegFirstChar, "*");
+	return firstChar + string.slice(1).replace(/(t)/g, "*");
 }
 console.log("");
 console.log("FIX START");
@@ -151,7 +151,7 @@ console.log(verbing("go"));
 // If it doesn't find 'not' and 'bad' in the right sequence (or at all), just return the original sentence.
 // For example:
 var notBad = function(sentence) {
-	if (sentence.indexOf("not") > -1 && sentence.indexOf("bad") > -1) {
+	if (sentence.indexOf("not") > -1 && sentence.indexOf("bad") > -1 && sentence.indexOf("not") < sentence.indexOf("bad")) {
 		return sentence.replace(sentence.slice(sentence.indexOf("not")),"good!");
 	}
 	else {
@@ -228,3 +228,27 @@ console.log("EXTRA Even Fibonaci numbers");
 fibonaci(100);
 fibonaci(4000000);
 
+
+var fibonaci1 = function(numberUpTo) {
+	arrayOfFibonaci = [1,2];
+	arrayOfEvenFibonaci = [];
+	var sumOfArray = 2;
+	var lastLoc = arrayOfFibonaci.length - 1
+	var secondLastLoc = lastLoc - 1
+	while (arrayOfFibonaci.slice(-1) < numberUpTo) {
+		newNumber = arrayOfFibonaci[lastLoc] + arrayOfFibonaci[secondLastLoc];
+		arrayOfFibonaci.push(newNumber);
+		if (newNumber % 2 === 0) {
+			arrayOfEvenFibonaci.push(newNumber);
+			sumOfArray += newNumber;
+		}
+	}
+	console.log(arrayOfFibonaci);
+	console.log("There are exactly " + arrayOfEvenFibonaci.length + " even Fibonaci numbers out of " + arrayOfFibonaci.length + " Fibonaci with the highest number being less than " + numberUpTo);
+	console.log("Sum of aray for even fibonacis up to " + numberUpTo + " is " + sumOfArray)
+}
+
+console.log("");
+console.log("EXTRA Even Fibonaci numbers");
+fibonaci1(100);
+fibonaci1(4000000);
