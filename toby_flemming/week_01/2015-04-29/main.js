@@ -1,98 +1,48 @@
-var sanitize = function(number) {
-	return number.toFixed(2);
-}
+/*
+Homework: The Word Guesser
+You'll create a simple word guessing game where the user gets infinite tries to guess the word (like Hangman without the hangman, or like Wheel of Fortune without the wheel and fortune).
 
+Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), and one to hold the current guessed letters (e.g. it would start with '', '', '_' and end with 'F', 'O', 'X').
+Write a function called guessLetter that will:
+Take one argument, the guessed letter.
+Iterate through the word letters and see if the guessed letter is in there.
+If the guessed letter matches a word letter, changed the guessed letters array to reflect that.
+When it's done iterating, it should log the current guessed letters ('F__') and congratulate the user if they found a new letter.
+It should also figure out if there are any more letters that need to be guessed, and if not, it should congratulate the user for winning the game.
+Pretend you don't know the word, and call guessLetter multiple times with various letters to check that your program works.
+*/
 
+var guessedLetters = [];
 
+var guessLetter = function(letter) {
+	var found = false;
 
-
-var squareNumber = function(number) {
-	var result = sanitize(number * number);
-
-	console.log('The result of squaring the number ' + number + ' is ' + result);
-	return result;
-}
-
-var halfNumber = function(number) {
-	var result = sanitize(number / 2);
-
-	console.log('Half of ' + number + ' is ' + result);
-	return result;
-}
-
-var percentOf = function(num1, num2) {
-	var result = sanitize(num1 / num2 * 100);
-
-	console.log(num1 + ' is ' + result + '% of ' + num2);
-	return result;
-}
-
-var areaOfCircle = function(radius) {
-	var result = sanitize(Math.PI * squareNumber(radius));
-
-	console.log('The area for a circle with radius ' + radius + ' is ' + result);
-	return result;
-}
-
-var calculator = function(number) {
-	var halfNum = halfNumber(number);
-	var squareNum = squareNumber(halfNum);
-	var area = areaOfCircle(squareNum);
-	var percentage = area / squareNum * 100;
-
-	console.log('Percentage is ' + percentage + '%');
-	return percentage;
-}
-
-var DrEvil = function(amount) {
-	var result = amount + ' dollars';
-	if (amount === 1000000) {
-		result += ' (pinky)';
-	}
-
-	return result;
-}
-
-var mixUp = function(str1, str2) {
-	var str1Result = str2.slice(0, 2) + str1.slice(2);
-	var str2Result = str1.slice(0, 2) + str2.slice(2);
-
-	return str1Result + ' ' + str2Result;
-}
-
-var fixStart = function(string) {
-	var firstLetter = string[0];
-	var re = new RegExp(firstLetter, 'g');
-	var result = firstLetter + string.slice(1).replace(re, '*');
-
-	return result;
-}
-
-var verbing = function(string) {
-	var length = string.length;
-	var result = string;
-
-	if (length >= 3) {
-		if (string.slice(-3) === 'ing') {
-			result += 'ly';
-		} else {
-			result += 'ing';
+	for (var i = 0; i < word.length; i++) {
+		if (letter === word[i]) {
+			found = true;
+			guessedLetters.push(letter);
 		}
-	} 
-
-	return result;
-}
-
-var notBad = function(string) {
-	var re = new RegExp('not.*bad', '');
-	var matchIdx = string.search(re);
-
-	if (matchIdx < 0) {
-		return string;
 	}
 
-	var match = string.match(re)[0];
-	var result = string.replace(match, 'good');
-
-	return result;
+	if (found) {
+		console.log('Congratulations!  You guessed ' + letter + ' correctly');
+	}
+	console.log('Guessed letters: ' + guessedLetters.join(', ') + '\n\n');
 }
+
+var wordGuesser = function() {
+	console.log('----------------------------');
+	console.log('GUESSING GAME');
+	console.log('----------------------------');
+
+	console.log('Player 1: enter a word:');
+	word = prompt().split('');
+	console.log('*' + word.length + ' letter word entered*\n\n');
+
+	console.log('Player 2: start guessing');
+	while (word.length !== guessedLetters.length) {
+		guessLetter(prompt());
+	}
+
+	console.log('Congratulations!  You WON!');
+}();
