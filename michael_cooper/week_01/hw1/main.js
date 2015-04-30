@@ -128,7 +128,10 @@ var verbing = function(str) {
 //   notBad('This dinner is bad!'): 'This dinner is bad!'
 
 var notBad = function (str) {
-	if (str.indexOf('not') < str.indexOf('bad')) {
+	if (str.indexOf('not') === -1 || str.indexOf('bad') === -1) {
+	// Check is required as if the indexOf does not find any instances of a string, it returns -1.
+		return str;
+	} else if (str.indexOf('not') < str.indexOf('bad')) { 
 		var notIndex = str.indexOf('not');
 		var badIndex = str.indexOf('bad');
 		// I only did this to make the return statement a little clearer
