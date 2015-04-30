@@ -62,6 +62,8 @@ function isIsoscles(triangle){
 		if(triangle.sideA === triangle.sideB || triangle.sideB == triangle.sideC || triangle.sideA == triangle.sideC){
 			return true;
 		}
+		else{
+			return false;		}
 	}
 	else{
 		return false; 
@@ -131,7 +133,7 @@ var bank = {
 		//Take prompt results and store as variable. search term for account owner name;
 		var accOwnerName = prompt("What is your name?");
 
-		//Take prompt result and store as variable
+		//Take prompt result and store as variable. Search term for keyword that activates a specific function. 
 		var typeOftransaction = prompt("what would you like to do today? Withdraw or Deposit?").toLowerCase();
 		var counter = 0;
 
@@ -224,6 +226,6 @@ function getAccount(ownerName){
 
 
 // bank.ATM();
-bank.transfer(300);
+
 
 
