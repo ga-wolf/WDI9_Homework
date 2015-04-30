@@ -75,7 +75,11 @@ var area = function(triangle) {
 }
 
 var isObtuse = function(triangle) {
-	if (Math.pow(triangle.sideA, 2) + Math.pow(triangle.sideB, 2) < Math.pow(triangle.sideC, 2)) {
+	var a = Math.pow(triangle.sideA, 2);
+	var b = Math.pow(triangle.sideB, 2);
+	var c = Math.pow(triangle.sideC, 2);
+
+	if (a - b - c < 0 || b - c - a < 0 || c - a - b < 0) {
 		return true;
 	}
 
@@ -120,7 +124,7 @@ var bank = {
 		return newAccount;
 	},
 
-	findAccount: function(name) {
+	_findAccount: function(name) {
 		var matchedAccount;
 
 		for (var i = 0; i < bank.accounts.length; i++) {
@@ -136,8 +140,8 @@ var bank = {
 	},
 
 	transfer: function(source, dest, amount) {
-		var sourceAcc = bank.findAccount(source);
-		var destAcc = bank.findAccount(dest);
+		var sourceAcc = bank._findAccount(source);
+		var destAcc = bank._findAccount(dest);
 		var accountFound = true;
 
 		if (sourceAcc === undefined) {
@@ -152,7 +156,9 @@ var bank = {
 		if (!accountFound) {
 			return false;
 		}
-		if (!sourceAcc.withdraw(amount)) {
+
+		var successful = sourceAcc.withdraw(amount);
+		if (successful === false) {
 			return false;
 		} else {
 			destAcc.deposit(amount);
