@@ -37,9 +37,9 @@ var perimeterRec = function(rec){
 	return recPerim;
 }
 
-// isSquare(rectangle);
-// area(rectangle);
-// perimeter(rectangle);
+isSquare(rectangle);
+areaRec(rectangle);
+perimeterRec(rectangle);
 
 
 // -----------------------------------Part 2, Triangle-----------------------------------
@@ -66,7 +66,7 @@ var isEquilateral = function(tri){
 		console.log("This triangle is equilateral!!!!!");
 		return true;
 	}else{
-		console.log("This triangle is not special");
+		console.log("FAIL!!! This triangle is not equilateral");
 		return false;
 	}
 
@@ -74,11 +74,11 @@ var isEquilateral = function(tri){
 
 
 var isIsosceles = function(tri){
-	if( (tri.sideA === tri.sideB || tri.sideA ===tri.sideC) || (tri.sideB === tri.sideC) ){
+	if( tri.sideA === tri.sideB || tri.sideA ===tri.sideC || tri.sideB === tri.sideC ){
 		console.log("This triangle is an isosceles!!!!!");
 		return true;
 	}else{
-		console.log("This triangle is not special");
+		console.log("FAIL!!!! This triangle is not an isosceles");
 		return false;
 	}
 
@@ -100,8 +100,8 @@ var areaTri = function(tri){
 
 var isObtuse = function(tri){
 
-	var sides = [tri.sideA, tri.sideB, tri.sideC];									//place 3 sides into an array
-	sides.sort(function(a, b){return b-a});													//largest > smallest. largest is in index 0
+	var sides = [tri.sideA, tri.sideB, tri.sideC];									//place the 3 sides into an array
+	sides.sort(function(a, b){return b-a});													//largest > smallest. largest is index 0
 
 	var obtuseNum = Math.pow(sides[0], 2) -  (Math.pow(sides[1], 2) + Math.pow(sides[2], 2));
 	
@@ -120,7 +120,7 @@ var isObtuse = function(tri){
 isEquilateral(triangle);
 isIsosceles(triangle);
 areaTri(triangle);
-// isObtuse(triangle);
+isObtuse(triangle);
 
 
 
@@ -157,43 +157,36 @@ areaTri(triangle);
 
 var trustBank = {
 
-		customer:[],
-		addAccount : function(nameIn, moneyIn){
-
-				var user =	{
-						name: nameIn,
-						amount: moneyIn,
-						balance: function() {
-		    			console.log(user.name+ ' you have: $' + user.amount + " in your account");
-						},
-						deposit: function(i, show) {
-							user.amount = user.amount + i;
-							var showM = true																			//showM used to supress message when transfering
-																																		//between accounts
-							if(show = false){
-								showM = false;
+	customer:[],
+	addAccount : function(nameIn, moneyIn){
+			var user =	{
+					name: nameIn,
+					amount: moneyIn,
+					balance: function() {
+	    			console.log(user.name+ ' you have: $' + user.amount + " in your account");
+					},
+					deposit: function(i, show) {
+						user.amount = user.amount + i;
+						var showM = show																			
+																																	
+							if(show != false){																//showM used to supress message when transfering
+								showM = true;																		//between accounts
 							}
-
 							if(showM){
-								console.log('You deposited $' + i + 
-							 	" you now have $" + 
-							 	user.amount + 
-							 	" in your account");
+								console.log('You deposited $' + i + " you now have $" + user.amount + " in your account");
 							}
-						},
-						withdraw: function(i, show) {
-							var showM = true;
+					},
+					withdraw: function(i, show) {
+						var showM = show;
 
-							if(show = false){
-								showM = false;
+							if(show != false){
+								showM = true;
 							}
 
-							if(i <= user.amount){
+							if(i <= user.amount){																//will not allow account to be negative
 									user.amount = user.amount - i;
 									if(showM){
-											console.log('You withdrew $' + i +  
-											" you now have $" + user.amount + 
-											" in your account");
+											console.log('You withdrew $' + i + " you now have $" + user.amount + " in your account");
 									}
 									return true;
 
@@ -202,31 +195,28 @@ var trustBank = {
 									return false;
 							}
 
-						}
-				};
-				trustBank.customer.push(user);
-		},
-		transfer : function(amount, acc1, acc2){
+					}
+			};
+		trustBank.customer.push(user);
+	},	//add account function end																												
+	transfer : function(amount, acc1, acc2){
 
-			var nameOut = trustBank.customer[acc1].name;
-			var nameIn = trustBank.customer[acc2].name;
-
-
-			if(trustBank.customer[acc1].withdraw(amount, false)){
-
-				trustBank.customer[acc2].deposit(amount, false);
-
-				console.log("successfully transfered $" + amount + " from "+ nameOut + " account to " +
-											nameIn+" account");
-			}else{
-				console.log("unable to transfer money due to insufficent funds");
-			}
+		var nameOut = trustBank.customer[acc1].name;
+		var nameIn = trustBank.customer[acc2].name;
 
 
+		if(trustBank.customer[acc1].withdraw(amount, false)){
 
+			trustBank.customer[acc2].deposit(amount, false);
+
+			console.log("successfully transfered $" + amount + " from "+ nameOut + " account to " + nameIn+" account");
+		}else{
+			console.log("unable to transfer money due to insufficent funds");
 		}
 
-};
+	}
+
+};	//trustBank object end
 
 trustBank.addAccount("Ben Smith", 1000);
 trustBank.addAccount("Jamie Smith", 100);
@@ -235,8 +225,21 @@ trustBank.addAccount("Jamie Smith", 900000);
 
 trustBank.customer[2].balance();
 trustBank.customer[2].withdraw(200);
-trustBank.customer[2].deposit(200);
+trustBank.customer[3].deposit(99);
 
 trustBank.transfer(20, 0, 1);
+
+
+function moneyRead(amount){
+		var money = amount;
+
+		if(money<1000){
+			return money;
+		}else{
+			money = money + "";
+
+		}
+}
+
 
 
