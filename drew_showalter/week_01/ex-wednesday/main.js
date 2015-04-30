@@ -142,7 +142,10 @@ var guessLetter = function(guess) {
 var wordLets = "frogger".split('');
 var guessedLets = ["", "", ""];
 var rewardAmt = 0;
+
+
 var guessBetter = function(guess) {
+
 	//this block sets up the variables that change on each run of the program, and logs your roll
 	rewardRoll = Math.round(Math.random() * 1000);
 	console.log("You rolled $" + rewardRoll + "!")
@@ -162,7 +165,7 @@ var guessBetter = function(guess) {
 	//this function displays your winnings and losings each round, and doesn't let winnings drop below zero
 	if (isThereOne === 0) {
 		rewardAmt -= 250;
-		if (rewardAmt <= 0) {
+		if (rewardAmt <= 0) {\
 			rewardAmt = 0;
 		}
 		console.log("You lost $250.");
@@ -178,13 +181,13 @@ var guessBetter = function(guess) {
 		console.log("Keep guessing!");
 	}
 }
-// guessBetter('a');
-// guessBetter('f');
-// guessBetter('g');
-// guessBetter('o');
-// guessBetter('x');
-// guessBetter('r');
-// guessBetter('e');
+guessBetter('a');
+guessBetter('f');
+guessBetter('g');
+guessBetter('o');
+guessBetter('x');
+guessBetter('r');
+guessBetter('e');
 
 
 // Bonus: Make it like Hangman:
@@ -249,20 +252,20 @@ var guessHang = function(guess) {
 		console.log("Keep guessing!")
 	}
 }
-guessHang('a');
-guessHang('a');
-guessHang('f');
-guessHang('d');
-guessHang('x');
-guessHang('y');
-guessHang('x');
-guessHang('z');
-guessHang('b');
+// guessHang('a');
+// guessHang('a');
+// guessHang('f');
+// guessHang('d');
+// guessHang('x');
+// guessHang('y');
+// guessHang('x');
+// guessHang('z');
+// guessHang('b');
 
-guessHang('x');
-guessHang('f');
-guessHang('f');
-guessHang('r');
-guessHang('o');
-guessHang('g');
-guessHang('e');
+// guessHang('x');
+// guessHang('f');
+// guessHang('f');
+// guessHang('r');
+// guessHang('o');
+// guessHang('g');
+// guessHang('e');
