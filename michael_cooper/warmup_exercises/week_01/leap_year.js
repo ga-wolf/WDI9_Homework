@@ -23,24 +23,23 @@
 // - Add the is Leap Year function to the number prototype...  Don't be too concerned about this.
 // - Watch a whole heap of information about leap years... http://www.youtube.com/watch?v=xX96xng7sAE
 
-Number.prototype.isLeapYear = function() {
-	console.log(isLeapYear(this)); 
-};
+var isLeapYear = function ( year ) {
+  // To go further
+  // year divided by 4 has to have no remainder - year % 4 
+  // year divided by 100 can't equal 0 - year % 100
+  // unless its divisible by 400 - year % 400
+  if ( year % 4 === 0 && ( !(year % 100 === 0) || year % 400 === 0 ) ) {
+    console.log( "Yep, " + year + " is a leap year." )
+  } else {
+    console.log( "Nope, " + year + " is not a leap year." )
+  }
+}
 
-var main = function() {
-	console.log(isLeapYear(getInput()));
-};
+isLeapYear( 1900 );
+isLeapYear( 1996 );
+isLeapYear( 1997 );
+isLeapYear( 2000 );
 
-var getInput = function() {
-    var year = parseInt(prompt("Please enter a year:"));
-    console.log('You entered ' + year);
-    return year;
-};
+// PROMPT SECTION
 
-var isLeapYear = function(year) {
-	if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
-		return true;
-	} else {
-		return false;
-	}
-};
+isLeapYear( parseInt( prompt( "What year would you like to test?" ) ) );
