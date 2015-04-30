@@ -1,4 +1,4 @@
-// Part 1, Rectangle
+ // Part 1, Rectangle
 
 // Given the following a rectangle object like the one below, write the following functions:
 
@@ -154,6 +154,12 @@ var Account = function(name, cash) {
     }
   }
   
+  var bank = 10
+  bank = bank + 10
+  bank += 10
+
+
+
   this.deposit = function(amount) {
     this.balance = this.balance + amount;
     return "Successfully Deposited $" + amount + ", current balance is $" + this.balance;
@@ -184,19 +190,17 @@ var Account = function(name, cash) {
     return 'Payment of $' + amount + ' successfully made to ' + payee;
     
   }
-
-  this.interest = function() {
-    setInterval(function() {
-        this.balance += (this.balance * 0.02);
-       }, 3000);
-  }
 };
 
 var newAccount = function(name, cash) {
   if (cash < 0) {
     return 'invalid amount entered, please try again.';
   }
-  Accounts.push(new Account(name, cash));
+  var newAccount = new Account(name, cash);
+
+  Accounts.push(newAccount);
+  newAccount.interest();
+
 };
 
 var bankHoldings = function() {
@@ -206,3 +210,13 @@ var bankHoldings = function() {
   });
   return total;
 };
+
+var updateBalance = function () {
+  for (var i = 0; i < Accounts.length; i++) {
+    Accounts[i].balance += (Accounts[i].balance * 0.002);
+  };
+  // Iterate through all accounts
+  // Change their balance
+};
+
+setInterval(updateBalance, 3000);
