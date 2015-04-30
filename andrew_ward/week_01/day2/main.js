@@ -123,7 +123,7 @@ var notBad = function(str){
 	var indexOfBad = str.lastIndexOf('bad') + 3;
 	if (str.match('not' && 'bad') && indexOfNot < indexOfBad) {
 		var sliced = str.slice(indexOfNot,indexOfBad);
-		str = str.replace(sliced,"good");
+		str = str.replace(sliced,'good');
 	}
 	return str;
 };
