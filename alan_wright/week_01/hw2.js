@@ -44,7 +44,7 @@ var guessLetter = function (letter) {
 		// if (answer.indexOf(letter) !== -1) {
 		if (letter === answer[i]) {
 		  lettersGuessed[i] = letter;
-		  prize = Math.round(Math.random() * 100); 
+		  var reward = Math.round(Math.random() * 100); 
 		  console.log('You have found: ' + lettersGuessed + ' and you also earned $' + prize);
 		}
 		if (lettersGuessed.indexOf("_") < 0) {
