@@ -29,7 +29,7 @@ random = getRandomArbitrary(0,boxOfRandomWords.length).toFixed(0)
 
 var theGuessingWord = boxOfRandomWords[random].split('');
 var theGuessedArray = [];
-for (i=0; i <= (theGuessingWord.length - 1); i++) {
+for (var i=0; i <= (theGuessingWord.length - 1); i++) {
 	theGuessedArray.push("_");
 }
 
@@ -44,8 +44,8 @@ console.log(theGuessedArray);
 var guessLetter = function(userinput) {
 	userinput = userinput.toUpperCase();
 	if (theGuessingWord.indexOf(userinput) !== -1) {
-		for (i=0; i < theGuessingWord.length; i++) {
-			if (theGuessingWord[i] == userinput) {
+		for (var i=0; i < theGuessingWord.length; i++) {
+			if (theGuessingWord[i] === userinput) {
 				theGuessedArray[i] = userinput;
 				rewardAmount += 10;
 				console.log("Your current reward is $" + rewardAmount);
@@ -53,16 +53,16 @@ var guessLetter = function(userinput) {
 
 			}
 		}
-		if (theGuessedArray.join() == theGuessingWord.join()) {
-		console.log("CONGRATUATIONS!!!!!");
-		console.log("YOU HAVE GUESSED THE WORD");
-		console.log("GAME RESET");				
-		resetGame();
+		if (theGuessedArray.join() === theGuessingWord.join()) {
+			console.log("CONGRATUATIONS!!!!!");
+			console.log("YOU HAVE GUESSED THE WORD");
+			console.log("GAME RESET");				
+			resetGame();
 		}	
 	}
 	else {
-		tries -= 1
-		rewardAmount -= 10
+		tries -= 1;
+		rewardAmount -= 10;
 		console.log("You guessed, " + userinput + ". Try again. You have " + tries + " tries left.");
 		if (tries === 0) {
 			console.log("You have failed")
@@ -164,8 +164,10 @@ var reverseString = function(str) {
 	}
 	console.log(reverseArray);
 }
-//NOT WORKING
-reverseString("jag testar")
+
+reverseString("jag testar");
+
+
 // Write a function findLongestWord that takes an array of words and returns the length of the longest one.
 var findLongestWord = function(array) {
 	lengthOfWord = [];
@@ -175,7 +177,7 @@ var findLongestWord = function(array) {
 	}
 	console.log(Math.max.apply(Math, lengthOfWord));
 }
-//NOT WORKING
+
 findLongestWord(boxOfRandomWords);
 // Write a function filterLongWords that takes an array of words and an number i and returns the array of words that are longer than i.
 
