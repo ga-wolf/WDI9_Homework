@@ -1,7 +1,8 @@
 // Homework: The Word Guesser
 // You'll create a simple word guessing game where the user gets infinite tries to guess the word (like Hangman without the hangman, or like Wheel of Fortune without the wheel and fortune).
 
-// Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), and one to hold the current guessed letters (e.g. it would start with '', '', '_' and end with 'F', 'O', 'X').
+// Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), and one to hold the current guessed letters (e.g. 
+	// it would start with '', '', '_' and end with 'F', 'O', 'X').
 // Write a function called guessLetter that will:
 // Take one argument, the guessed letter.
 // Iterate through the word letters and see if the guessed letter is in there.
@@ -9,7 +10,57 @@
 // When it's done iterating, it should log the current guessed letters ('F__') and congratulate the user if they found a new letter.
 // It should also figure out if there are any more letters that need to be guessed, and if not, it should congratulate the user for winning the game.
 // Pretend you don't know the word, and call guessLetter multiple times with various letters to check that your program works.
-// Bonus: Make it more like Wheel of Fortune:
+// // 
+
+
+var guessLetter = function (let)
+
+
+
+var answerWord = ['T', 'I' , 'C', ]
+
+var testLetter = {'','', '_' }
+
+
+if(let.indexOf(answerWord[0]) !== -1 || (let.indexOf(answerWord[1]) !== -1 || (let.indexOf(answerWord[2]) !== -1) {
+	 console.log("Congraulations you have logged the letter" +let+ )
+	 
+	 guessLetter = "let"
+	 answerWord. =        //
+
+	 testLetter[] = 'let'; 
+	
+
+} else { return let ; 
+
+} 
+
+OR 
+
+str.match 
+
+
+
+
+// var  = str.match(/answerWord(i)
+// // var str = "The rain in SPAIN stays mainly in the plain"; 
+// // var res = str.match(/ain/g);
+// The result of res will be an array with the values:
+
+// ain,ain,ain
+
+
+// function compareCanonically(a, b) {
+//     if (a < b) {
+//         return -1;
+//     } else if (a > b) {
+//         return 1;
+//     } else {
+//         return 0;
+//     }
+// }
+
+Bonus: Make it more like Wheel of Fortune:
 
 // Start with a reward amount of $0
 // Every time a letter is guessed, generate a random amount and reward the user if they found a letter (multiplying the reward if multiple letters found), otherwise subtract from their reward.
@@ -21,8 +72,3 @@
 // Once the number reaches 6 (a reasonable number of body parts for a hangman), inform the user that they lost and show a hangman on the log.
 
 
-var greatPeople = [ "Louis Pasteur", "Jacques Cousteau", "Imhotep", "Sigmund Freud", "Wolfgang Amadeus Mozart" ];
-
-for ( var i = 0; i < greatPeople.length; i++ ) {
-    console.log( greatPeople[ i ] ); // Will log out the "i-th" element
-}
