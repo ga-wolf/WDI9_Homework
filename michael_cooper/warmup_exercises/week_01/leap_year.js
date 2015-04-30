@@ -23,6 +23,20 @@
 // - Add the is Leap Year function to the number prototype...  Don't be too concerned about this.
 // - Watch a whole heap of information about leap years... http://www.youtube.com/watch?v=xX96xng7sAE
 
+Number.prototype.isLeapYear = function() {
+	console.log(isLeapYear(this)); 
+};
+
+var main = function() {
+	console.log(isLeapYear(getInput()));
+};
+
+var getInput = function() {
+    var year = parseInt(prompt("Please enter a year:"));
+    console.log('You entered ' + year);
+    return year;
+};
+
 var isLeapYear = function(year) {
 	if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
 		return true;

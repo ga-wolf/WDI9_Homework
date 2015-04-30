@@ -22,7 +22,7 @@
 // Keep track of the state of the hangman as a number (starting at 0), and subtract or add to that number every time they make a wrong guess.
 // Once the number reaches 6 (a reasonable number of body parts for a hangman), inform the user that they lost and show a hangman on the log.
 
-var theWord = [];
+var theWord;
 var guessedLetters = [];
 var noRepeats = [];
 var currentProgress = '';
@@ -53,7 +53,7 @@ var guessLetter = function (letter, needWord) {
 	letter = letter.toLowerCase();
 
 	if (needWord && !theWord) {
-		var index = Math.round(Math.random() * 34)-1;
+		var index = Math.round(Math.random() * randomWords.length)-1;
 		setWord(randomWords[index]);
 	}
 
@@ -134,8 +134,9 @@ var guessLetter = function (letter, needWord) {
 	if (guessedLetters.length === theWord.length) {
 		console.log("Congratulations!! You have successfully guessed the word: " + theWord.join('') + ', Thank you for playing!');
 		console.log("You earned $" + prize);
-		theWord = [];
+		theWord = undefined;
 		noRepeats = [];
+		guessedLetters = [];
 		// Automatically resets the game if they win
 	}
 };
