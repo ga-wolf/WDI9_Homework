@@ -99,12 +99,12 @@ triangleArea = function(num1, num2, num3){
 //console.log(triangleArea(46,4,2))
 
 
-// triangleObtuse = function(){
-	triangle.sideA = num1;
-	triangle.sideB = num2;
-	triangle.sideC = num3;
+// // triangleObtuse = function(){
+// 	triangle.sideA = num1;
+// 	triangle.sideB = num2;
+// 	triangle.sideC = num3;
 
-// }
+// // }
 
 //////////////////////////
 
@@ -143,7 +143,7 @@ var bank = {
 	},
 	rmFunds:function(acc, fundsToRemove){
 		if(fundsToRemove > bank.accounts[acc].balance){
-			return console.log("Sorry but you don't have enough money")
+			return console.log("Sorry but you don't have enough money");
 		}
 		bank.accounts[acc].balance -= fundsToRemove;
 	},
@@ -156,7 +156,7 @@ var bank = {
 	},
 	transFunds: function(acc1, acc2, num1){
 		if(num1 > bank.accounts[acc1].balance){
-			return console.log("Sorry but you don't have enough money")
+			return console.log("Sorry but you don't have enough money");
 		}
 		bank.rmFunds(acc1, num1);
 		bank.addFunds(acc2, num1);

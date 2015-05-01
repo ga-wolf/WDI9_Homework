@@ -31,10 +31,10 @@
 // 	else{
 // 		console.log(year + ' is not a leap year!')
 // 	}
-// }super dooper
-super dooper
-// console.log(isLeapYear(1996))super dooper
-//prompt('Oi enter a year!')super dooper
+// }
+
+// console.log(isLeapYear(1996))
+//prompt('Oi enter a year!')
 
 //var 
 
@@ -47,10 +47,8 @@ var isLeapYear = function(year){
 		return false
 	}
 
-console.log(isLeapYear(1900
+console.log(isLeapYear(1900))
 
-parseInt //This converts a string into a number
-string.prototype//
 
 
 
