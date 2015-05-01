@@ -1,3 +1,25 @@
+// Extend the default Number object with a formatMoney() method:
+// usage: someVar.formatMoney(decimalPlaces, symbol, thousandsSeparator, decimalSeparator)
+// defaults: (2, "$", ",", ".")
+
+
+Number.prototype.formatMoney = function(places, symbol, thousand, decimal) {
+	places = !isNaN(places = Math.abs(places)) ? places : 2;
+	symbol = symbol !== undefined ? symbol : "$";
+	thousand = thousand || ",";
+	decimal = decimal || ".";
+	var number = this, 
+	    negative = number < 0 ? "-" : "",
+	    i = parseInt(number = Math.abs(+number || 0).toFixed(places), 10) + "",
+	    j = (j = i.length) > 3 ? j % 3 : 0;
+	return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(number - i).toFixed(places).slice(2) : "");
+};
+
+
+
+
+
+
 // -----------------------------------Geometry Function Lab-----------------------------------
 // Part 1, Rectangle
 
@@ -98,6 +120,8 @@ var areaTri = function(tri){
 }
 
 
+
+
 var isObtuse = function(tri){
 
 	var sides = [tri.sideA, tri.sideB, tri.sideC];									//place the 3 sides into an array
@@ -163,7 +187,7 @@ var trustBank = {
 					name: nameIn,
 					amount: moneyIn,
 					balance: function() {
-	    			console.log(user.name+ ' you have: $' + user.amount + " in your account");
+	    			console.log(user.name+ " you have: "  + user.amount.formatMoney() + " in your account");
 					},
 					deposit: function(i, show) {
 						user.amount = user.amount + i;
@@ -173,7 +197,7 @@ var trustBank = {
 								showM = true;																		//between accounts
 							}
 							if(showM){
-								console.log('You deposited $' + i + " you now have $" + user.amount + " in your account");
+								console.log("You deposited $" + i + " you now have " + user.amount.formatMoney() + " in your account");
 							}
 					},
 					withdraw: function(i, show) {
@@ -186,12 +210,12 @@ var trustBank = {
 							if(i <= user.amount){																//will not allow account to be negative
 									user.amount = user.amount - i;
 									if(showM){
-											console.log('You withdrew $' + i + " you now have $" + user.amount + " in your account");
+											console.log("You withdrew $" + i + " you now have " + user.amount.formatMoney() + " in your account");
 									}
 									return true;
 
 							}else{
-									console.log('Can not withdraw $' + i);
+									console.log("Can not withdraw $" + i);
 									return false;
 							}
 
@@ -201,6 +225,8 @@ var trustBank = {
 	},	//add account function end																												
 	transfer : function(amount, acc1, acc2){
 
+		
+
 		var nameOut = trustBank.customer[acc1].name;
 		var nameIn = trustBank.customer[acc2].name;
 
@@ -209,7 +235,7 @@ var trustBank = {
 
 			trustBank.customer[acc2].deposit(amount, false);
 
-			console.log("successfully transfered $" + amount + " from "+ nameOut + " account to " + nameIn+" account");
+			console.log("successfully transfered " + amount.formatMoney() + " from "+ nameOut + " account to " + nameIn+" account");
 		}else{
 			console.log("unable to transfer money due to insufficent funds");
 		}
@@ -218,7 +244,7 @@ var trustBank = {
 
 };	//trustBank object end
 
-trustBank.addAccount("Ben Smith", 1000);
+trustBank.addAccount("Ben", 1000);
 trustBank.addAccount("Jamie Smith", 100);
 trustBank.addAccount("Mak Malloney", 50000);
 trustBank.addAccount("Jamie Smith", 900000);
@@ -230,16 +256,11 @@ trustBank.customer[3].deposit(99);
 trustBank.transfer(20, 0, 1);
 
 
-function moneyRead(amount){
-		var money = amount;
 
-		if(money<1000){
-			return money;
-		}else{
-			money = money + "";
 
-		}
-}
+
+
+
 
 
 
