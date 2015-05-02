@@ -5,21 +5,21 @@ var rectangle = {    //rectangle is an object that can be called
   width: 7           // .width can also be called
 };
 
-var isSquare = function (rectangle) {       //defined function isSquare
-  if (rectangle.length === rectangle.width ) { //check if both sides are 
-    return true;                                // equal then return T/F
+var isSquare = function (rectangle) {             //defined function isSquare
+  if (rectangle.length === rectangle.width ) {    //check if both sides are 
+    return true;                                  // equal then return T/F
   } else {
     return false;
   }
 } 
 
-var area = function (rectangle) {            // function area defined
-  return rectangle.length * rectangle.width  // times the sides to
-}                                               //get area
+var area = function (rectangle) {                // function area defined
+  return rectangle.length * rectangle.width      // times the sides to
+}                                                //get area by * objects 
 
 var perimeter = function (rectangle) {
-  return (rectangle.length * 2) + (rectangle.width * 2)
-}
+  return (rectangle.length * 2) + (rectangle.width * 2)  //this function just returns the perimeter 
+}                                                        // by .length * 2 and .width * 2
 
 // Part 2, Triangle
 
@@ -31,7 +31,7 @@ var perimeter = function (rectangle) {
 // isObtuse - Returns whether the triangle is obtuse or not
 
 var triangle = {
-  sideA: 28,
+  sideA: 28,                   //
   sideB: 28,
   sideC: 28
 };
