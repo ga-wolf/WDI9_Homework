@@ -1,0 +1,13 @@
+body {
+  color: grey;
+}
+
+.line,
+.station {
+  font-weight: bold;
+  color: red;
+}
+
+.selected {
+  color: green;
+}
