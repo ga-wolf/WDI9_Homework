@@ -85,7 +85,6 @@ area(triangle);
 var isObtuse = function (obj) {
 	// a2 + b2 are lower than c2 it is obtuse
 	var hypotenuse = 0;
-	var otherSide = 0;
 	if (obj.sideA > obj.sideB && obj.sideA > obj.sideC) {
 		hypotenuse = obj.sideA;
 		if (hypotenuse * hypotenuse > ((obj.sideB * obj.sideB) + (obj.sideC * obj.sideC))) {
@@ -135,6 +134,20 @@ isObtuse(triangle);
 // Ensure that the accounts cannot have negative values.
 // Write a 'transfer' on the bank that allows you to transfer amounts between two accounts.
 
+// TO DO:
+// Bank items to do:
+
+// In bank array I need:
+// ARRAY of accounts X
+// FUNCTION to check money sum of all accounts X
+// OBJECT CONSTRUCTOR which creates account and adds to ARRAY of accounts X
+
+// accounts characters need:
+// KEY/VALUES of current balance & owner X
+// BALANCE which changes X
+// FUNCTION for deposit X
+// FUNCTION for withdraw X
+
 var NewAccount = function (balance,owner) { // creates new accounts
 	this.balance = balance;
 	this.owner = owner;
@@ -169,7 +182,7 @@ var bank = {
 		if (amount > bank.accounts[payerInd].balance) { // cannot transfer if insufficient funds
 			console.log('Insufficient funds to complete transaction.')
 			return 'owned'
-		} else {
+		} else { // adds or removes money from account as required
 			bank.accounts[payerInd].balance = bank.accounts[payerInd].balance - amount;
 			bank.accounts[payeeInd].balance = bank.accounts[payeeInd].balance + amount;
 		}
@@ -188,8 +201,10 @@ var bank = {
 	}
 };
 
-// fuck yeah code feels short but the transfer function is not pretty
+// fuck yeah code feels short but the transfer function is not pretty.
+
 // narrative time
+bank.balOfAcc();
 console.log('creating an account for me with $500');
 bank.createAcc('rand',500,'rand ward');
 console.log('account name is ' + bank.accounts[0].owner + ' and balance is $' + bank.accounts[0].balance);
