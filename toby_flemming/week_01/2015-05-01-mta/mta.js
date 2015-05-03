@@ -38,8 +38,8 @@ Line.prototype.travel = function(startStation, endStation) {
     }
 
   // After reaching the endStation, report what stations were involved.
-  console.log('Travelling from ' + startStation + ' to ' + endStation + ' (along line ' + this.name + ')');
-  console.log('Stations past along the way: ' + this.stationsPast.join(', '));
+  GUI.log('Travelling from ' + startStation + ' to ' + endStation + ' (along line ' + this.name + ')');
+  GUI.log('Stations past along the way: ' + this.stationsPast.join(', ') + '\n\n');
 
 }
 
@@ -73,9 +73,9 @@ ___  ________ ___
 
 */
 
-console.log('--------------------------------------');
-console.log('MTA Lab - Call MTA.main() to begin!');
-console.log('--------------------------------------');
+GUI.log('--------------------------------------');
+GUI.log('MTA Lab - Click a station');
+GUI.log('--------------------------------------');
 var MTA = {};
 MTA.lines = [];
 
@@ -89,7 +89,7 @@ MTA.findLine = function(name) {
     }
   });
 
-  if (!result)console.log("Line '" + name + "' not found.");
+  if (!result)GUI.log("Line '" + name + "' not found.");
   return result;
 }
 
@@ -103,13 +103,13 @@ MTA.planTrip = function(startLine, startStation, endLine, endStation) {
     line1 = this.findLine(startLine);
     line2 = this.findLine(endLine);
 
-    console.log('Line switch required.  Heading to ' + UNION_SQUARE + '.');
+    GUI.log('Line switch required.  Heading to ' + UNION_SQUARE + '.');
 
     // Get to the common station
     line1.travel(startStation, UNION_SQUARE);
 
     // Switch trains and finish journey
-    console.log('Switching from line ' + startLine + ' to line ' + endLine);
+    GUI.log('Switching from line ' + startLine + ' to line ' + endLine);
     line2.travel(UNION_SQUARE, endStation);
   } else {
     line1 = this.findLine(startLine);
