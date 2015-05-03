@@ -10,24 +10,35 @@ var rectangle = {
   length: 4,
   width: 4
 };
+var rectangle1 = {
+  length: 8,
+  width: 6
+};
+
 
 var inSquare = function(input) {
 	console.log(input.length === input.width);
 }
 
+console.log("inSquare");
 inSquare(rectangle);
+inSquare(rectangle1);
 
 var area = function(input) {
 	console.log(input.length * input.width);
 }
 
+console.log("area");
 area(rectangle);
+area(rectangle1);
 
 var perimeter = function(input) {
 	console.log(input.length * 2 + input.length * 2);
 }
 
+console.log("perimeter");
 perimeter(rectangle);
+perimeter(rectangle1);
 // Part 2, Triangle
 
 // Given the following a triangle object like the one below, write the following functions:
@@ -41,42 +52,85 @@ var triangle = {
   sideB: 4,
   sideC: 4
 };
+var triangle1 = {
+  sideA: 3,
+  sideB: 9,
+  sideC: 16
+};
+var triangle2 = {
+  sideA: 9,
+  sideB: 9,
+  sideC: 9
+};
 //  js-homework-5.md Raw
 var isEquilateral = function(input) {
 	console.log(input.sideA == input.sideB && input.sideB == input.sideC);
 }
 
-isEquilateral(triangle)
+console.log("isEquilateral");
+isEquilateral(triangle);
+isEquilateral(triangle1);
+isEquilateral(triangle2);
 
 var isIsosceles = function(input) {
-	console.log(input.sideA == input.sideB || input.sideB == input.sideC || input.sideC == input.sideA);
+	console.log(!isEquilateral(input) && input.sideA == input.sideB || input.sideB == input.sideC || input.sideC == input.sideA);
 }
 
-isIsosceles(triangle)
+console.log("isIsosceles");
+isIsosceles(triangle);
+isIsosceles(triangle1);
+isIsosceles(triangle2);
 
-var area = function(input) {
+var areaTri = function(input) {
 	var S = (input.sideA + input.sideB + input.sideC)/2;
 	var area = Math.pow(S*(S-input.sideA)*(S-input.sideB)*(S-input.sideC) ,0.5);
 	console.log(area);
 }
-
-area(triangle);
+console.log("areaTri");
+areaTri(triangle);
+areaTri(triangle1);
+areaTri(triangle2);
 
 var isObtuse = function(input) {
 	console.log((Math.pow(input.sideA, 2) + Math.pow(input.sideB, 2) < Math.pow(input.sideC, 2)) || (Math.pow(input.sideB, 2) + Math.pow(input.sideC, 2) < Math.pow(input.sideA, 2)) || (Math.pow(input.sideC, 2) + Math.pow(input.sideA, 2) < Math.pow(input.sideb, 2)))
 }
-
+console.log("isObtuse");
 isObtuse(triangle);
+isObtuse(triangle1);
+isObtuse(triangle2);
 
 
-var Wolf = {name:"Wolf", id:0, balance:600};
-var Bob = {name:"Bob", id:1, balance:6820};
-var Alfie = {name:"Alfie", id:2, balance:5};
+console.log("ABANK")
 
-var accountArray = [Wolf, Bob, Alfie];
+var namePool = "Carter Hector Johnnie Zenobia Kandis Zoila Curtis Rosia Len Armando Roxana Dick Tresa Sally Margorie Demetrice Mable Cora Bailey Donetta Marie Lannie Adalberto Maryellen Eloise Terrance Shantay Inez Ping Hyon Judie Hugh Joeann Jarrod Jennie Bradly Reva Veronika Clara Georgia Wendell Jere Humberto Kari Marquitta Dona Bennie Russel Walker Lois".split(' ');
+
+
+
+var Wolf = {name:"Wolf", id:100000, balance:600};
+var Bob = {name:"Bob", id:100001, balance:6820};
+var Alfie = {name:"Alfie", id:100002, balance:5};
+var Aaron = {name: "Aaron", id:100003, balance: 453.45721735582356};
+var Alvin = {name: "Alvin", id: 100004, balance: 4414.309910630992};
+var Groro = {name: "Groro", id: 100005, balance: 4641.016118075979};
+var Joel = {name: "Joel", id: 100006, balance: 24278.649150288886};
+var Allen = {name: "Allen", id: 100007, balance: 1000000};
+
+var accountArray = [Wolf, Bob, Alfie, Aaron, Alvin, Groro, Joel, Allen];
 var createAccount = function(inputname, initialDeposit) {
-	accountArray.push( {name:inputname, id: accountArray.length, balance: initialDeposit} );
+	accountArray.push( {name:inputname, id: 100000 + accountArray.length, balance: initialDeposit} );
+	displayAccounts()
 	// accountArray[inputname] = {name:inputname, id: accountArray.length, balance: initialDeposit}
+}
+
+var genAccount = function(name) {
+	accountArray.push( {name:name, id: 100000 + accountArray.length, balance: (Math.random() / Math.random() * 1000 / Math.random())} );
+	displayAccounts()
+	// accountArray[inputname] = {name:inputname, id: accountArray.length, balance: initialDeposit}
+}
+var generateAccount = function(number) {
+	for (var i = 0 ; i < number; i++) {
+			genAccount(namePool[i])
+	}
 }
 
 var findID = function(nameinput) {
@@ -91,11 +145,11 @@ var findID = function(nameinput) {
 var grabTotal = function() {
 	total = 0;
 	for (var i = 0 ; i < accountArray.length; i++) {
-		ac = accountArray[i]
-		total += ac.balance
+		ac = accountArray[i];
+		total += ac.balance;
 	}
 
-	console.log(total)
+	console.log(total);
 }
 
 var deposit = function(name, amount) {
@@ -110,23 +164,23 @@ var withdraw = function(name, amount) {
 	if (accountArray[num].balance - amount > 0) {
 		console.log(accountArray[num].balance);
 		accountArray[num].balance -= amount;	
-		console.log(name + " currently has a balance of " + accountArray[num].balance)
+		console.log(name + " currently has a balance of " + accountArray[num].balance);
 	}
 	else {
-		console.log("You do not have enough money")
+		console.log("You do not have enough money");
 	}
 	
 }
 
 var transferAmount = function(from, to, amount) {
-	accountFrom = findID(from)
-	accountTo = findID(to)
+	accountFrom = findID(from);
+	accountTo = findID(to);
 	if (accountArray[accountFrom].balance - amount > 0) {
 		console.log(accountArray[accountFrom].balance);
 		accountArray[accountFrom].balance -= amount;	
-		console.log(from + " currently has a balance of " + accountArray[accountFrom].balance)
+		console.log(from + " currently has a balance of " + accountArray[accountFrom].balance);
 		accountArray[accountTo].balance += amount;
-		console.log(to + "currently has a balance of " + accountArray[accountTo].balance)
+		console.log(to + "currently has a balance of " + accountArray[accountTo].balance);
 	}
 	else {
 		console.log("You do not have enough money")
@@ -135,22 +189,37 @@ var transferAmount = function(from, to, amount) {
 }
 
 var checkBalance = function(name) {
-	num = findID(name)
-	console.log(accountArray[num].balance)
+	num = findID(name);
+	console.log(accountArray[num].balance);
 }
 
 setInterval(function(){ 
 	for (var i = 0 ; i < accountArray.length; i++) {
-		accountArray[i].balance = accountArray[i].balance * 1.009
+		accountArray[i].balance = accountArray[i].balance * 1.009;
 	}
-	console.log("0.9% interest added")
-	 }, 3000);
-
-// }
-console.log(accountArray);
-console.log("FUNCTIONS \n createAccount(inputname, initialDeposit) \n grabTotal() \n deposit(name, amount) \n withdraw(name, amount) \n transferAmount(accountFrom, accountTo, amount)");
+	console.log("0.9% interest added");
+	 }, 10000);
 
 
+// delete for array only replaces the index with undefined
+var closeAccount = function(name) {
+	num = findID(name);
+	accountArray.splice(num, 1);
+	displayAccounts();
+}
+
+var swiftTransfer = function (from, to, swiftID, amount) {
+
+}
+
+
+console.log("FUNCTIONS \n createAccount(inputname, initialDeposit) \n closeAccount(name) \n grabTotal() \n deposit(name, amount) \n withdraw(name, amount) \n transferAmount(accountFrom, accountTo, amount) \n displayAccounts()");
+var displayAccounts = function() {
+	for (var i = 0 ; i < accountArray.length; i++) {
+		console.log(accountArray[i]);
+	}
+}
+displayAccounts()
 // JavaScript Bank
 // In this homework, you'll create a basic bank in Javascript. The bank has many accounts and the following capabilities that you need to write.
 
