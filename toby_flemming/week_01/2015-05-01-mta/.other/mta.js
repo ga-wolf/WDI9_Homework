@@ -22,10 +22,8 @@ Line.prototype.travel = function(startStation, endStation) {
   var BACKWARDS = 'Backwards';
   this.stationsPast = [];
 
-  $('.station.selected').toggleClass('selected');
   var startIDX = this.stations.indexOf(startStation);
   var endIDX = this.stations.indexOf(endStation);
-  $('.station#' + endIDX).toggleClass('selected');
 
   if (startIDX > endIDX) {
     this.stations.reverse();
@@ -81,7 +79,7 @@ console.log('--------------------------------------');
 var MTA = {};
 MTA.lines = [];
 
-MTA._findLine = function(name) {
+MTA.findLine = function(name) {
   var result;
 
   this.lines.forEach(function(line) {
@@ -102,8 +100,8 @@ MTA.planTrip = function(startLine, startStation, endLine, endStation) {
 
   switchLines = (startLine !== endLine) ? true : false;
   if (switchLines) {
-    line1 = this._findLine(startLine);
-    line2 = this._findLine(endLine);
+    line1 = this.findLine(startLine);
+    line2 = this.findLine(endLine);
 
     console.log('Line switch required.  Heading to ' + UNION_SQUARE + '.');
 
@@ -114,7 +112,7 @@ MTA.planTrip = function(startLine, startStation, endLine, endStation) {
     console.log('Switching from line ' + startLine + ' to line ' + endLine);
     line2.travel(UNION_SQUARE, endStation);
   } else {
-    line1 = this._findLine(startLine);
+    line1 = this.findLine(startLine);
     line1.travel(startStation, endStation);
   }
 }
@@ -136,9 +134,9 @@ MTA.main = function() {
 
   MTA.loadLines();
 
-  while (startLine === undefined)startLine = this._findLine( prompt('Enter Start Line:') );
+  while (startLine === undefined)startLine = this.findLine( prompt('Enter Start Line:') );
   while (startStation === undefined)startStation = this._findStation( prompt('Enter Start Station:') );
-  while (endLine === undefined)endLine = this._findLine( prompt('Enter End Line:') );
+  while (endLine === undefined)endLine = this.findLine( prompt('Enter End Line:') );
   while (endStation === undefined)endStation = this._findStation( prompt('Enter End Line:') );
 }
 
