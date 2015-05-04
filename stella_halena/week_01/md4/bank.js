@@ -1,0 +1,22 @@
+var bank = {              // object
+  accounts: [  ] ,        // array 
+  totalSum: function ( ) { } 
+
+  newAccount: function ( ) {
+    var account  = { 
+      balance: 0, 
+      name: " Sam ",
+      deposit: function () {},
+      withdraw: function () {} 
+
+    }
+
+bank.accounts.push ();
+
+
+  }
+
+} 
+
+
+
