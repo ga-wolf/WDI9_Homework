@@ -20,16 +20,20 @@ word=string.split("");
   for(var i= 0; i > word.length ; i++){
 
     for(var j = 0; j > points[i].length; j++){
-      console.log(word[j]);
+      console.log(points[j][0]);
       if(word[j] === points[i][j+1]){
         score += points[i][0];
         break;
       }
     }
   }
+console.log(word.length);
+console.log(points);
+console.log(points[0]);
+console.log(points[2]);
 
-console.log(score);
+//console.log(score);
 
 }
 
-scrabble("CABBAGE")
+scrabble("CABBAGE");
