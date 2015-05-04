@@ -149,19 +149,13 @@ var Account = function(name, cash) {
     if (amount > this.balance) {
       return "Not enough to make a withdrawal";
     } else {
-      this.balance = this.balance - amount;
+      this.balance -= amount;
       return "Successfully Withdrew $" + amount + ", current balance is $" + this.balance;
     }
   }
   
-  var bank = 10
-  bank = bank + 10
-  bank += 10
-
-
-
   this.deposit = function(amount) {
-    this.balance = this.balance + amount;
+    this.balance += amount;
     return "Successfully Deposited $" + amount + ", current balance is $" + this.balance;
   }
 
@@ -206,7 +200,7 @@ var newAccount = function(name, cash) {
 var bankHoldings = function() {
   var total = 0;
   Accounts.forEach(function(acc) {
-    total = total + acc.balance;
+    total += acc.balance;
   });
   return total;
 };
@@ -215,8 +209,7 @@ var updateBalance = function () {
   for (var i = 0; i < Accounts.length; i++) {
     Accounts[i].balance += (Accounts[i].balance * 0.002);
   };
-  // Iterate through all accounts
-  // Change their balance
+  // Iterates through all accounts and adds interest based on the setInterval timer (every 3 seconds)
 };
 
 setInterval(updateBalance, 3000);
