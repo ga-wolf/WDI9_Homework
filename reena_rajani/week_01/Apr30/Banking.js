@@ -222,3 +222,4 @@ totalBalance();
 transaction('Jackie',345 ,'d');
 transaction('Jackie',34534 ,'3');
 transferfunds('Daemon', 'Patty', 123);
+transferfunds('Pinochio', 'Patty' , 345);
