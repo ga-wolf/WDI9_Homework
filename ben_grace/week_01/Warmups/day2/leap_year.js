@@ -29,7 +29,7 @@
 // # => "34"
 // ```
 
-
+////my code////
 
 var plingPlangPlong = function (enterNumber){
 
@@ -55,6 +55,37 @@ var plingPlangPlong = function (enterNumber){
 	// 	return 'plong';
 	// }
 }
+///////////////
+
+//////Ternary-operator/////////////
+
+[conditional]?[true]:[false]
+
+[conditional] = what is in the brackets of an if statement;
+[true] = what would return if the conditional is true;
+[false] = what would return if the conditional is false;
+
+(enterNumber % 3 === 0) ? string += 'Pling' : string+= string"";
+
+(enterNumber % 5 === 0) ? string += 'Plang' : string+= string"";
+
+(enterNumber % 7 === 0) ? string += 'Plong' : string+= string"";
+
+///////////////////
+
+/////////////////
+
+// best functions have their variables running inside them
+
+/////////////////
+
+This...
+
+.this refers to the variable/object that it is contained within.
+
+
+
+////////////////
 
 
 
