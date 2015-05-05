@@ -1,0 +1,42 @@
+
+/*## Style Hints: */
+
+body {
+  font-size: 12px;
+	line-height: 17px;
+	font-family: "Times New Roman", serif;
+	color: #656565; 
+}
+
+p {
+  line-height: 22px;
+  margin-top:0;
+  font-size:13.5px;
+}
+
+a {
+  text-decoration: none;
+  color:rgb(0,136,205);
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 40px;
+  color: #999999;
+}
+
+a:hover {
+  color: #20222a;
+}
+
+#container {
+  max-width: 960px;
+  margin: auto;
+}
+
+#blocks img {
+ display:inline-block;
+ padding: 1px;
+ background-color: white;
+ border:5px solid rgb(204,204,204); 
+}
