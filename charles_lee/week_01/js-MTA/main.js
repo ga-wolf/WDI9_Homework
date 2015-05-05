@@ -12,32 +12,33 @@ var sixLine ={
 };
 
 var trainStation = {
-	calcStat: function calcStations(startPos, endPos){
-		var counter = 0;
-		var stationsPassed = "";
-		if(startPos - endPos < 0){
-			for(i=startPos; i < endPos+1; i++){
-				counter++;
-				stationsPassed += endLine.stations[i] +", ";
-			}
-			console.log(counter);
-			console.log(stationsPassed);
-		}
-		else if(startPos - endPos >=0){
-			for(i=startPos; i > endPos; i--){
-				counter ++;
-				stationsPassed += endLine.stations[i] + ", ";
-			}
-			console.log(counter);
-			console.log(stationsPassed);
-		}
-	},
+	// FAILED ATTEMPT AT DRYING. 
+	// calcStat: function calcStations(startPos, endPos){
+	// 	var counter = 0;
+	// 	var stationsPassed = "";
+	// 	if(startPos - endPos < 0){
+	// 		for(i=startPos; i < endPos+1; i++){
+	// 			counter++;
+	// 			stationsPassed += endLine.stations[i] +", ";
+	// 		}
+	// 		return 
+	// 	}
+	// 	else if(startPos - endPos >=0){
+	// 		for(i=startPos; i > endPos; i--){
+	// 			counter ++;
+	// 			stationsPassed += endLine.stations[i] + ", ";
+	// 		}
+	// 		console.log(counter);
+	// 		console.log(stationsPassed);
+	// 	}
+	// },
 	planTrip: function planTrip(startLine, startStat, endLine, endStat){
 		var startPos = startLine.stations.indexOf(startStat); // start position
 		var endPos = endLine.stations.indexOf(endStat); // end position
 
 		var sCounter = 0; 
 		var stationsPassed = "";
+		var endLineStations = "";
 
 		var sUsq = startLine.stations.indexOf("Union Square");
 		var eUsq = endLine.stations.indexOf("Union Square");
@@ -120,20 +121,22 @@ var trainStation = {
 					//If its after, loop through the line  going forward from Union Square;
 					for(i=eUsq; i < endPos; i++){
 						sCounter++;
-						stationsPassed += endLine.stations[i] +", ";
+						endLineStations += endLine.stations[i] +", ";
 					}
-					// console.log(sCounter++);
+					stationsPassed += endLineStations + ", "
 					console.log( "Alight at Union Square, change to the " + endLine.name +". Now travel through the following stops on the " 
-						+ endLine.name + ": " + stationsPassed);
-					console.log("You have arrived at " + endStat + " after passing through " + sCounter + " stations.");
+									+ endLine.name + ": " + endLinestations);
+									console.log("You have arrived at " + endStat + " after passing through " + sCounter + " stations. The stations are: " + stationsPassed);
 				} else if(eUsq - endPos >= 0){
 					//If its before, loop through the line going backward from Union Square; 
 					for(i=eUsq; i > endPos; i--){
 						sCounter ++;
-						stationsPassed += endLine.stations[i] + ", ";
+						endLineStations += endLine.stations[i] + ", ";
 					}
-					console.log(sCounter++);
-					console.log(stationsPassed);
+					stationsPassed += endLineStations + ", "
+					console.log( "Alight at Union Square, change to the " + endLine.name +". Now travel through the following stops on the " 
+						+ endLine.name + ": " + endLineStations);
+					console.log("You have arrived at " + endStat + " after passing through " + sCounter + " stations. The stations are: " + stationsPassed);
 				}
 				else{
 
@@ -169,14 +172,14 @@ var trainStation = {
 }
 
 
-trainStation.planTrip(nLine, "Time Square", nLine, "Time Square");
+// trainStation.planTrip(nLine, "Time Square", nLine, "Time Square");
 
 trainStation.planTrip(nLine,"Time Square",lLine,"6thL");
 
-trainStation.planTrip(nLine,"Union Square", lLine, "Union Square");
+// trainStation.planTrip(nLine,"Union Square", lLine, "Union Square");
 
-trainStation.planTrip(nLine, "Time Square", nLine, "Union Square");
+// trainStation.planTrip(nLine, "Time Square", nLine, "Union Square");
 
-trainStation.planTrip(lLine, "Union Square", nLine, "Time Square");
+// trainStation.planTrip(lLine, "Union Square", nLine, "Time Square");
 
-trainStation.planTrip(lLine, "Union Square", nLine,"8thN");
+// trainStation.planTrip(lLine, "Union Square", nLine,"8thN");
