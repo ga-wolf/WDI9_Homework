@@ -29,7 +29,7 @@ var unionN = lineN.stops.indexOf('Union_Square_N');
 
 
 var changeAtUnion = function(stationOne, lineOne){
-	debugger
+	//debugger
 	if (lineOne === lineN.title){
 		lineNMove(stationOne, 'Union_Square_N')
 	}
@@ -119,7 +119,7 @@ lineLMove = function (stationOne, stationTwo){
 }
 
 var planTrip = function(lineOne, stationOne, lineTwo, stationTwo){
-	debugger;
+	//debugger;
 	if(lineOne !== lineTwo){
 		changeAtUnion(stationOne, lineOne)
 	}
