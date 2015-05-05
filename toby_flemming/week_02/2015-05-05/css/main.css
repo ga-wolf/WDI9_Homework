@@ -4,6 +4,9 @@ hr {
   border-bottom-width: 0;
 }
 
+a {
+  text-decoration: none;
+}
 
 
 body {
@@ -11,11 +14,19 @@ body {
 }
 
 nav {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+
   background: rgb(122,188,255); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(rgba(122,188,255,1) 0%, rgba(96,171,248,1) 44%, rgba(64,150,238,1) 100%);
   background: -o-linear-gradient(rgba(122,188,255,1) 0%, rgba(96,171,248,1) 44%, rgba(64,150,238,1) 100%);
   background: linear-gradient(rgba(122,188,255,1) 0%, rgba(96,171,248,1) 44%, rgba(64,150,238,1) 100%); /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */ /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
+
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
 }
 
 nav ul {
@@ -26,7 +37,6 @@ nav ul {
 }
 
 nav li {
-  color: white;
   list-style-type: none;
   display: inline-block;
   height: 75px;
@@ -36,6 +46,10 @@ nav li {
   text-align: center;
   /*border: 1px solid white;*/
   border-width: 2px 0 0 0;
+}
+
+nav a {
+  color: white;
 }
 
 nav li:hover {
@@ -55,5 +69,13 @@ section {
   width: 960px;
   margin: 0 auto;
   text-align: center;
+}
+
+section h1 {
   font-family: 'Meddon', cursive;
+}
+
+footer {
+  /*background-color: orange;*/
+  height: 300px;
 }
