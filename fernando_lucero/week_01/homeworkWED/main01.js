@@ -1,4 +1,6 @@
-// Homework: The Word Guesser
+
+console.log("Homework: The Word Guesser");
+
 // You'll create a simple word guessing game where the user gets infinite tries to guess the word (like Hangman without the hangman, or like Wheel of Fortune without the wheel and fortune).
 
 // Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), and one to hold the current guessed letters (e.g. it would start with '', '', '_' and end with 'F', 'O', 'X').
@@ -9,30 +11,17 @@
 // When it's done iterating, it should log the current guessed letters ('F__') and congratulate the user if they found a new letter.
 // It should also figure out if there are any more letters that need to be guessed, and if not, it should congratulate the user for winning the game.
 // Pretend you don't know the word, and call guessLetter multiple times with various letters to check that your program works.
-// Bonus: Make it more like Wheel of Fortune:
 
+
+// Bonus: Make it more like Wheel of Fortune:
 // Start with a reward amount of $0
 // Every time a letter is guessed, generate a random amount and reward the user if they found a letter (multiplying the reward if multiple letters found), otherwise subtract from their reward.
 // When they guess the word, log their final reward amount.
-// Bonus: Make it like Hangman:
 
+// Bonus: Make it like Hangman:
 // Keep track of all the guessed letters (right and wrong) and only let the user guess a letter once. If they guess a letter twice, do nothing.
 // Keep track of the state of the hangman as a number (starting at 0), and subtract or add to that number every time they make a wrong guess.
 // Once the number reaches 6 (a reasonable number of body parts for a hangman), inform the user that they lost and show a hangman on the log.
-
-
-// function makeArray(word) {
-// 	var array1 = word.split('');
-// 	console.log(array1);
-// 	var array2 = ["x", "w", "n", "z"];
-
-// 	for (var i = 0; i < array2.length; i++) {
-// 		if ( array2[i] === word.indexOf[i] );
-// 		console.log(array1[i]+"array1");
-// 	}
-// };
-
-// makeArray("fernando");
 
 
 var array1 = [];//sets up an array to store the word to be guessed 
@@ -58,14 +47,15 @@ var guessLetter = function(letter) {//function to take user input guess letters
         							//assign letter into same position in array2
             array2[i] = letter;
             guessCorrect = true;//executes the guessCorrect code block below
-        } else if (array1.indexOf(letter) === -1) {//if -1, means there is no match, guess was wrong
+        } 
+        else if (array1.indexOf(letter) === -1) {//if -1, means there is no match, guess was wrong
             guessWrong = true;//executes the guessWrong code block below
         }
     }
     	//next loop evaluating previous results
         if (guessCorrect) {
         console.log('You found the letter ' + letter);
-        console.log(array2.join(''));
+        console.log(array2.join('')); // .join('') - this joins the array at each 'space'. Will read normal ie. f__ instead of "f","_","_"
         }
         
         if (array2.indexOf('_') === -1){//searches for '_' in array2, if none is found (meaning -1) then all
