@@ -8,16 +8,20 @@
 // Bonus: Round the result so there are only two digits after the decimal.
 
 var squareNumber = function(num) {
+	console.log( "SQUARE NUMBER CALLED " + typeof num)
 	var numSquared = num * num;
 	console.log("The result of squaring the number " + num + " is " + numSquared + ".");
+	return numSquared;
 }
 
 
 squareNumber(12);
 
 var halfNumber = function(num) {
+	console.log( "HALF NUMBER CALLED " + typeof num)
 	var numHalved = num/2;
 	console.log("Half of " + num + " is " + numHalved + ".");
+	return numHalved;
 }
 halfNumber(12);
 
@@ -25,12 +29,14 @@ var percentOf = function(num1,num2) {
 	var percentageStep1 = num2 / num1;
 	var percentageStep2 = 100 / percentageStep1;
 	console.log(num1 + " is " +percentageStep2 + "% of " + num2 + ".");
+	return percentageStep2;
 }
 percentOf(120,1000);
 
 var areaOfCircle = function(radius) {
 	var area = (Math.PI * radius * radius).toFixed(2);
 	console.log("The area for a circle with radius " + radius + " is " + area + ".");
+	return area;
 }
 
 areaOfCircle(2);
@@ -42,14 +48,15 @@ areaOfCircle(2);
 // Calculate the area of a circle with the result of #2 as the radius.
 // Calculate what percentage that area is of the squared result (#3).
 
-var a = function(num) {
+var workAll = function(num) {
+	// debugger;
 	var half = halfNumber(num);
 	var square = squareNumber(half);
 	var area = areaOfCircle(square);
 	var percent = percentOf(area,square);
 }
 
-console.log(a(10));
+console.log(workAll(10));
 
 
 
@@ -95,10 +102,15 @@ var fixStart = function (word) {
 		// wordStart = /wordStart/g;
 	var wordEnd = word.slice(1);
 	console.log(wordEnd);
-	var newWordEnd = wordEnd.replace(wordStart, '*');
-	// var newWordEnd = new RegExp(wordStart, 'g')
-	console.log(newWordEnd);
-	var censoredWord = wordStart + newWordEnd;
+
+	// debugger;
+
+	// var newWordEnd = wordEnd.replace(wordStart, '*');
+	// // var newWordEnd = new RegExp(wordStart, 'g')
+	// console.log(newWordEnd);
+	var regEx = new RegExp( wordStart, "g" );
+	wordEnd = wordEnd.replace( regEx, "*" )
+	var censoredWord = wordStart + wordEnd;
 
 	console.log(censoredWord);
 }
@@ -139,7 +151,7 @@ var notBad = function (sentence) {
 	var whereIsNot = sentence.indexOf("not");
 	var whereIsBad = sentence.indexOf("bad");
 
-	if (whereIsNot && whereIsBad && whereIsNot < whereIsBad) {
+	if (whereIsNot >= 0 && whereIsBad >= 0 && whereIsNot < whereIsBad) {
 		return sentence.substring(whereIsNot,-1) + "good";
 		} 
 	else {
