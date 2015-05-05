@@ -1,0 +1,59 @@
+@import url(http://fonts.googleapis.com/css?family=Meddon|Roboto:400,700);
+
+hr {
+  border-bottom-width: 0;
+}
+
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+nav {
+  background: rgb(122,188,255); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(rgba(122,188,255,1) 0%, rgba(96,171,248,1) 44%, rgba(64,150,238,1) 100%);
+  background: -o-linear-gradient(rgba(122,188,255,1) 0%, rgba(96,171,248,1) 44%, rgba(64,150,238,1) 100%);
+  background: linear-gradient(rgba(122,188,255,1) 0%, rgba(96,171,248,1) 44%, rgba(64,150,238,1) 100%); /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */ /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  width: 960px;
+  margin: 0 auto;
+}
+
+nav li {
+  color: white;
+  list-style-type: none;
+  display: inline-block;
+  height: 75px;
+  width: 150px;
+  font-weight: bold;
+  line-height: 75px;
+  text-align: center;
+  /*border: 1px solid white;*/
+  border-width: 2px 0 0 0;
+}
+
+nav li:hover {
+  background-color: orange;
+}
+
+#hero {
+  height: 400px;
+  background-image: url("../images/hero.jpg");
+  background-size: cover;
+  background-position-y: -115px;
+  -webkit-filter: opacity(0.5);
+  filter: opacity(0.5);
+}
+
+section {
+  width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Meddon', cursive;
+}
