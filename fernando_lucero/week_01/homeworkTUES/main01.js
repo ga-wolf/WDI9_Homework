@@ -26,7 +26,6 @@ function squareNumber(number) {
 	return numberSq;
 }
 
-squareNumber(3);
 
 function halfNumber(number) {
 	var numberHalf = number / 2;
@@ -34,7 +33,6 @@ function halfNumber(number) {
 	return numberHalf;
 }
 
-halfNumber(5);
 
 function percentOf(number1, number2) {
 	var percent = ((number1 / number2) * 100);
@@ -42,27 +40,24 @@ function percentOf(number1, number2) {
 	return percent;
 }
 
-percentOf(4,2);
 
 function areaOfCircle(radius) {
-	var area = Math.round(3.14 * (radius * radius));
-	console.log("The area for a circle with radius " + radius + " is " + area);
+	var area = Math.PI * (radius * radius); //Math.PI gives me value of Pi.
+	console.log("The area for a circle with radius " + radius + " is " + area.toFixed(2)); //the .toFixed() lets me set how many decimals to round off to.
 	return area;
 }
 
-areaOfCircle(5);
 
 
 
-function performOperations (number) {
+function performOperations (number) { //here we made a function that will use output from previous functions. Thats why we needed to return them,
+										//so they would be available to store in these new variables to use in THIS function.
 	console.log("CALCULATIONS")
 	var a = halfNumber( number );
 	var b = squareNumber( number );
 	var area = areaOfCircle(b);
 	percentOf(area,b);
 }
-
-performOperations( 8 );
 
 
 // Strings
@@ -86,8 +81,6 @@ function drEvil(amount) {
 	}
 }
 
-drEvil(10);
-drEvil(1000000);
 
 // MixUp
 
@@ -100,14 +93,20 @@ drEvil(1000000);
 // Look up the JavaScript string reference to find methods which may be useful!
 
 function mixUp(word1,word2) {
-	var a = word1.slice(0,2);
+	var a = word1.slice(0,2); //use slice to grab portion needed, in this cast the first two letters.
 	var b = word2.slice(0,2);
-	var c = word1.slice(2, word1.length);
+	var c = word1.slice(2, word1.length); //will cut the word at (2) and keep going for its length ie.length.
 	var d = word2.slice(2, word2.length);
-	console.log(b + c + " " + a + d);
+	console.log(b + c + " " + a + d); //stitch the portions together.
 }
 
-mixUp('dog','dinner');
+// HERE IS A DIFFERENT WAY OF DOING MIXUP, WE'LL CALL IT MIXUP2
+
+function mixUp2(word1,word2) {
+	console.log(word2.substring(0,2) + word1.substring(2) + " " + word1.substring(0,2) + word2.substring(2));
+} //here we use the substring command to cut the words up, either specify full portion eg. (0,2) or just (2) which will cut the word from there
+	//and take everything after it.
+
 
 // FixStart
 
@@ -118,15 +117,23 @@ mixUp('dog','dinner');
 
 // fixStart('babble'): 'ba**le'
 
-function fixStart(word) {
-	var firstL = word.slice(0,1);
-	var letterReplace = word.slice(1);
-	var re = new RegExp(letterReplace, 'g');
-	var newWord = letterReplace.replace(re, "*");
-	console.log(firstL + newWord);
-}
+var fixStart = function(word) {
+	var firstLetter = word.charAt(0); //takes the first letter in the word and stores it.
+	var newWord = firstLetter; //the new word to output will begin with the first letter thats has been stored.
 
-fixStart("babble");
+	for(var i=1; i<word.length; i++){ //loops thru the word to check it there are any matches with first letter.
+		if(word.charAt(i) === firstLetter) {
+			newWord = newWord + "*"; //if so add an * to the new word which already has the first original letter.
+		}
+		else {
+			newWord = newWord + word.charAt(i); //else just add the letter in that position to the newWord, which will be the same.
+		}
+	}
+	
+	console.log(newWord); // print out the newly formed word.
+};
+
+
 
 
 // Verbing
@@ -140,9 +147,9 @@ fixStart("babble");
 //   verbing('go'): 'go'
 
 function verbing(verbWord) {
-var ing = verbWord.slice(-3);
+var ing = verbWord.slice(-3); //here we use to slice the last 3 letters off whatever the word might be. ie.(-3) cuts off the last 3 letters.
 
-	if ((ing === "ing") && (verbWord.length >= 3)) {
+	if (ing === "ing") { //if those 3 letters are "ing" then we will leave it and add "ly".
 		console.log(verbWord + "ly");
 	}
 	else if (verbWord.length >= 3) {
@@ -153,9 +160,6 @@ var ing = verbWord.slice(-3);
 	}
 }
 
-verbing("flying");
-verbing("dog");
-verbing("go");
 
 // Not Bad
 
@@ -170,10 +174,28 @@ verbing("go");
 //   notBad('This movie is not so bad!'): 'This movie is good!'
 //   notBad('This dinner is bad!'): 'This dinner is bad!'
 
-function notBad(string1) {
-var not = string1.indexOf("not");
-var bad = string1.indexOf("bad");
+// function notBad(string1) {
+// var not = string1.indexOf("not");
+// var bad = string1.indexOf("bad");
 
+// 	if (string1.indexOf("not") === true) {
+// 	var yippee = "it worked";
+// console.log(yippee);
 
+// 	}
+// 	else {
+// 		console.log("Nooo");
+// 	}
 
-}
+// }
+
+var notBad = function (string1) {
+	var newString;
+	if(string1.indexOf("not") !== -1 && (string1.indexOf("not") < string1.indexOf("bad"))) { // saying if 'not' is found (ie.!== -1) AND 'not' comes before 'bad' then go on.
+		newString = string1.substr(0,string1.indexOf("not")) + "good" + string1.substr(string1.indexOf("bad")+3); //stitch newString together replacing from substring(?,?) to substring (?).
+																													//note: added +3 to include all three b,a,d letters.
+	}
+	else newString = string1;
+
+	return newString;
+};
