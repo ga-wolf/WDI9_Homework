@@ -4,17 +4,22 @@ body {
   width: 100%;
   /*margin: 0 auto;*/
 }
-.container {
-  position:relative;
-  max-width: 960px;
+
+.container * {
+  position: relative;
   margin: 0 auto;
+  height: 2000px;
+  background-color: #2E0F8A;
+  z-index: 100;
 }
+
 .headimg {
-  position: absolute;
   background-image: url("http://www.obscuresound.com/wp-content/uploads/jagwar-ma-australia.jpg");
   height: 100px;
   width: 350px;
 }
-.headimg img {
-  margin: 0 auto;
+div.container {
+  height: 2000px;
+  background-color: #2E0F8A;
+  max-width: 960px;
 }
