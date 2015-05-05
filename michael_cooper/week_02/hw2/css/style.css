@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+    font-family: "Source Sans Pro", Helvetica;
+}
+
+body {
+  background-image:url("../images/concrete_seamless.png");
+  background-repeat: repeat;
+}
+
+nav {
+  list-style-type: none;
+  background-color: #35302D;
+  opacity: 0.9;
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#logo {
+  display: inline-block;
+}
+
+nav h1 {
+  color: #DFDBD9;
+  margin-left: 50px;
+  line-height: 100px;
+  font-size: 40px;
+}
+
+#menu {
+  display: inline-block;
+}
+
+nav a {
+  color: #DFDBD9;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+nav a:hover {
+  color: #DF4500;
+  transition: .7s;
+}
+
+nav li:first-child {
+  border-left: 2px solid #3C3735;
+}
+
+nav li {
+  display: inline-block;
+  padding: 20px;
+  color: white;
+  border-right: 2px solid #3C3735;
+  font-family: Arial;
+}
+
+#social {
+  position: absolute;
+  display: inline-block;
+  right: 60px;
+  margin-top: 10px;
+}
+
+#fb:hover {
+  color: #3B5998;
+}
+
+#twitter:hover {
+  color: #4099FF;  
+}
+
+#inst:hover {
+  color: #3f729b;
+}
+
+#sc:hover {
+  color: #FF6600;
+}
+
+i.fa {
+  font-size: 40px;
+}
+
+#container {
+  width: 960px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+#soundcloud {
+  width: 400px;
+  height: 150px;
+  margin-top: 120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#primary {
+  width: 960px;
+/*  height: 1200px;*/
+  background-color: rgba(0,0,0,0.7);
+  /*opacity: 0.7;*/
+  margin-top: -80px;
+  margin-bottom: 50px;
+  border-radius: 25px;
+}
+
+#newslogo {
+/*  margin: 0 auto;*/
+  margin-top: 30px;
+  margin-left: 100px;
+  color: #DFDBD9;
+  font-size: 50px;
+}
+
+#content {
+  margin: 40px 100px;
+  padding-bottom: 40px;
+  color: #DFDBD9;
+  line-height: 1.8;
+}
+
+#primary iframe {
+  opacity: 1.0;
+}
+
+table {
+  border-top: 1px solid #DFDBD9;
+  border-bottom: 1px solid #DFDBD9;
+}
+
+td {
+  padding:15px;
+  height: 30px;
+  text-align: right;
+  border: 0px;
+}
+
+tr {
+  border-bottom: 1px solid #DFDBD9;
+}
+
+footer {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 11px;
+}
