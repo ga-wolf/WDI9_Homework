@@ -93,6 +93,7 @@ var isObtuse = function(triangle) {
 }
 console.log(isObtuse(triangle2));
 
+
 var triangle3 = {
   sideA: 28,
   sideB: 18,

@@ -1,0 +1,73 @@
+/* 
+
+## Style Hints: 
+
+Body Font Size = 12px
+	 Line Height = 17px
+	 Font Family = "Times New Roman", serif
+	 Font Color = #656565
+
+Link Hover Color = #20222a
+
+*/
+
+#container {
+  max-width: 960px;
+  margin: auto;
+}
+
+/***************** FONTS *********************/
+
+h3 {
+  font:  bold 16px  "Times New Roman", serif;
+  color: #656565;
+}
+
+p {
+  font: 12px "Times New Roman", serif;
+  color: #656565;
+}
+
+a {
+  text-decoration: none;
+  color: #51BEF5;
+}
+
+/***************** LOGO *********************/
+header {
+  margin: 30px 0 10px;
+}
+
+
+/***************** BIG PICTURES *********************/
+.main img {
+  max-width: 98%;
+}
+
+
+/***************** COPY *********************/
+
+.copy {
+  max-width: 98%;
+}
+
+/***************** PRESS LOGOS *********************/
+
+.press img {
+  border: 3px solid #cccccc;
+  display: inline-block;
+  padding: 1px;
+  margin: 1px;
+  max-width: 23%;
+}
+
+/***************** MEDIA QUERIES *********************/
+
+@media screen and (max-width: 670px) {
+  .press img {
+  max-width: 48%;
+}
+}
+
+
+
