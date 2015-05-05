@@ -1,0 +1,37 @@
+body {
+    background-color: #E184F0;
+    width: 960px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: "Pacifico", sans-serif;
+}
+
+#fronttitle {
+    text-align: center;
+}
+
+#frontpug {
+    margin: 60px auto 50px;
+    display: block;
+}
+
+ .button {
+    display: inline-block;
+    width: 200px;
+    height: 70px;
+    background-color: #F21847;
+    line-height: 70px;
+    border-radius: 2px;
+    margin: 50px 25px;
+    font-family: "Raleway", sans-serif;
+ }
+
+ .container{
+    text-align: center;
+ }
+
+ img {
+    border-radius: 100%;
+ }

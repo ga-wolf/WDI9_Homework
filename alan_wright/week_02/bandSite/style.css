@@ -1,0 +1,34 @@
+/*Lab: Create a website for a band or musician of your choice
+Requirements
+
+At least 3 pages (example: about, media, touring)
+At least 1 Google Font
+Whatever HTML and CSS you desire
+Keep your code clean and DRY
+No Javascript! Even if you know how to use jQuery, see how far you can push this with pure HTML + CSS
+Don't worry about responsiveness -- desktop resolution is fine
+Optional extras
+
+Experiment with http://fortawesome.github.io/Font-Awesome/
+Try embedding media (SoundCloud music player, YouTube video, Spotify or Rdio)
+Try embedding a Google map (for the musicians hometown or their tour locations)*/
+
+li {
+  display: inline-block;
+}
+
+body {
+  background-image: url(rastaBg.png);
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
