@@ -24,6 +24,32 @@
 // - Watch a whole heap of information about leap years... http://www.youtube.com/watch?v=xX96xng7sAE
 
 
+<<<<<<< HEAD:warmup_exercises/week_01/leap_year.js
+var year = parseInt(prompt('Enter a year to see if it is a leap year','enter year'));
+
+
+var isLeapYear = function (year) {
+	if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
+		console.log(year + ' is a leap year')
+		return true
+	} else {
+		console.log(year + ' is not a leap year')
+		return false
+	}
+};
+
+//isLeapYear(year);
+
+var leapYearPrinter = function () {
+	if (isLeapYear === true) {
+		console.log(year + ' is a leap year')
+	} else {
+		console.log(year + ' is not a leap year')
+	}
+};
+leapYearPrinter();
+
+=======
 // var isLeapYear = function(year){
 // 	if (year % 4 === 0){
 // 		console.log(year + ' is a leap year! ');
@@ -48,6 +74,7 @@ var isLeapYear = function(year){
 	}
 
 console.log(isLeapYear(1900))
+>>>>>>> b6e9e387ce5a23483275162ad8ffe4718b4aeb2a:ben_grace/week_01/Warmups/day1/leap_year.js
 
 
 
