@@ -1,4 +1,4 @@
-// Part 1, Rectangle
+ // Part 1, Rectangle
 
 // Given the following a rectangle object like the one below, write the following functions:
 
@@ -149,13 +149,13 @@ var Account = function(name, cash) {
     if (amount > this.balance) {
       return "Not enough to make a withdrawal";
     } else {
-      this.balance = this.balance - amount;
+      this.balance -= amount;
       return "Successfully Withdrew $" + amount + ", current balance is $" + this.balance;
     }
   }
   
   this.deposit = function(amount) {
-    this.balance = this.balance + amount;
+    this.balance += amount;
     return "Successfully Deposited $" + amount + ", current balance is $" + this.balance;
   }
 
@@ -184,25 +184,32 @@ var Account = function(name, cash) {
     return 'Payment of $' + amount + ' successfully made to ' + payee;
     
   }
-
-  this.interest = function() {
-    setInterval(function() {
-        this.balance += (this.balance * 0.02);
-       }, 3000);
-  }
 };
 
 var newAccount = function(name, cash) {
   if (cash < 0) {
     return 'invalid amount entered, please try again.';
   }
-  Accounts.push(new Account(name, cash));
+  var newAccount = new Account(name, cash);
+
+  Accounts.push(newAccount);
+  newAccount.interest();
+
 };
 
 var bankHoldings = function() {
   var total = 0;
   Accounts.forEach(function(acc) {
-    total = total + acc.balance;
+    total += acc.balance;
   });
   return total;
 };
+
+var updateBalance = function () {
+  for (var i = 0; i < Accounts.length; i++) {
+    Accounts[i].balance += (Accounts[i].balance * 0.002);
+  };
+  // Iterates through all accounts and adds interest based on the setInterval timer (every 3 seconds)
+};
+
+setInterval(updateBalance, 3000);

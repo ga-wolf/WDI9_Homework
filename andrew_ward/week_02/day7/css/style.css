@@ -1,0 +1,25 @@
+body {
+  background-image: url("http://i.ytimg.com/vi/azFW4bZY5EY/maxresdefault.jpg");
+  height: 1000em;
+  width: 100%;
+  /*margin: 0 auto;*/
+}
+
+.container * {
+  position: relative;
+  margin: 0 auto;
+  height: 2000px;
+  background-color: #2E0F8A;
+  z-index: 100;
+}
+
+.headimg {
+  background-image: url("http://www.obscuresound.com/wp-content/uploads/jagwar-ma-australia.jpg");
+  height: 100px;
+  width: 350px;
+}
+div.container {
+  height: 2000px;
+  background-color: #2E0F8A;
+  max-width: 960px;
+}
