@@ -1,0 +1,35 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,900);
+
+body {
+  background-image: url("../images/pink-nebula.jpg");
+  background-position: absolute;
+  text-align: center;
+}
+
+.front-page h1 {
+  color: #3C2034;
+  font-size: 180px;
+  font-family: Lato;
+  text-align: center;
+  letter-spacing: 18px;
+}
+
+.front-page h2 {
+  color: #FF899D;
+  font-size: 60px;
+  font-family: Lato;
+  font-weight: 400px;
+  text-align: center;
+  letter-spacing: 8px;
+}
+
+
+h1:hover {
+  text-shadow: -3px -3px hotpink;
+}
+
+
+h2:hover {
+  text-shadow: -3px -3px hotpink;
+}
+
