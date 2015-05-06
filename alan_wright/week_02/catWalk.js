@@ -32,6 +32,9 @@ var catWalk = function (){
   var oldRight = parseInt(img.style.right);
   var newRight = oldRight + 10;
   img.style.right = newRight + 'px';
+  if (newRight > 1300)  {
+    img.style.right = '0px';
+  }
 }
 
-setInterval(catWalk, 400);
+setInterval(catWalk, 500);
