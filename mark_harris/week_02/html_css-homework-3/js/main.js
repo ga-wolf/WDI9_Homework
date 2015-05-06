@@ -3,8 +3,10 @@ var cat = document.getElementById("catPic");
 cat.style.left = '0px';
 var direction = "right";
 
+
 // Decide which way the cat is going
 var controller = function() {
+  //console.log("cont");
   window.clearInterval(timer);
   cat.src = "http://www.anniemation.com/clip_art/images/cat-walk.gif";
 
@@ -21,12 +23,14 @@ var controller = function() {
 var catWalkRight = function () {
   
   var currentLeft = parseInt(cat.style.left);
-  var newLeft = currentLeft + 5;
+  var displacement = 5;
+  var newLeft = currentLeft + displacement;
   cat.style.left = newLeft + 'px';
   
   // Dance at the halfway point
-  var half = (parseInt(window.innerWidth) / 2 );
-  if(currentLeft === half) {
+  var halfway = Math.ceil(((window.innerWidth/2)-148)/displacement)*displacement;
+  if(currentLeft === halfway) {
+    window.clearInterval(timer);
     catDance();
   }
 
@@ -34,7 +38,7 @@ var catWalkRight = function () {
   if(currentLeft > window.innerWidth) {
     direction = "left";
     controller();
-  } //
+  }
 }
 
 
@@ -42,12 +46,13 @@ var catWalkRight = function () {
 var catWalkLeft = function () {
   
   var currentLeft = parseInt(cat.style.left);
-  var newLeft = currentLeft - 5;
+  var displacement = 5;
+  var newLeft = currentLeft - displacement;
   cat.style.left = newLeft + 'px';
   
   // Dance at the halfway point
-  var half = window.innerWidth / 2;
-  if(currentLeft === half) {
+  var halfway = Math.ceil(((window.innerWidth/2)-148)/displacement)*displacement;
+  if(currentLeft === halfway) {
     catDance();
   }
 
