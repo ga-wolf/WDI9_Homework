@@ -1,35 +1,95 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,900);
-
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
 body {
   background-image: url("../images/pink-nebula.jpg");
   background-position: absolute;
+  background-opacity: 0.5;
   text-align: center;
+  margin: 0px;
+  padding: 0px;
 }
 
-.front-page h1 {
-  color: #3C2034;
-  font-size: 180px;
-  font-family: Lato;
+.container {
+  max-width: 960px;
+  margin: 0px auto 0px auto;
+}
+
+header h1 {
+  margin-top: -10px;
+  color: #000000;
+  font-size: 90px;
+  font-family: Lato, "Comic Sans", sans-serif;
+  font-weight: 600;
   text-align: center;
-  letter-spacing: 18px;
+  letter-spacing: -2px;
 }
 
-.front-page h2 {
-  color: #FF899D;
-  font-size: 60px;
-  font-family: Lato;
-  font-weight: 400px;
+header nav ul {
+  margin-top: -50px;
+  padding: 0px;
+}
+
+header ul li {
+  padding: 0px;
+  list-style: none;
+  display: inline;
+  letter-spacing: 2px;
   text-align: center;
-  letter-spacing: 8px;
+  font-family: Lato, "Comic Sans", sans-serif;
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-shadow: 2px 1px gainsboro;
 }
 
-
-h1:hover {
-  text-shadow: -3px -3px hotpink;
+header ul li:hover {
+  text-shadow: 2px 1px hotpink;
 }
 
-
-h2:hover {
-  text-shadow: -3px -3px hotpink;
+a {
+  text-decoration: none;
 }
+
+a:link {
+  color: #242424;
+}
+
+a:visited {
+  color: #242424;
+}
+
+a:hover {
+  color: #FF178F;
+}
+
+a:active {
+  color: #0000FF;
+}
+
+.bio p {
+  margin: 0px auto;
+  font-family: Lato, "Comic Sans", sans-serif;
+  color: #242424;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  width: 260px;
+}
+
+.image-gallery img {
+  border-radius: 50%;
+}
+
+.image-gallery img:hover {
+  opacity: .7;
+}
+
+footer p {
+  margin-top: 50px;
+  margin: auto;
+  text-align: center;
+  top: 720px;
+  font-family: Lato, "Comic Sans", sans-serif;
+  font-size: 12px;
+  color: #FF178F;
+}
+
 
