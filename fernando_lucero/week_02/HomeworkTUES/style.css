@@ -1,0 +1,9 @@
+header {
+	margin: 0 auto;
+	width: 960px;
+	background-color: blue;
+}
+
+header li {
+	display: inline;
+}
