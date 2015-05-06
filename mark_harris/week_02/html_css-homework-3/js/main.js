@@ -1,66 +1,78 @@
 
 var cat = document.getElementById("catPic");
-cat.style.top = '0px';
 cat.style.left = '0px';
-//cat.style.width = "296px";
-//cat.style.height = "296px";
-/*
+var direction = "right";
 
-var catWalk = function () {
-  var newTop = parseInt(cat.style.top) + 1;
-  //cat.style.top = newTop + 'px';
+// Decide which way the cat is going
+var controller = function() {
+  window.clearInterval(timer);
+  cat.src = "http://www.anniemation.com/clip_art/images/cat-walk.gif";
 
-  var newLeft = parseInt(cat.style.left) + 5;
-  cat.style.left = newLeft + 'px';
-
-  var newWidth = parseInt(cat.style.width) + 1;
-  //cat.style.width = newWidth + 'px';
-
-  var newHeight = parseInt(cat.style.height) + 1;
-  //cat.style.height = newHeight + 'px';
-}
-
-var catWalkForever = function () {
-  var currentLeft = parseInt(cat.style.left);
-  var newLeft = currentLeft + 5;
-  cat.style.left = newLeft + 'px';
-
-  if(currentLeft > window.innerWidth) {
-    cat.style.left = "0px";
+  if(direction === "right") {
+    cat.className = "right-cat";
+    timer = window.setInterval(catWalkRight, 40);
+  } else {
+    cat.className = "left-cat";
+    timer = window.setInterval(catWalkLeft, 40);
   }
 }
-*/
 
 // Set the cat walking to the right
-var trappedCatRight = function () {
+var catWalkRight = function () {
+  
   var currentLeft = parseInt(cat.style.left);
   var newLeft = currentLeft + 5;
   cat.style.left = newLeft + 'px';
+  
+  // Dance at the halfway point
+  var half = (parseInt(window.innerWidth) / 2 );
+  if(currentLeft === half) {
+    catDance();
+  }
 
+  // Turn the cat around
   if(currentLeft > window.innerWidth) {
-    window.clearInterval(timer1);
-    timer1 = window.setInterval(trappedCatLeft, 40);
-    cat.className = "left-cat";
-  } 
+    direction = "left";
+    controller();
+  } //
 }
 
+
 // Set the cat walking to the left
-var trappedCatLeft = function () {
+var catWalkLeft = function () {
+  
   var currentLeft = parseInt(cat.style.left);
   var newLeft = currentLeft - 5;
   cat.style.left = newLeft + 'px';
+  
+  // Dance at the halfway point
+  var half = window.innerWidth / 2;
+  if(currentLeft === half) {
+    catDance();
+  }
 
+  // Turn the cat around
   if(currentLeft < 0-cat.width) {
-    window.clearInterval(timer1);
-    timer1 = window.setInterval(trappedCatRight, 40);
-    cat.className = "right-cat";
-  } 
+    direction = "right";
+    controller();
+  }
 }
 
 
-//window.setInterval(catWalk, 40);
-//window.setInterval(catWalkForever, 40);
-var timer1 = window.setInterval(trappedCatRight, 40);
+// Make the cat dance
+var catDance = function () {
+
+  // Change the cat image
+  window.clearInterval(timer);
+  cat.src = "images/dancing-cat.gif";
+
+  // Decide where to go next
+  window.setTimeout(controller, 10000); 
+}
+
+
+var timer = window.setInterval(catWalkRight, 40);
+
 
 
 
