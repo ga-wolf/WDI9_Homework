@@ -67,7 +67,7 @@ section {
 .spacer { height: 70px;}
 
 .wrapper {
-  background: rgba(210,229,234,0.8);
+    background: rgba(210,229,234,0.8);
   border-radius: 15px;
   padding: 10px;
   position: relative;
