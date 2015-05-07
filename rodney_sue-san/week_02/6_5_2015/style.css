@@ -1,0 +1,85 @@
+  #superman{
+    position: absolute;
+    left: 600px;
+    top: 20px;
+   
+    height: 300px;
+    width: 400px;
+  }
+
+  #smoke{
+    position: absolute;
+    left: 10px;
+    width: 300px;
+    height: 250px;
+  }
+
+
+
+  .cat1{
+  position: absolute;
+  left: 0;
+  top: 10px;
+  height: 10px;
+  width: 10px;
+}
+
+.turnRight{
+      -moz-transform: scale(1, 1);
+-webkit-transform: scale(1, 1);
+-o-transform: scale(1, 1);
+transform: scale(1, 1);
+filter: FlipH;
+}
+
+.turnLeft{
+        -moz-transform: scale(-1, 1);
+-webkit-transform: scale(-1, 1);
+-o-transform: scale(-1, 1);
+transform: scale(-1, 1);
+filter: FlipH;
+}
+
+.bill{
+    -moz-transform: scale(-1, 1);
+-webkit-transform: scale(-1, 1);
+-o-transform: scale(-1, 1);
+transform: scale(-1, 1);
+filter: FlipH;
+}
+
+.tree4{
+  position:relative;
+
+}
+
+body{
+  background: #EAF0F7;
+}
+
+
+
+.tree2{
+  position:absolute;
+  left: 300px;
+  top: -150px;
+  font-size: 400px;
+  color: rgb(101,101,101);
+}
+
+.tree1{
+  position: absolute;;
+  left: -200px;
+  top: 50px;
+  font-size: 800px;
+}
+
+.tree3{
+  position: absolute;;
+  left: -50px;
+  top: 300px;
+  font-size: 1000px;
+  color: grey;
+  
+
+}
