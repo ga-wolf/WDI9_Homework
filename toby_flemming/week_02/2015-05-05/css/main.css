@@ -1,0 +1,133 @@
+@import url(http://fonts.googleapis.com/css?family=Meddon|Roboto:400,700);
+
+hr {
+  border-bottom-width: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+nav {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+
+  background: rgb(122,188,255); /* Old browsers */ /* FF3.6+ */ /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(rgba(122,188,255,1) 0%, rgba(96,171,248,1) 44%, rgba(64,150,238,1) 100%);
+  background: -o-linear-gradient(rgba(122,188,255,1) 0%, rgba(96,171,248,1) 44%, rgba(64,150,238,1) 100%);
+  background: linear-gradient(rgba(122,188,255,1) 0%, rgba(96,171,248,1) 44%, rgba(64,150,238,1) 100%); /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */ /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 ); /* IE6-9 */
+
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  width: 960px;
+  margin: 0 auto;
+}
+
+nav li {
+  list-style-type: none;
+  display: inline-block;
+  height: 75px;
+  width: 150px;
+  font-weight: bold;
+  line-height: 75px;
+  text-align: center;
+  border: solid rgba(0,0,0,0);
+  border-width: 0 0 1px 0;
+}
+
+nav a {
+  color: white;
+}
+
+nav li.selected,
+nav li:hover {
+  border-width: 0 0 1px 0;
+  border-color: orange;
+  cursor: pointer;
+}
+
+#hero {
+  height: 575px;
+  background-image: url("../images/hero.png");
+  background-size: cover;
+  background-position-y: -115px;
+  margin-bottom: 30px;
+}
+
+#social {
+  font-family: 'Meddon', cursive;
+  width: 960px;
+  position: relative;
+  top: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#social h1 {
+  font-size: 48pt;
+  margin: 0;
+  text-shadow: 2px 2px white;
+}
+
+#social i {
+  font-size: 96pt;
+}
+
+#social i + i {
+  margin-left: 45px;
+}
+
+.fa:hover {
+  cursor: pointer;
+}
+
+.fa-facebook-square:hover {
+  color: #3B5998;
+}
+
+.fa-twitter-square:hover {
+  color: #55ACEE;
+}
+
+.fa-instagram:hover {
+  color: #3F729B;
+}
+
+#content {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#content img {
+  display: inline-block;
+  height: 204px;
+  border: 4px solid #1E5799;
+  padding: 1px;
+}
+
+section {
+  text-align: center;
+}
+
+section h1 {
+  font-family: 'Meddon', cursive;
+}
+
+footer {
+  background-color: #1E5799;
+  height: 300px;
+  padding: 0 960px;
+}
