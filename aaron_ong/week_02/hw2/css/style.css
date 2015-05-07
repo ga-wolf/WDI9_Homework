@@ -1,0 +1,203 @@
+.container {
+  text-align: center;
+}
+
+/*@-webkit-keyframes makeItRadical {
+  0% {text-shadow: 5px 5px 4px grey;}
+  50% {text-shadow: 5px 5px 3px lightgreen;}
+  100% {text-shadow:6px 6px 3px lightgrey;}
+}*/
+
+body {
+  font-family: Lato;
+  background: url("images/background.gif");
+  background-repeat: no-repeat;
+  height: 7402px;
+
+}
+
+
+#start {
+  position: absolute;
+  top:60px;
+  right:100px;
+  width:50%;
+  
+}
+#start img{
+  width:100%;
+  border:2px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px 3px lightgrey;
+}
+p.google {
+  text-align: center;
+}
+
+.fixedcontainer {
+  border: 1px solid black;
+  margin-top:10%;
+  position:fixed;
+  width:30%;
+  border-radius: 2%;
+  padding: 5px;
+  text-align: center;
+  background: rgba(125,125,125,.2);
+
+}
+
+h1 {
+  text-align: center;
+  text-decoration: bold;
+  letter-spacing: 3px;
+/*  text-shadow: 5px 5px 4px hotpink;
+  transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-animation: makeItRadical 10s infinite;
+  -webkit-animation-direction: alternate;*/
+}
+
+h1:hover {
+  text-shadow:6px 6px 3px lightgrey;
+}
+
+.fixedcontainer p {
+  font-size: 70%;
+}
+
+
+button {
+  background: none;
+  border-radius: 4%;
+  border: 2px solid black;
+  width: 60px;
+  height: 45px;
+  font-size: 12px;
+  cursor: pointer;
+  -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -ms-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -o-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  box-shadow: 2px 2px 3px 2px lightgrey, inset 2px 2px 1px 1px lightgrey;
+}
+
+button:hover {
+  background: black;
+  width: 70px;
+  height: 60px;
+}
+button:hover {
+  color:white;
+}
+button a {
+  text-decoration: none;
+  color: black;
+}
+
+#about {
+  position:absolute;
+  margin-left: 35%;
+  right:290px;
+  top: 650px;
+  border: 1px solid black;
+  padding: 10px;
+  margin-top: 100px;
+  border-radius: 5px;
+}
+
+#media {
+  position:absolute;
+  margin-left: 35%;
+  top: 1800px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+
+}
+
+#media h2 {
+  font-size: 60%;
+}
+#media img {
+  max-width: 200px
+}
+
+.soundcloud {
+  position:absolute;
+  margin-left:55%;
+  width: 400px;
+  top: 1800px;
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 1500px;
+}
+
+.soundcloud iframe {
+  position:relative;
+  width: 100%;
+}
+
+#tours {
+  position:absolute;
+  margin-left: 35%;
+  top: 3700px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+#contact {
+  position:absolute;
+  margin-left: 35%;
+  top: 4500px;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#contact a{
+  text-decoration: none;
+  color: black;
+}
+
+#socialMedia ul {
+  margin-right:40px;
+}
+#socialMedia ul li {
+      width:60px;
+      height:60px;
+      background:blue;   
+      text-indent:-9999em;
+}
+
+#socialMedia ul li.linkedIn {
+     background:url(images/socialNav.png) 0px 64px;
+}
+#socialMedia ul li.twitter {
+     background:url(images/socialNav.png) -60px 64px; 
+}
+
+#socialMedia ul li.facebook {
+     background:url(images/socialNav.png) -120px 64px; 
+}
+
+#socialMedia ul li.rss {
+     background:url(images/socialNav.png) -180px 64px; 
+}
+
+
+
+#socialMedia ul li.linkedIn:hover {
+     background:url(images/socialNav.png) 0px 0px; 
+}
+
+#socialMedia ul li.twitter:hover {
+     background:url(images/socialNav.png) -60px 0px; 
+}
+
+#socialMedia ul li.facebook:hover {
+     background:url(images/socialNav.png) -120px 0px; 
+}
+
+#socialMedia ul li.rss:hover {
+     background:url(images/socialNav.png) -180px 0px; 
+}

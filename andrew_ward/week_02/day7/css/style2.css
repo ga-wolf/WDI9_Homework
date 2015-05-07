@@ -1,0 +1,151 @@
+@import url(http://fonts.googleapis.com/css?family=Dosis:400,700&subset=latin,latin-ext);
+* {
+  font-family: 'Dosis', sans-serif;
+  color: white;
+  margin: 0 auto;
+}
+
+body {
+  background-image: url("http://i.ytimg.com/vi/azFW4bZY5EY/maxresdefault.jpg");
+  background-attachment: fixed;
+  height: 66em;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.topImg {
+  background-image: url("http://www.windishagency.com/assets/17681/JagwarMa_Logo_1.png");
+  height: 150px;
+  width: 1004px;
+  margin: 20px auto 0 auto;
+  padding: 10px;
+}
+
+.nav {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li {
+  display: inline;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+}
+
+.nav a {
+  display: inline-block;
+  padding: 10px;
+  margin: 0 10px 0 10px;
+  transition: all 0.5s;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.18);
+  max-width: 600px;
+  margin: 40px auto 0 auto;
+  height: 350px;
+  position: absolute;
+  left: 20px;
+}
+
+.container1 {
+  background-color: rgba(255, 255, 255, 0.18);
+  max-width: 540px;
+  margin: 40px auto 0 auto;
+  height: 290px;
+  position: absolute;
+  right: 20px;
+}
+
+.container>iframe {
+  position: relative;
+  margin: 19px;
+  display: inline-block;
+}
+
+.container p {
+  display: inline-block;
+}
+
+iframe {
+  margin: 40px auto 0 auto;
+}
+
+.container2 {
+  background-color: rgba(255, 255, 255, 0.18);
+  max-width: 960px;
+  margin: 40px auto 0 auto;
+  height: 550px;
+  position: relative;
+}
+
+.container1 {
+  padding: 30px;
+}
+
+h2 {
+  text-align: center;
+  padding: 10px 0 0 0;
+}
+
+.container2 p {
+  padding: 10px;
+}
+
+.photo1,
+.photo2 {
+  height: 400px;
+  width: 300px;
+  position: absolute;
+  top: 660px;
+  right: 340px;
+}
+
+.nav ul li a:hover {
+  color: hotpink;
+}
+
+.map {
+  position: relative;
+  top: 380px;
+  left: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

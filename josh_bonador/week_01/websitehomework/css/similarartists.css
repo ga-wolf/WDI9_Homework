@@ -1,0 +1,84 @@
+body {
+  background-image:url(../images/bg_nujabes.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-attachment: fixed;
+}
+
+.container {
+  background-color: rgba(252, 233, 143, 0.5);
+  width: 960px;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+}
+
+h1 {
+  font-family: 'Khand', sans-serif;
+  font-size: 50px;
+  text-align: center;
+  padding-top: 40px;
+  letter-spacing: 5px;
+  margin: 0px;
+}
+
+li {
+  width: 600px;
+  font-size: 30px;
+  font-family: "Arial";
+  list-style-type: none;
+  margin: 0;
+  padding-left: 150px;
+  display: inline;
+}
+
+a:link {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FF7878;
+}
+
+iframe {
+  padding-left: 230px;
+  padding-top: 40px;
+}
+
+
+.container img{
+  margin-top: 20px;
+  margin-left: 80px;
+  border: 3px solid #FF7878;
+  width: 200px;
+  height: 200px;
+}
+
+p {
+  width: 700px;
+  padding: 10px 40px 30px 80px;
+  font-family: "Arial";
+  font-size: 16px;
+  line-height: 2;
+  text-align: left;
+} 
+
+h3 {
+  font-family: "Arial";
+  padding-left: 40px;
+  padding-top: 30px;
+}
+
+
+
+
+
+
