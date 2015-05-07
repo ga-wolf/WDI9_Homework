@@ -14,52 +14,65 @@ leadcat.style.left = '-1900px';
 leadcat.style.top = '200px';
 leadcat.style.width = '55%'
 
+var oddEven = 2;
 
-
-var infiniLoop = function() {
-  walkincat.setAttribute('width', walkincat.width+1);
+var walker = function () {
   var walkleft = parseInt(walkincat.style.left);
-  var backFor = 1;
-  //walking forward
-  if ( (walkleft < window.innerWidth) && (backFor % 2 !== 0) ) {
-    walkincat.style.left = walkleft + 2 + 'px';
+  walkincat.setAttribute('width', walkincat.width+1);
+
+
+  var walkFore = function (walkleft) {
   //walking back
-  } else if ( (walkleft > -301) && (backFor % 2 === 0) ) {
-    walkincat.style.left = walkleft - 2 + 'px';
-  //reset on right
-  } else if (walkleft === window.innerWidth) {
-    walkincat.setAttribute('width', 296);
-    walkincat.setAttribute('src',"file:///Users/werd119/Homework/WDI9_Homework/drew_showalter/week_02/wednesday/images/cat-walk-back.gif");
     walkincat.style.left = walkleft + 2 + 'px';
-    console.log('turnin back to the left')
-    backFor++
-  //reset on left
-  } else if (walkleft === -301) {
+  }
+    
+  //reset on right
+  var walkForeSet = function (walkleft) {
     walkincat.setAttribute('width', 296);
-    walkincat.setAttribute('src',"file:///Users/werd119/Homework/WDI9_Homework/drew_showalter/week_02/wednesday/images/cat-walk.gif");
-    walkincat.style.left = walkleft - 2 + 'px';
-    console.log('turnin back to the right');
-    backFor++
+    walkincat.style.transform = "scaleX(-1)";
+    oddEven += 1;
+  }
+  
+  //walking forward
+  var walkAft = function (walkleft) {
+    walkincat.style.left = walkleft - 4 + 'px';
+  }
+
+  
+  var walkAftSet = function (walkleft) {
+    //reset on left
+    walkincat.setAttribute('width', 296);
+    walkincat.style.transform = "scaleX(1)";
+    oddEven += 1;
+    walkincat.style.left = -296 + 'px';
+    return walkleft
+  }
+
+  if ( (walkleft < window.innerWidth) && ((oddEven % 2) === 0) ) {
+    walkFore(walkleft);
+  } else if ( (walkleft >= window.innerWidth) && ((oddEven % 2) === 0) ) {
+    walkForeSet(walkleft);
+  } else if ( (walkleft > -1000) && ((oddEven % 2) !== 0) ) {
+    walkAft(walkleft);
+  } else if ( (walkleft <= window.innerWidth) && ((oddEven % 2) !== 0) ){
+    walkAftSet(walkleft);
   }
 
   var walkwing = parseInt(wingmen[0].style.left);
-  if (walkwing < 1000) {
+  if (walkwing < 500) {
     wingmen[0].style.left = walklead + 2 + 'px';
     wingmen[1].style.left = walklead + 2 + 'px';
   }
 
   var walklead = parseInt(leadcat.style.left);
-  if (walklead < 900) {
+  if (walklead < 400) {
     leadcat.style.left = walklead + 3 + 'px';
   }
-
-
-    
-  console.log(walkleft)
 }
 
 
-//window.setInterval(infiniLoop, 16);
+
+window.setInterval(walker, 16);
 
 
 
