@@ -26,9 +26,16 @@
 }
 
 .account {
-  background-color: #6C9A74;
   border: 1px solid #295A33;
   padding: 10px;
+}
+
+.positive {
+  background-color: #6C9A74;
+}
+
+.negative {
+  background-color: red;
 }
 
 .balance {

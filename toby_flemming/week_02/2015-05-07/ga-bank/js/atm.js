@@ -5,32 +5,55 @@ var Account = function(type) {
 };
 
 Account.prototype.deposit = function(that) {
-	var $account = $(this.parentElement);
+	var $accountEl = $(this.parentElement);
 
-	var amount = $(that.prefix + '-amount', $account).val();
+	var amount = $(that.prefix + '-amount', $accountEl).val();
 	amount = parseInt(amount) || 0;
 
-	var $balance = $(that.prefix + '-balance', $account);
+	var $balance = $(that.prefix + '-balance', $accountEl);
 	that.balance += amount;
 	$balance.html('$' + that.balance);
-};
 
-Account.prototype.withdraw = function(that) {
-	var $account = $(this.parentElement);
-	var idPrefix = '#' + that.type;
-
-	var amount = $(that.prefix + '-amount', $account).val();
-	amount = parseInt(amount) || 0;
-
-	var $balance = $(that.prefix + '-balance', $account);
-
-	if (that.balance >= amount) {
-		that.balance -= amount;
-		$balance.html('$' + that.balance);
+	if (that.balance) {
+		$accountEl.removeClass('negative');
+		$accountEl.addClass('positive');
 	}
 };
 
+Account.prototype.withdraw = function(that) {
+	var $accountEl = $(this.parentElement);
+	var idPrefix = '#' + that.type;
 
+	var amount = $(that.prefix + '-amount', $accountEl).val();
+	amount = parseInt(amount) || 0;
+
+	var otherAccountType = (that.type === 'checking') ? 'savings' : 'checking';
+	var otherAccount = atm[otherAccountType];
+
+	var $balance = $(that.prefix + '-balance', $accountEl);
+	var $otherBalance = $('#' + otherAccountType + '-balance');
+
+	if (that.balance >= amount) {
+		that.balance -= amount;
+	} else if (that.balance + otherAccount.balance >= amount) {
+		var overdraft = amount - that.balance;
+		that.balance = 0;
+		otherAccount.balance -= overdraft;
+	}
+
+	if (!that.balance) {
+		$accountEl.removeClass('positive');
+		$accountEl.addClass('negative');
+	}
+	if (!otherAccount.balance) {
+		var $otherAccountEl = $('#' + otherAccountType + '.account');
+		$otherAccountEl.removeClass('positive');
+		$otherAccountEl.addClass('negative');
+	}
+
+	$balance.html('$' + that.balance);
+	$otherBalance.html('$' + otherAccount.balance);
+};
 
 
 
