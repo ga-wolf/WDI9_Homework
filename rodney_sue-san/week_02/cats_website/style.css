@@ -1,0 +1,241 @@
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+
+html, body{
+ 
+  margin: 0;
+
+}
+body{
+
+  background: black;
+
+}
+
+/* ------------------------NAV---------------------
+                                                */
+
+nav{
+  width: 100%;
+  background: black;
+  position: fixed;
+  top:0;
+  z-index: 99999;
+  margin: 0 auto;
+}
+
+
+
+nav li{
+  display: inline-block;
+  height: 60px;
+  width: 180px;
+  line-height: 60px;
+  text-align: center;
+  font-family: "Indie Flower", Arial, sans-serif;
+  font-size: 28px;
+  -webkit-transition: background 0.5s;
+  -moz-transition: background 0.5s;
+  -o-transition: background 0.5s;
+  transition: background 0.5s;
+}
+
+nav li:first-child {
+  margin-left: 150px;
+}
+
+nav ul{
+  margin: 0 auto;
+  border-bottom: 1px solid white;
+}
+
+nav li:hover {
+  background: rgba(199,199,199,0.5);
+}
+
+
+
+ol li{
+  list-style: circle;
+  list-style-type:circle;
+  list-style-position: outside;
+  margin-bottom: 12px;
+  margin-left: 30px;
+  margin-right: 30px;
+
+}
+
+.catted{
+  font-family: "Indie Flower", Arial, sans-serif;
+}
+
+
+
+/*------------------------------nav end------------------------*/
+
+a{
+  text-decoration: none
+}
+
+a:visited{
+  color:white;
+}
+
+a:active{
+  color: white;
+}
+
+
+.sides{
+  position: fixed;
+  top: 60px;
+  background: black;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  font-size: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+}
+
+.leftside{
+  left:40px;
+
+}
+
+.rightside{
+  right:40px;
+}
+
+@-webkit-keyframes hearts {
+    from {color: white;}
+    to {color: black;}
+}
+
+@-moz-keyframes hearts {
+    from {color: white;}
+    to {color: black;}
+}
+
+@keyframes hearts {
+    from {color: white;}
+    to {color: black;}
+}
+
+.leftside i, .rightside i{
+  color: white;
+  display: block;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.sides i:nth-of-type(1){
+ -webkit-animation-name: hearts;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -moz-animation-name: hearts;
+  -moz-animation-duration: 4s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+  animation-name: hearts;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.sides i:nth-of-type(2){
+ -webkit-animation-name: hearts;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-delay:2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -moz-animation-name: hearts;
+  -moz-animation-duration: 4s;
+  -moz-animation-delay:2s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+  animation-name: hearts;
+  animation-duration: 4s;
+  animation-delay:2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.sides i:nth-of-type(3){
+ -webkit-animation-name: hearts;
+  -webkit-animation-duration: 4s;
+  -webkit-animation-delay:4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -moz-animation-name: hearts;
+  -moz-animation-duration: 4s;
+  -moz-animation-delay:4s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-direction: alternate;
+  animation-name: hearts;
+  animation-duration: 4s;
+  animation-delay:4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+
+.container{
+  top: 0px;
+  width: 900px;
+  height: 1000px;
+  color: white;
+  background: black;
+  margin: 0 auto;
+  position: relative;
+}
+
+article{
+  padding-top: 80px;
+  margin: 10px;
+}
+
+.middlecat{
+  top: 150px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 500px;
+}
+
+.middlemap{
+  position:absolute;
+  right:10px;
+}
+
+#map_canvas{
+  top: 30px;
+  width:470px;
+  height: 490px;
+  color: black;  
+}
+
+.middlemap ~ p{
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+ol + img{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.catpic > img{
+  width: 180px;
+  height:100px;
+  padding-right: 5px;
+}
+.catpic img:first-child{
+  padding-left: 70px;
+}
+
+
+
+
+
