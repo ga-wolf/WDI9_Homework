@@ -1,4 +1,7 @@
 var travel = function(start, end) {
+	if (start === end) {
+		console.log("UMADBRO? why you wanna travel to the same station? TROLL you to the same station")
+	}
 	startstation = lineID(start).stationIndex;
 	endstation = lineID(end).stationIndex;
 	linestart = lineID(start).lineIndex;
@@ -95,7 +98,6 @@ var sameLine = function(sta1, sta2) {
 	for (var i = 0 ; i < lineArray[lineID(sta1).lineIndex].length ; i++) 
 		return lineArray[lineID(sta1).lineIndex][i] === sta2
 }
-
 
 
 
