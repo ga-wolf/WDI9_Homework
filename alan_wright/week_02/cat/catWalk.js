@@ -26,15 +26,15 @@
 var img = document.getElementsByTagName('img')[0];
 
 img.style.position = 'absolute';
-img.style.right = '0px';
+img.style.left = '-170px';
 
 var catWalk = function (){
-  var oldRight = parseInt(img.style.right);
-  var newRight = oldRight + 10;
-  img.style.right = newRight + 'px';
-  if (newRight > 1300)  {
-    img.style.right = '0px';
+  var oldLeft = parseInt(img.style.left);
+  var newLeft = oldLeft + 10;
+  img.style.left = newLeft + 'px';
+  if (newLeft > 1300)  {
+    img.style.left = '-170px';
   }
 }
 
-setInterval(catWalk, 500);
+setInterval(catWalk, 400);
