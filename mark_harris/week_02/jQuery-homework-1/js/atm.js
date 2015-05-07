@@ -22,8 +22,10 @@ var account = {
     var amount = $("#checking-amount").val();
     if (account.testOverdrawn("c", amount)) {
       account.checking -= (amount) ? parseInt(amount) : 0;
-      account.updateBalances();
+    } else if (account.testOverdraftProtection(amount)) {
+      account.overdraftWithdraw("c", amount);
     }
+    account.updateBalances();
   },
 
   depositSavings: function() {
@@ -36,8 +38,10 @@ var account = {
     var amount = $("#savings-amount").val();
     if (account.testOverdrawn("s", amount)) {
       account.savings -= (amount) ? parseInt(amount) : 0;
-      account.updateBalances();
+    } else if (account.testOverdraftProtection(amount)) {
+      account.overdraftWithdraw("s", amount);
     }
+    account.updateBalances();
   },
 
   testOverdrawn: function(acc, amount) {
@@ -45,6 +49,26 @@ var account = {
       return (account.checking - amount < 0) ? false : true;
     } else if (acc === "s") {
       return (account.savings - amount < 0) ? false : true;
+    }
+  },
+
+  testOverdraftProtection: function(amount) {
+    var test = ((account.checking + account.savings) < amount) ? false : true;
+    console.log(test);
+    return test;
+  },
+
+  overdraftWithdraw: function(acc, amount) {
+    if (acc === "c") {
+      amount = amount - account.checking;
+      account.checking = 0;
+      account.savings = account.savings - amount;
+    } else if (acc === "s") {
+      amount = amount - account.savings;
+      account.savings = 0;
+      account.checking = account.checking - amount;
+    } else {
+      return false;
     }
   },
 
@@ -63,7 +87,6 @@ var account = {
 
   }
 
-
 };
 
 
@@ -71,12 +94,10 @@ $( document ).ready(function() {
 
   account.updateBalances();
 
-
   $("#checking-deposit").on("click", account.depositChecking);
   $("#checking-withdraw").on("click", account.withdrawChecking);
   $("#savings-deposit").on("click", account.depositSavings);
   $("#savings-withdraw").on("click", account.withdrawSavings);
-
 
 });
 

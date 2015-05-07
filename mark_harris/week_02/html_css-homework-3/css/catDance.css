@@ -1,3 +1,4 @@
+
 .left-cat {
   -webkit-transform: scaleX(-1);
   -moz-transform: scaleX(-1);
@@ -6,6 +7,7 @@
   ms-filter: "FlipH";
   filter: FlipH;
 }
+
 
 body {
   background-color: #cecece;
@@ -17,13 +19,13 @@ body {
   position: relative;
   margin: 20px auto;
   overflow: hidden;
-
+  transition: all 1s ease;
 }
 
 #catPic {
   top: 40%;
   height: 300px;
-  z-index: 50;
+  z-index: 100;
 }
 
 #top {
@@ -35,8 +37,9 @@ body {
   opacity: 0;
   min-height: 150px;
   background-image: url("../images/stage.jpg");
-  z-index: -50;
+  z-index: 50;
   transition: all 1s linear;
+  position: relative;
 
 }
 
@@ -80,18 +83,80 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   position: absolute;
-  top: 0;
+  top: -10px;
   left: 400px;
-  z-index: 25;
+  z-index: 25; 
   opacity: 0;
   transition: all 1s linear;
 }
 
 
+#crowd {
+  position: absolute;
+  ---top: 500px;
+  bottom: -300px;
+  transition: all 2s ease;
+}
 
 
+.leftPaw {
+  position: absolute;
+  bottom: -50px;
+  height: 200px;
+  width: 100px;
+  z-index: 6000;
 
+  -ms-transform: rotate(-20deg); /* IE 9 */
+  -webkit-transform: rotate(-20deg); /* Safari */
+  transform: rotate(-20deg);
+  -webkit-transform-origin: 0% 50%; /* Chrome, Safari, Opera */
+  transform-origin: 0% 50%;
+  transition: all 0.5s linear;
+}
 
+.rightPaw {
+  position: absolute;
+  bottom: -50px;
+  height: 200px;
+  width: 100px;
+  z-index: 6000;
 
+  -ms-transform: rotate(20deg); /* IE 9 */
+  -webkit-transform: rotate(20deg); /* Safari */
+  transform: rotate(20deg);
+  -webkit-transform-origin: 0% 50%; /* Chrome, Safari, Opera */
+  transform-origin: 0% 50%;
+  transition: all 0.5s linear;
+}
+
+#paw1 {
+  left: 30px;
+  background-image: url("../images/paw1.gif");
+}
+
+#paw2 {
+  left: 230px;
+  background-image: url("../images/paw1.gif");
+}
+
+#paw3 {
+  left: 350px;
+  background-image: url("../images/paw2.gif");
+}
+
+#paw4 {
+  left: 550px;
+  background-image: url("../images/paw2.gif");
+}
+
+#paw5 {
+  left: 650px;
+  background-image: url("../images/paw1.gif");
+}
+
+#paw6 {
+  left: 850px;
+  background-image: url("../images/paw1.gif");
+}
 
 
