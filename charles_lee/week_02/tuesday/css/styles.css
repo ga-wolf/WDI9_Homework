@@ -1,0 +1,246 @@
+body{
+	font-family:Open Sans, Helvetica, Arial, sans-serif;
+}
+header{
+
+	margin:0 auto;
+	position:relative;
+}
+h1{
+	margin-bottom:35px;
+	margin-top:0px;
+	font-family:Merriweather, Georgia, serif;
+}
+h2{
+	font-family:Merriweather, Georgia, serif;
+}
+p{
+	font-family:Open Sans, Helvetica, Arial, sans-serif;
+}
+nav{
+	max-width:1280px;
+	margin:0 auto;
+}
+a{
+	text-decoration:none;
+	border-bottom: 1px dotted;
+}
+nav ul {
+	margin:0;
+	list-style:none;
+	padding:0px;
+}
+nav ul li{
+	display:inline-block;
+}
+nav ul li a{
+	text-decoration:none;
+	text-transform: uppercase;
+	padding: 24px 24px;
+	display: block;
+	color: black;
+	border:0px;
+}
+nav ul li a:hover{
+	border-bottom: 2px solid ;
+}
+section:before{
+	content:"";
+	position: absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	background: url(../images/symphony.png);
+	background-repeat: repeat;
+	background-position:top left;
+	opacity:.8;
+	z-index:-999;
+}
+#album01:hover{
+	color:#f7d501;
+	-webkit-transition: color 1s;
+	transition: color 1s;
+}
+#album03:hover{
+	color:#57423f;
+	-webkit-transition: color 1s;
+	transition: color 1s;	
+}
+.featureBanner{
+	background-image: url();
+	background-size:cover;
+	background-position:top center;
+	position:relative;
+	height:600px;
+	overflow:hidden;
+
+}
+.featureBanner:after{
+	content:"";
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	z-index:-200;
+	background:rgba(255,255,240,.75);
+}
+.featureBanner.album .container{
+	padding:40px;
+/*	display:table-cell;
+	vertical-align:bottom;*/
+	/*height:100%;*/
+	padding-top:300px;
+}
+.featureBanner.album .text-wrap{
+	
+	bottom:25px;
+	max-width:600px;
+	margin:0;
+	left:52px;
+}
+#album02-banner{
+	background:#eee;
+}
+#featurevid{
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	min-width:100%;
+	min-height:100%;
+	width: auto;
+	height: auto;
+	top:0px;
+	bottom:0;
+	z-index:-999;
+	background-size:cover;
+	background: url();
+}
+footer{
+	background: #2c2c2c;
+	height:200px;
+}
+.albumimage{
+	position:absolute;
+	top:0;
+	bottom:0;
+	right:0;
+	z-index:0;
+}
+.container{
+	max-width:1280px;
+	padding:0 200px;
+	margin:0 auto;
+}
+section{
+	padding:120px 0;
+	text-align:center;
+	position:relative;
+}
+.introduction{
+	background: #aaa;
+
+}
+/*.albumimage:hover{
+	z-index:999;
+}*/
+.albumimage img{
+	height:100%;
+}
+
+#okawari{
+	right:-200px;
+}
+.more-albums .albumsect{
+	box-sizing:border-box;
+	display:table-cell;
+	padding:200px 0px;
+}
+.more-albums .albumimage{
+	top:auto;
+	width:200px;
+}
+
+#weg-sect{
+	background: #948d87;
+}
+.albumsect{
+/*	box-sizing:border-box;*/
+	height:300px;
+	background: #444;
+	text-align:center;
+	padding:200px 300px;
+	position:relative;
+	color:white;
+}
+.more-albums .albumsect .container{
+	padding: 0 100px;
+}
+.albumsect .container{
+	max-width:640px;
+	padding:0px;
+}
+
+.albumsect:nth-child(odd){
+	background: #ededed;
+	color:black;
+}
+#djo-sect{
+	background: #002611;
+	color:#fff;
+}
+#djo-sect .albumimage{
+	right:-200px;
+}
+#hein-sect .albumimage{
+	right:-400px;
+}
+#weg-sect{
+	background: #948d87;
+}
+#weg-sect .albumimage{
+	right:-200px;
+}
+.btn{
+	margin-top:45px;
+	border: 2px solid black;
+	display:inline-block;
+	text-transform:uppercase;
+	color:black;
+	padding:12px 25px;
+	-webkit-transition:all 1s;
+	transition: all 1s;	
+}
+.btn-alt{
+	color:#fff;
+	border:2px solid white;
+}
+.btn:hover{
+	background: #000;
+	background-size:200%;
+	color:#fff;
+	font-weight:600;
+	background-position:center center;
+	-webkit-transition:all 1s;
+	transition: all 1s;
+}
+#djo-cta:hover{
+	background:url(../images/djo.png)#000;
+}
+#hein-cta:hover{
+	background:url(../images/heinali.png)#000;
+}
+#weg-cta:hover{
+	background:url(../images/hbw.png)#000;
+}
+#djo-cta:hover,#hein-cta:hover,#weg-cta:hover{
+	background-size:200%;
+	background-position:center center;
+}
+.col-2{
+	width:50%;
+	display:inline-block;
+}
+

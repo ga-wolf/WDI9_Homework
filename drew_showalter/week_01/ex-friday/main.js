@@ -118,6 +118,7 @@ var makeTrips = function(start, stop) {
 		}
 	}
 	//generates the optimal pathway from within the 2-path solution array
+	bigArra = bigArra.sort();
 	for ( var i = 0 ; i < bigArra.length - 1 ; i++ ) {
 		if ( (bigArra[i] < bigArra[i + 1]) && (bigArra[i] !== 0) ) {
 			return bigArra[i+1];

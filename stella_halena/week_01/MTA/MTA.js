@@ -41,7 +41,7 @@ planTrip(sixline[0], sixLine[2]);
 
 
 
-
+nLine.stop.indexOf 
 
 
 var function = planTrip ( ) {
