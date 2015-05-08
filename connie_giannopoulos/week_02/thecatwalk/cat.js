@@ -14,15 +14,77 @@ var img = document.getElementsByTagName('img')[0];
 img.style.position = 'absolute';
 img.style.left = '0px';
 
-var catWalk = function() {
-  var oldPos = parseInt(img.style.left, 10);
+var catWalkLeft = function() {
+  var oldPos = parseInt(img.style.left);
   var newPos = (oldPos + 10).toString();
   img.style.left = newPos + 'px';
+
+  if (parseInt(img.style.left) >= ((window.innerWidth - 296) / 2)) {
+    window.clearInterval(catTimeLeft);
+    img.src = 'https://media0.giphy.com/media/67j0Iy0UzvBG8/200.gif';
+    danceTimer();
+  } 
 };
 
-setInterval(catWalk, 120);
+var catWalkLeft2 = function() {
+  var oldPos = parseInt(img.style.left);
+  var newPos = (oldPos + 10).toString();
+  img.style.left = newPos + 'px';
 
-// Made the kitty walk a little slower, now kitty has a bounce in its step. GANGSTA.
+  if (parseInt(img.style.left) >= (window.innerWidth - 296)) {
+    window.clearInterval(catTimeLeft2);
+    img.style.transform = 'scale(-1,1)';
+    cTimeRight();
+  } 
+};
+
+
+var catWalkRight = function() {
+  var oldPos = parseInt(img.style.left);
+  var newPos = (oldPos - 10).toString();
+  img.style.left = newPos + 'px';
+
+  if (parseInt(img.style.left) <= 0) {
+    window.clearInterval(catTimeRight);
+    img.style.transform = 'scale(1,1)';
+
+    cTimeLeft();
+  } 
+};
+
+var catTimeLeft;
+var catTimeLeft2;
+var catTimeRight;
+var kittyDance;
+
+var cTimeLeft = function() {
+  catTimeLeft = setInterval(catWalkLeft, 80);
+};
+
+var danceTimer = function() {
+  kittyDance = setTimeout(cTimeLeft2 ,6000);
+};
+
+var cTimeLeft2 = function() {
+  img.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
+  catTimeLeft2 = setInterval(catWalkLeft2, 120);
+};
+
+var cTimeRight = function() {
+  catTimeRight = setInterval(catWalkRight, 120);
+};
+
+
+cTimeLeft();
+
+
+
+
+
+
+
+
+
 
 
 
