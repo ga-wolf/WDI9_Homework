@@ -1,17 +1,50 @@
-  #superman{
+  #ball{
     position: absolute;
-    left: 600px;
-    top: 20px;
-   
-    height: 300px;
-    width: 400px;
+    left: 200px;
+    top: -400px;
   }
 
-  #smoke{
+  #danceCrew{
     position: absolute;
-    left: 10px;
-    width: 300px;
-    height: 250px;
+    top: 300px;
+    left: 450px;
+    width: 800px;
+    height: 600px;
+  }
+
+  .danceCrewCats{
+    width: 200px;
+    height: 300px;
+  }
+
+ 
+
+  #discoLights{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 1000px;
+    width: 1680px;
+    z-index: 9999;
+  }
+
+  #superman{
+    position: absolute;
+    left: 640px;
+    top: 30px;
+    height: 300px;
+    width: 400px;
+
+  }
+
+
+  .smoke{
+    position: absolute;
+    left: -90px;
+    width: 340px;
+    height: 300px;
+    top: -80px;
+
   }
 
 
@@ -25,7 +58,7 @@
 }
 
 .turnRight{
-      -moz-transform: scale(1, 1);
+-moz-transform: scale(1, 1);
 -webkit-transform: scale(1, 1);
 -o-transform: scale(1, 1);
 transform: scale(1, 1);
@@ -40,13 +73,6 @@ transform: scale(-1, 1);
 filter: FlipH;
 }
 
-.bill{
-    -moz-transform: scale(-1, 1);
--webkit-transform: scale(-1, 1);
--o-transform: scale(-1, 1);
-transform: scale(-1, 1);
-filter: FlipH;
-}
 
 .tree4{
   position:relative;
@@ -64,7 +90,7 @@ body{
   left: 300px;
   top: -150px;
   font-size: 400px;
-  color: rgb(101,101,101);
+  color: rgb(150,150,150);
 }
 
 .tree1{
@@ -72,6 +98,7 @@ body{
   left: -200px;
   top: 50px;
   font-size: 800px;
+  color: rgb(200,200,200);
 }
 
 .tree3{
@@ -81,5 +108,4 @@ body{
   font-size: 1000px;
   color: grey;
   
-
 }
