@@ -10,6 +10,8 @@ Account.prototype.deposit = function(that) {
 	var amount = $(that.prefix + '-amount', $accountEl).val();
 	amount = parseInt(amount) || 0;
 
+	if (amount <= 0)return;
+
 	var $balance = $(that.prefix + '-balance', $accountEl);
 	that.balance += amount;
 	$balance.html('$' + that.balance);
@@ -26,6 +28,8 @@ Account.prototype.withdraw = function(that) {
 
 	var amount = $(that.prefix + '-amount', $accountEl).val();
 	amount = parseInt(amount) || 0;
+
+	if (amount <= 0)return;
 
 	var otherAccountType = (that.type === 'checking') ? 'savings' : 'checking';
 	var otherAccount = atm[otherAccountType];
