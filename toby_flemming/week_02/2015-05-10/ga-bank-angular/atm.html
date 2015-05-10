@@ -12,28 +12,28 @@
 </head>
 <body>
 
-  <div id="content" ng-app="atm">
+  <div id="content" ng-app="atm" ng-controller="MainController">
 
     <div id="nav">
       <div id="logo"><img src="img/ga.png" alt="Bank of GA"/></div>
       <div id="title">Bank of GA</div>
     </div>
 
-    <div class="account negative" id="checking" ng-controller="MainController">
+    <div class="account" id="checking" ng-controller="CheckingController">
       <h1>Checking</h1>
-      <div class="balance">{{ balance | currency }}</div>
+      <div class="balance">{{ checking | currency }}</div>
       <input type="text" placeholder="enter an amount" ng-model="amount"/>
-      <input type="button" value="Deposit" ng-click="deposit('checking')"/>
-      <input type="button" value="Withdraw" ng-click="withdraw('checking')"/>
+      <input type="button" value="Deposit" ng-click="deposit('checking', amount)"/>
+      <input type="button" value="Withdraw" ng-click="withdraw('checking', amount)"/>
     </div>
 
-    <!-- <div class="account negative" id="savings">
+    <div class="account" id="savings" ng-controller="SavingsController">
       <h1>Savings</h1>
-      <div class="balance" id="savings-balance">$0</div>
-      <input id="savings-amount" type="text" placeholder="enter an amount" />
-      <input id="savings-deposit" type="button" value="Deposit" />
-      <input id="savings-withdraw" type="button" value="Withdraw" />
-    </div> -->
+      <div class="balance">{{ savings | currency }}</div>
+      <input type="text" placeholder="enter an amount" ng-model="amount"/>
+      <input type="button" value="Deposit" ng-click="deposit('savings', amount)"/>
+      <input type="button" value="Withdraw" ng-click="withdraw('savings', amount)"/>
+    </div>
 
     <div class="clear"></div>
 

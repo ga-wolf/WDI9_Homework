@@ -28,6 +28,7 @@
 .account {
   border: 1px solid #295A33;
   padding: 10px;
+  background-color: red;
 }
 
 .positive {
