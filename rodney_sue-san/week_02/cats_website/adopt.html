@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Cats</title>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <script>
+  function initialize() {
+    var syddc = new google.maps.LatLng(-33.976908, 151.121675);
+    var catsociety = new google.maps.LatLng(-33.899433, 151.176606);
+    var rspca = new google.maps.LatLng(-33.8857539,150.7206738);
+
+    var mapCanvas = document.getElementById('map_canvas');
+    var map_options = {
+      center: rspca,
+      zoom: 9,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(map_canvas, map_options);
+
+
+    var syddcM = new google.maps.Marker({
+      position: syddc,
+    });
+
+    var catsocietyM = new google.maps.Marker({
+      position: catsociety
+    });
+
+    var rspcaM = new google.maps.Marker({
+      position: rspca,
+    });
+
+    syddcM.setMap(map);
+    catsocietyM.setMap(map);
+    rspcaM.setMap(map);
+
+    var infowindowSyddcM = new google.maps.InfoWindow({
+      content: "Sydney dogs and cats home"
+    });
+
+
+
+    var infowindowCatSoc = new google.maps.InfoWindow({
+      content: "Cat Protection Society"
+    });
+
+
+
+    var infowindowRspca = new google.maps.InfoWindow({
+      content: "RSPCA"
+    });
+
+    infowindowSyddcM.open(map, syddcM);
+    infowindowCatSoc.open(map, catsocietyM);
+    infowindowRspca.open(map, rspcaM);
+
+
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+  function MM_swapImgRestore() { //v3.0
+    var i, x, a = document.MM_sr;
+    for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+  }
+
+  function MM_preloadImages() { //v3.0
+    var d = document;
+    if (d.images) {
+      if (!d.MM_p) d.MM_p = new Array();
+      var i, j = d.MM_p.length,
+        a = MM_preloadImages.arguments;
+      for (i = 0; i < a.length; i++)
+        if (a[i].indexOf("#") != 0) {
+          d.MM_p[j] = new Image;
+          d.MM_p[j++].src = a[i];
+        }
+    }
+  }
+
+  function MM_findObj(n, d) { //v4.01
+    var p, i, x;
+    if (!d) d = document;
+    if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+      d = parent.frames[n.substring(p + 1)].document;
+      n = n.substring(0, p);
+    }
+    if (!(x = d[n]) && d.all) x = d.all[n];
+    for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+    for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+    if (!x && d.getElementById) x = d.getElementById(n);
+    return x;
+  }
+
+  function MM_swapImage() { //v3.0
+    var i, j = 0,
+      x, a = MM_swapImage.arguments;
+    document.MM_sr = new Array;
+    for (i = 0; i < (a.length - 2); i += 3)
+      if ((x = MM_findObj(a[i])) != null) {
+        document.MM_sr[j++] = x;
+        if (!x.oSrc) x.oSrc = x.src;
+        x.src = a[i + 2];
+      }
+  }
+  </script>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="breed.html">Breeds</a></li>
+      <li><a href="facts.html">Facts</a></li>
+      <li><a href="adopt.html"><i class="fa fa-github"></i> Adopt</a></li>
+    </ul>
+  </nav>
+
+    <div class="sides leftside">
+    <i class="fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
+    </div>
+
+    <div class="sides rightside">
+    <i class="fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
+    </div>
+
+
+  <div class="container">
+    <article>
+      <h1>Where can you get a cat???</h1>
+      <div class="middlemap"> <div id="map_canvas"></div> </div>
+
+      <p><span class="catted">Sydney dogs and cats home</span>
+      <br>Address: 77 Edward Street, Carlton NSW 2218<br> Phone:(02) 9587 9611</p>
+
+      <p><span class="catted">RSPCA Sydney</span>
+      <br>Address: 201 Rookwood Road Yagoona NSW<br> Phone:(02) 9770 7555</p>
+
+      <p><span class="catted">The Cat Protection Society</span>
+      <br>Address: 103 Enmore Rd., Newtown NSW 2042<br> Phone:(02) 9557 1011</p>
+
+      <p>Just go for it! Get one!!</p>
+      <img src="http://www.gifbin.com/bin/012012/1326219353_cat_pushes_friend_down_stairs.gif">
+    </article>
+  </div>
+</body>
+
+</html>

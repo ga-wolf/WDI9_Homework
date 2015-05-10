@@ -1,0 +1,111 @@
+  #ball{
+    position: absolute;
+    left: 200px;
+    top: -400px;
+  }
+
+  #danceCrew{
+    position: absolute;
+    top: 300px;
+    left: 450px;
+    width: 800px;
+    height: 600px;
+  }
+
+  .danceCrewCats{
+    width: 200px;
+    height: 300px;
+  }
+
+ 
+
+  #discoLights{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 1000px;
+    width: 1680px;
+    z-index: 9999;
+  }
+
+  #superman{
+    position: absolute;
+    left: 640px;
+    top: 30px;
+    height: 300px;
+    width: 400px;
+
+  }
+
+
+  .smoke{
+    position: absolute;
+    left: -90px;
+    width: 340px;
+    height: 300px;
+    top: -80px;
+
+  }
+
+
+
+  .cat1{
+  position: absolute;
+  left: 0;
+  top: 10px;
+  height: 10px;
+  width: 10px;
+}
+
+.turnRight{
+-moz-transform: scale(1, 1);
+-webkit-transform: scale(1, 1);
+-o-transform: scale(1, 1);
+transform: scale(1, 1);
+filter: FlipH;
+}
+
+.turnLeft{
+        -moz-transform: scale(-1, 1);
+-webkit-transform: scale(-1, 1);
+-o-transform: scale(-1, 1);
+transform: scale(-1, 1);
+filter: FlipH;
+}
+
+
+.tree4{
+  position:relative;
+
+}
+
+body{
+  background: #EAF0F7;
+}
+
+
+
+.tree2{
+  position:absolute;
+  left: 300px;
+  top: -150px;
+  font-size: 400px;
+  color: rgb(150,150,150);
+}
+
+.tree1{
+  position: absolute;;
+  left: -200px;
+  top: 50px;
+  font-size: 800px;
+  color: rgb(200,200,200);
+}
+
+.tree3{
+  position: absolute;;
+  left: -50px;
+  top: 300px;
+  font-size: 1000px;
+  color: grey;
+  
+}

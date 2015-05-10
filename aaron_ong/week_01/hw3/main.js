@@ -64,13 +64,13 @@ var triangle2 = {
 };
 //  js-homework-5.md Raw
 var isEquilateral = function(input) {
-	console.log(input.sideA == input.sideB && input.sideB == input.sideC);
+	 return(input.sideA == input.sideB && input.sideB == input.sideC);
 }
 
 console.log("isEquilateral");
-isEquilateral(triangle);
-isEquilateral(triangle1);
-isEquilateral(triangle2);
+console.log(isEquilateral(triangle));
+console.log(isEquilateral(triangle1));
+console.log(isEquilateral(triangle2));
 
 var isIsosceles = function(input) {
 	console.log(!isEquilateral(input) && input.sideA == input.sideB || input.sideB == input.sideC || input.sideC == input.sideA);
@@ -109,10 +109,10 @@ var namePool = "Carter Hector Johnnie Zenobia Kandis Zoila Curtis Rosia Len Arm
 var Wolf = {name:"Wolf", id:100000, balance:600};
 var Bob = {name:"Bob", id:100001, balance:6820};
 var Alfie = {name:"Alfie", id:100002, balance:5};
-var Aaron = {name: "Aaron", id:100003, balance: 453.45721735582356};
-var Alvin = {name: "Alvin", id: 100004, balance: 4414.309910630992};
-var Groro = {name: "Groro", id: 100005, balance: 4641.016118075979};
-var Joel = {name: "Joel", id: 100006, balance: 24278.649150288886};
+var Aaron = {name: "Aaron", id:100003, balance: 453};
+var Alvin = {name: "Alvin", id: 100004, balance: 4414};
+var Groro = {name: "Groro", id: 100005, balance: 4641};
+var Joel = {name: "Joel", id: 100006, balance: 24278};
 var Allen = {name: "Allen", id: 100007, balance: 1000000};
 
 var accountArray = [Wolf, Bob, Alfie, Aaron, Alvin, Groro, Joel, Allen];
@@ -146,7 +146,7 @@ var grabTotal = function() {
 	total = 0;
 	for (var i = 0 ; i < accountArray.length; i++) {
 		ac = accountArray[i];
-		total += ac.balance;
+		total += ac.balance.toFixed(2);
 	}
 
 	console.log(total);
@@ -160,7 +160,7 @@ var deposit = function(name, amount) {
 }
 
 var withdraw = function(name, amount) {
-	num =findID(name);
+	num = findID(name);
 	if (accountArray[num].balance - amount > 0) {
 		console.log(accountArray[num].balance);
 		accountArray[num].balance -= amount;	
@@ -190,7 +190,7 @@ var transferAmount = function(from, to, amount) {
 
 var checkBalance = function(name) {
 	num = findID(name);
-	console.log(accountArray[num].balance);
+	console.log(accountArray[num].balance.toFixed(2));
 }
 
 setInterval(function(){ 
@@ -209,11 +209,11 @@ var closeAccount = function(name) {
 }
 
 var swiftTransfer = function (from, to, swiftID, amount) {
-
+//NO SWIFT TRANSFER!!! TOO BAD
 }
 
 
-console.log("FUNCTIONS \n createAccount(inputname, initialDeposit) \n closeAccount(name) \n grabTotal() \n deposit(name, amount) \n withdraw(name, amount) \n transferAmount(accountFrom, accountTo, amount) \n displayAccounts()");
+console.log("FUNCTIONS \n createAccount(inputname, initialDeposit) \n closeAccount(name) \n grabTotal() \n deposit(name, amount) \n withdraw(name, amount) \n transferAmount(accountFrom, accountTo, amount) \n displayAccounts() \n generateAccount(numberofAccountsyouwithtogenerate)");
 var displayAccounts = function() {
 	for (var i = 0 ; i < accountArray.length; i++) {
 		console.log(accountArray[i]);

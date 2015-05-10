@@ -1,0 +1,31 @@
+/* 
+
+## Style Hints: 
+
+Body Font Size = 12px
+	 Line Height = 17px
+	 Font Family = "Times New Roman", serif
+	 Font Color = #656565
+
+Link Hover Color = #20222a
+
+*/
+
+#container {
+  display:block;
+  padding-left:40px;
+  padding-top:30px;
+}
+
+#container h4 {
+  font-family: arial;
+}
+
+#container p {
+  font-family: arial;
+  font-size: 60%;
+}
+
+#logo {
+  display: block
+}

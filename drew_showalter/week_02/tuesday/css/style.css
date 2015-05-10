@@ -1,0 +1,151 @@
+@import url(link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css');
+
+body {
+  font-family: "Roboto", serif;
+  margin: 0px;
+  background: #ffc14f; /* Old browsers */
+  background: -webkit-linear-gradient(#ffc14f 0%, #ff670f 100%);
+  background: -o-linear-gradient(#ffc14f 0%, #ff670f 100%);
+  background: linear-gradient(#ffc14f 0%, #ff670f 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc14f', endColorstr='#ff670f',GradientType=0 );
+  height:1000px;
+}
+
+ul {
+  margin: 0px;
+}
+
+#wrapper {
+  background-image:url("../images/bg_wrapper.png");
+  background-repeat: repeat-x;
+  height: 90px;
+}
+
+nav {
+  list-style-type: none;
+  padding: 32px 20px 32px 100px;
+  background-color: black;
+  max-width: 960px;
+  text-align:0 auto;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  padding:38px;
+}
+
+nav a:hover {
+  color: black;
+  background-color:white;
+}
+
+nav li {
+  display: inline;
+  margin: 10px;
+  color: white;
+}
+
+#container {
+  padding-top:30px;
+  max-width: 960px;
+  margin: auto;
+
+}
+
+#social-media {
+  right: 0px;
+  top: 0px;
+  position: absolute;
+  display: inline-block;
+  margin-right: 0px;
+}
+
+.linkedin,.twitter,.facebook,.rss {
+  display: inline-block;
+  background-image:url(../images/socialNav.png);
+  height: 60px;
+  width: 60px;
+  background-position-y: -60px;
+}
+
+.linkedin:hover,.twitter:hover,.facebook:hover,.rss:hover {
+  background-position-y: 0px;
+}
+
+.twitter {
+  background-position-x: -60px;
+}
+
+.facebook {
+  background-position-x: -120px;
+}
+
+.rss {
+  background-position-x: -180px;
+}
+
+#blurb {
+  position: relative;
+  border-style: inset;
+  border-width: 1px;
+  width: 90%;
+  margin: 0 auto;
+  background-color:rgba(200,200,200,.8);
+}
+
+#text {
+  display: inline-block;
+  margin: 10px;
+  background-color:rgba(200,200,200,.8);
+}
+
+#blurbbutton {
+  position: absolute;
+  display: inline-block;
+  width: 25%;
+  height: 68px;
+  top: 0px;
+  right: 0px;
+  margin-left: 100px;
+  margin-top: 20px;
+  margin-right: 0px;
+}
+
+#homeboxes h2 {
+  font-weight: 200;
+  padding-bottom:15px;
+  padding-top:15px;
+  text-align:center;
+  background-color: rgba(200,200,200,.8)
+}
+
+#homeboxes img {
+  border: 6px solid #D6D6D6;
+  padding: 1px;
+  background-color: orange;
+  max-width: 274px;
+  margin: 0 auto;
+}
+
+#homeboxes p {
+  font-size: 12px;
+}
+
+#homeboxes a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #7B7DD1;
+}
+
+#homeboxes a:hover {
+  color: #57BA6B;
+}
+
+.home-box {
+  display: inline-block;
+  width: 30%;
+  margin: 10px;
+  background-color: rgba(200,200,200,.8);
+}

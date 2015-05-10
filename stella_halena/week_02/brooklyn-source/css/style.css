@@ -1,0 +1,51 @@
+/* 
+
+## Style Hints: 
+
+Body Font Size = 12px
+	 Line Height = 17px
+	 Font Family = "Times New Roman", serif
+	 Font Color = #656565
+
+Link Hover Color = #20222a
+
+*/
+#heroLogo {
+  margin-top: 20px; 
+}
+
+#heroImages {
+  margin-top: 10px; 
+}
+
+#container {
+  width: 960px;
+  margin: auto;
+}
+
+#mainText, #footer {
+  width: 960px;
+  font-size: 12px;
+  line-height: 17px; 
+  font-family: "Georgia", serif;
+  color: #656565;
+}
+
+a.Hover {
+  color:#20222a;
+}
+
+#press { 
+width: 940px;
+border: 
+}
+
+  
+
+
+
+
+
+
+
+  
