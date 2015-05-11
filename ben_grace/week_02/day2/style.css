@@ -1,0 +1,291 @@
+@import url(http://fonts.googleapis.com/css?family=Give+You+Glory|Bilbo|Open+Sans);
+
+body{
+	width: 100%;
+	margin: 0 auto;
+	background-image: url("images/body.jpg");
+	background-repeat: no-repeat;
+}
+
+
+a{
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.15);
+}
+
+h1 h2 h3 h4 h5 h6 p{
+	font-family: helvetica;
+}
+
+h1{
+	margin: 200px 0 15px 0;
+	text-transform: uppercase;
+	font-family: "georgia";
+	font-size:3.8em;
+	padding-top: 90px;
+	color: rgba(255, 255, 255, 0.15);
+	letter-spacing: 2px;
+}
+
+h2{
+	letter-spacing: 10px;
+	font-size: .9em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.15);
+	font-family: "Open Sans";
+	margin-bottom: 20px;
+}
+
+h3{
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.15);
+	font-size:2em;
+	font-family: "Open Sans";
+	letter-spacing: 3px;
+
+}
+
+p{
+	font-size:.9em;
+	color: rgba(255, 255, 255, 0.15);
+	line-height: 2em;
+	font-family: times;
+}
+
+hr{
+	margin-top:-10px;
+	opacity: .1;
+
+}
+
+ul{
+	text-align: center;
+	font-size: .9em;
+	margin: 0;
+	/*display: inline-block;*/
+	color: white;
+	text-decoration: none;
+	font-family: helvetica;
+	padding-top: 10px;
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-ms-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+}
+
+header{
+	background-color: #2C3B3C;
+	opacity: 0.6;
+	height: 50px;
+	padding-top:50px;
+	border-bottom: 2px solid white;
+}
+
+.whale{
+	opacity: 0.15;
+}
+
+.ship{
+	margin-left:800px;
+	opacity: 0.1;
+}
+
+.lighthouse{
+	opacity: 0.1;
+}
+
+.video{
+	display: inline-block;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+nav ul{
+	font-size: 1.6em;
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	font-family: helvetica;
+	margin:0 auto;
+	padding:0;
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-ms-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+
+}
+
+ul{
+	padding: 0;
+}
+
+ul li{
+	font-size: 1.6em;
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	font-family: helvetica;
+	margin: 10px 35px 0 28px;
+	padding:0;
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-ms-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+
+}
+
+ol{
+	padding:0;
+	line-height: 1.6em
+}
+
+ol li{
+	color: rgba(255, 255, 255, 0.15);
+	font-family: helvetica;
+}
+
+.frontPageType{
+	text-align: center;
+	margin: 0 0 0 400px;
+	width: 600px;
+	height: 400px;
+}
+
+.mainDiv{
+	background-size: 100%;
+	background-repeat: no-repeat;
+	width: 100%;
+	height:660px;
+	border-bottom: 2px solid white;
+}
+
+.content{
+	width:1440px;
+	height:400px;
+	background-color: rgba(0, 0, 0, 0.6);
+	border-bottom:4px solid rgba(255, 255, 255, 0.15);
+}
+
+.content:nth-child(even){
+	width:1440px;
+	height:400px;
+	background-color: rgba(0, 0, 0, 0.3);
+	border-bottom:4px solid rgba(255, 255, 255, 0.15);
+}
+
+
+.storyContent{
+	vertical-align: top;
+	display: inline-block;
+	width: 600px;
+	height: 300px;
+}
+
+.storyContentLeft{
+	vertical-align: top;
+	display: inline-block;
+	width: 600px;
+	height: 300px;
+	margin-left: 300px;
+}
+
+.albumContent{
+	vertical-align: top;
+	display: inline-block;
+	width: 600px;
+	height: 300px;
+	margin-left: 200px;
+}
+
+
+.leftContent:hover{
+	vertical-align: top;
+	margin-left: 100px;
+	margin-top: 40px;
+	width: 350px;
+	display: inline-block;
+	text-align: left;
+}
+
+.leftContent{
+	vertical-align: top;
+	margin-left: 100px;
+	margin-top: 40px;
+	width: 350px;
+	display: inline-block;
+	text-align: left;
+	opacity: .3;
+}
+
+.rightContent{
+	vertical-align: top;
+	margin-left: 100px;
+	margin-top: 40px;
+	width: 350px;
+	display: inline-block;
+	text-align: left;
+	opacity: .3;
+}
+
+
+.columnSplit{
+    -webkit-column-count: 2; /* Chrome, Safari, Opera */
+    -moz-column-count: 2; /* Firefox */
+    column-count: 2;
+    -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 10px; /* Firefox */
+    column-gap: 10px
+}
+
+
+
+footer{
+	background-color: rgba(0,0,0,0.6);
+	height:100px;
+	width:auto;
+
+}
+
+.homeButton:hover{
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-ms-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+	font-size: 1.3em;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.15)
+}
+
+.albumsButton:hover{
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-ms-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+	font-size: 1.3em;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.15)
+}
+
+.storyButton:hover{
+	-webkit-transition: .3s;
+	-moz-transition: .3s;
+	-ms-transition: .3s;
+	-o-transition: .3s;
+	transition: .3s;
+	font-size: 1.3em;
+	border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+

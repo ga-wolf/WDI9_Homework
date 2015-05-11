@@ -1,0 +1,160 @@
+body{
+  max-width: 100%;
+  background-image: url("images/bg_body.jpg");
+  background-repeat: repeat;
+  margin: auto;
+  height: auto;
+}
+
+p{
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+}
+
+h3{
+  font-family: helvetica;
+  color: grey;
+  font-size: 25px
+}
+
+.container{
+  max-width: 960px;
+  margin:auto;
+}
+
+.mainContent{
+  width:800px;
+  margin: auto;
+}
+
+.wrapper{
+  margin:auto;
+}
+
+.navBar{
+  background-color: black;
+  height: 70px;
+  margin: auto;
+}
+
+header{
+  height: 400px;
+  background-image: url("images/bg_body.jpg");
+  background:rgba(0,0,0,0.1);
+  background-repeat: repeat;
+  border-bottom: solid 2px white;
+
+}
+
+nav{
+  background-color: black;
+  height:70px;
+}
+
+nav li{
+  display: inline-block;
+  color: white;
+  margin: 30px 50px 0px 0;
+  font-family: helvetica;
+  font-size: 14px;
+}
+
+nav li:hover{
+/*  -webkit-transition: .3s;*/
+  background-image: url("bg_nav_rollover.png");
+/*  font-size: 15px;*/
+
+}
+
+.logoAndSocial{
+  margin:20px 0 10px 0;
+  height: 60px;
+  overflow: hidden;
+}
+
+.logoAndSocial > div{
+  display:inline-block;
+  vertical-align: top;
+}
+
+
+.logoAndSocial div:first-child{
+  margin-right: 410px;
+}
+
+.logoAndSocial div:last-child{
+  background-position: y-60;
+}/*Trying to do rollover*/
+
+.mainContent{
+  width:960px;
+}
+
+.photobanner{
+  background-repeat: no-repeat;
+  margin:0px 0px -5px 0px;
+}
+.imageShadow{
+  margin-top: -50px;
+
+}
+
+.blurb{
+  border:solid 1px white;
+  border-style: inset;
+  height:auto;
+  padding:10px;
+}
+
+.blurb div:first-child{
+  max-width: 600px;
+  margin-right: 120px;
+}
+
+.blurb div:last-child{
+  display: inline-block;
+  margin:10px 0 0 0;
+
+
+}
+
+.blurb div{
+  display: inline-block;
+  vertical-align: top;
+}
+
+#homeBoxes div{
+  vertical-align: top;
+  display: inline-block;
+  height:270px;
+  max-width: 250px;
+  margin:0 44px 0 44px;
+}
+
+#homeBoxes div:first-child{
+  margin-left: 0;
+}
+#homeBoxes div:last-child{
+  margin-right: 0;
+}
+
+.homeBox img{
+  border:solid 4px #A5ABAB;
+}
+
+.homeBox p{
+  font-size: 12px
+}
+
+.spacingNeverDoThis{
+  height:550px;
+}
+
+footer{
+  background-color: black;
+  height: 400px;
+
+}
+
+
+
