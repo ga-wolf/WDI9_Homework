@@ -61,7 +61,7 @@ var catWalk = function () {
     window.clearInterval(timer);                    // Stop the current animation
     direction = "left";                             // Set the direction
     cat.className = "left-cat";                     // Change the image orientation
-    timer = window.setInterval(catWalkRight, 40);   // Start the new animation
+    timer = window.setInterval(catWalk, 40);   // Start the new animation
   }
 
   // Turn the cat around at left edge of the screen

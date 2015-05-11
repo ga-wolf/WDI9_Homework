@@ -1,0 +1,40 @@
+body {
+  color: grey;
+}
+
+.line,
+.station {
+  font-weight: bold;
+  color: red;
+  cursor: pointer;
+}
+
+.selected {
+  color: green;
+}
+
+#console {
+  position: absolute;
+  width: 400px;
+  border: 1px solid black;
+  top: 15px;
+  right: 15px;
+  border-radius: 15px;
+}
+
+#header {
+  background-color: red;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 15px 15px 0 0;
+}
+
+#output {
+  padding: 15px 15px 30px 15px;
+  overflow: scroll;
+  height: 500px;
+}
+

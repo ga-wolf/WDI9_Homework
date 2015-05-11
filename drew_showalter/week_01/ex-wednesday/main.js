@@ -7,8 +7,8 @@ var maxOfTwoNumbers = function(a, b) {
 		return b;
 	}
 }
-console.log(maxOfTwoNumbers(2,5));
-console.log(maxOfTwoNumbers(99,15));
+//console.log(maxOfTwoNumbers(2,5));
+//console.log(maxOfTwoNumbers(99,15));
 
 // Define a function maxOfThree that takes three numbers as arguments and returns the largest of them.
 var maxOfThree = function(a, b, c) {
@@ -20,9 +20,9 @@ var maxOfThree = function(a, b, c) {
 		return c;
 	}
 }
-console.log(maxOfThree(2,5,99));
-console.log(maxOfThree(99,15,45));
-console.log(maxOfThree(4,99,4));
+//console.log(maxOfThree(2,5,99));
+//console.log(maxOfThree(99,15,45));
+//console.log(maxOfThree(4,99,4));
 
 // Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 var isAVowel = function(char) {
@@ -32,14 +32,14 @@ var isAVowel = function(char) {
 	} else
 		return true;
 }
-console.log(isAVowel('a'));
-console.log(isAVowel('e'));
-console.log(isAVowel('i'));
-console.log(isAVowel('o'));
-console.log(isAVowel('u'));
-console.log(isAVowel('y'));
-console.log(isAVowel('G'));
-console.log(isAVowel('x'));
+//console.log(isAVowel('a'));
+//console.log(isAVowel('e'));
+//console.log(isAVowel('i'));
+//console.log(isAVowel('o'));
+//console.log(isAVowel('u'));
+//console.log(isAVowel('y'));
+//console.log(isAVowel('G'));
+//console.log(isAVowel('x'));
 
 // Define a function sumArray and a function multiplyArray that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sumArray([1,2,3,4]) should return 10, and multiplyArray([1,2,3,4]) should return 24.
 var sumArray = function(arra) {
@@ -49,7 +49,7 @@ var sumArray = function(arra) {
 	}
 	return delta;
 }
-console.log(sumArray([1,2,3,4]));
+//console.log(sumArray([1,2,3,4]));
 
 var multiplyArray = function(arra) {
 	var delta = 1;
@@ -58,7 +58,7 @@ var multiplyArray = function(arra) {
 	}
 	return delta;
 }
-console.log(multiplyArray([1,2,3,4]));
+//console.log(multiplyArray([1,2,3,4]));
 
 // Bonus
 // Define a function reverseString that computes the reversal of a string. For example, reverseString("jag testar") should return the string "ratset gaj".
@@ -69,7 +69,7 @@ var reverseString = function(strang) {
 	}
 	return newString;
 }
-console.log(reverseString("jag testar"));
+//console.log(reverseString("jag testar"));
 
 // Write a function findLongestWord that takes an array of words and returns the length of the longest one.
 var findLongestWord = function(arra) {
@@ -82,7 +82,7 @@ var findLongestWord = function(arra) {
 	return longest;
 }
 newArra = "big bigger biggester biggest".split(' ');
-console.log(findLongestWord(newArra));
+//console.log(findLongestWord(newArra));
 
 // Write a function filterLongWords that takes an array of words and an number i and returns the array of words that are longer than i.
 var filterLongWords = function(arra, i) {
@@ -94,8 +94,7 @@ var filterLongWords = function(arra, i) {
 	}
 	return longWords;
 }
-newArra = "big bigger biggester biggest".split(' ');
-console.log(filterLongWords(newArra, 3));
+//console.log(filterLongWords(newArra, 3));
 
 
 
@@ -143,7 +142,10 @@ var guessLetter = function(guess) {
 var wordLets = "frogger".split('');
 var guessedLets = ["", "", ""];
 var rewardAmt = 0;
-var guessLetter = function(guess) {
+
+
+var guessBetter = function(guess) {
+
 	//this block sets up the variables that change on each run of the program, and logs your roll
 	rewardRoll = Math.round(Math.random() * 1000);
 	console.log("You rolled $" + rewardRoll + "!")
@@ -163,7 +165,7 @@ var guessLetter = function(guess) {
 	//this function displays your winnings and losings each round, and doesn't let winnings drop below zero
 	if (isThereOne === 0) {
 		rewardAmt -= 250;
-		if (rewardAmt <= 0) {
+		if (rewardAmt <= 0) {\
 			rewardAmt = 0;
 		}
 		console.log("You lost $250.");
@@ -179,13 +181,13 @@ var guessLetter = function(guess) {
 		console.log("Keep guessing!");
 	}
 }
-// guessLetter('a');
-// guessLetter('f');
-// guessLetter('g');
-// guessLetter('o');
-// guessLetter('x');
-// guessLetter('r');
-// guessLetter('e');
+guessBetter('a');
+guessBetter('f');
+guessBetter('g');
+guessBetter('o');
+guessBetter('x');
+guessBetter('r');
+guessBetter('e');
 
 
 // Bonus: Make it like Hangman:
@@ -203,6 +205,8 @@ var guessHang = function(guess) {
 	//variable to check wheter or not a correct guess has been made
 	var correctGuess = 0;
 
+	//iterates through the word-'wordLets', finding and replacing correct guesses
+	//also now changes correctGuess to something other than zero
 	for ( var i = 0 ; i <= wordLets.length ; i++ ) {
 		if (guess === wordLets[i]) {
 			guessedLets[i] = guess;
@@ -210,12 +214,12 @@ var guessHang = function(guess) {
 		}
 	}
 
-	//breakout loop for duplicate letters
+	//breakout 'if' for duplicate letters
 	if ( ((guessedLets + guessWrong).search(guess) >= 0 ) && (correctGuess <= 0) ) {
 		return;
 	}
 
-	//loop for correct or incorrect guesses
+	//'if' for correct or incorrect guess console logs
 	if (correctGuess === 0) {
 		guesses ++;
 		console.log(" You guessed wrong, you have " + ( 6 - guesses ) 
@@ -228,7 +232,7 @@ var guessHang = function(guess) {
 
 
 
-	//ending loop
+	//ending conditional
 	if (guessedLets.join("") === wordLets.join("")) {
 		console.log("Congratualtions! You win! The word was: " + wordLets.join(""));
 
@@ -248,19 +252,20 @@ var guessHang = function(guess) {
 		console.log("Keep guessing!")
 	}
 }
-guessHang('a');
-guessHang('a');
-guessHang('d');
-guessHang('x');
-guessHang('y');
-guessHang('x');
-guessHang('z');
-guessHang('b');
+// guessHang('a');
+// guessHang('a');
+// guessHang('f');
+// guessHang('d');
+// guessHang('x');
+// guessHang('y');
+// guessHang('x');
+// guessHang('z');
+// guessHang('b');
 
-guessHang('x');
-guessHang('f');
-guessHang('f');
-guessHang('r');
-guessHang('o');
-guessHang('g');
-guessHang('e');
+// guessHang('x');
+// guessHang('f');
+// guessHang('f');
+// guessHang('r');
+// guessHang('o');
+// guessHang('g');
+// guessHang('e');

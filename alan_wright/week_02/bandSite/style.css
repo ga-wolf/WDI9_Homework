@@ -1,0 +1,203 @@
+/*Lab: Create a website for a band or musician of your choice
+Requirements
+
+At least 3 pages (example: about, media, touring)
+At least 1 Google Font
+Whatever HTML and CSS you desire
+Keep your code clean and DRY
+No Javascript! Even if you know how to use jQuery, see how far you can push this with pure HTML + CSS
+Don't worry about responsiveness -- desktop resolution is fine
+Optional extras
+
+Experiment with http://fortawesome.github.io/Font-Awesome/
+Try embedding media (SoundCloud music player, YouTube video, Spotify or Rdio)
+Try embedding a Google map (for the musicians hometown or their tour locations)*/
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+
+
+li {
+  display: inline-block;
+  padding-left:235px;
+
+}
+
+body {
+  background-image: url(rastaBg.png);
+  background-size: cover;
+}
+
+
+h1{
+  text-align: center;
+  text-shadow:5px 5px 5px green;
+  color: yellow;
+}
+
+h2{
+  text-align: center;
+  text-shadow:5px 5px 5px red;
+  color: black;
+}
+
+.containerOne {
+  display: inline-block;
+  width: 50%;
+  height: 50%;
+  vertical-align: top;
+  background-color: red;
+  -webkit-filter: opacity(0.75);
+  filter: opacity(0.75);
+  color:white;
+  position: relative;
+  right: -20px;
+
+}
+#q2{
+  width: 200px;
+  position: relative;
+  right: -300px;
+  top: -20px;
+  
+}
+
+.containerTwo {
+  display: inline-block;
+  width: 50%;
+  height: 50%;
+  vertical-align: top;
+  background-color: yellow;
+  -webkit-filter: opacity(0.75);
+  filter: opacity(0.75);
+  color: black;
+  margin-top: 80px;
+  text-align: auto;
+  margin-right: 10px;
+  position: relative;
+  right: -600px;
+
+
+}
+#q4{
+  margin-left: 10px;
+  width: 400px;
+  position: relative;
+  left: -600px;
+
+  
+}
+
+.containerThree {
+  display: inline-block;
+  width: 50%;
+  height: 50%;
+  vertical-align: top;
+  background-color: green;
+  -webkit-filter: opacity(0.75);
+  filter: opacity(0.75);
+  color: white;
+  margin-top: 50px;
+  position: relative;
+  right: -20px;
+
+}
+#q3 {
+  width: 400px;
+  position: relative;
+  right: -200px;
+}
+
+
+
+#b1{
+  -webkit-appearance:none;
+  background-color: red;
+  -webkit-outline: none;
+  outline: none;
+  border-color: none;
+}
+
+#b2{
+  -webkit-appearance:none;
+  background-color: yellow;
+  -webkit-outline: none;
+  outline: none;
+  border-color: none;
+}
+
+#b3{
+  -webkit-appearance:none;
+  background-color: green;
+  -webkit-outline: none;
+  outline: none;
+  border-color: none;
+}
+
+button{
+  width:100px;
+  color:white;
+}
+button:hover {
+  background: white;
+  color: white;
+  width: 100px;
+  height: 50px;
+}
+
+#oneLove{
+  box-shadow: 5px 5px 5px green; 
+  position: relative;
+  right: -200px;
+}
+
+#houseofmarley{
+  box-shadow: 5px 5px 5px yellow; 
+  position: relative;
+  right: -350px;
+
+}
+ 
+h3{
+  color: red;
+  position: relative;
+  text-align: center;
+  padding-bottom: 200px;
+  
+}
+
+a {
+  color:black;
+}
+
+.containerFour {
+  display: inline-block;
+  width: 50%;
+  height: 170px;
+  vertical-align: top;
+  background-color: yellow;
+  -webkit-filter: opacity(0.75);
+  filter: opacity(0.75);
+  color: white;
+  margin-top: 50px;
+  position: relative;
+  right: -300px;
+  top:-70px;
+}
+ .containerFive{
+  display: inline-block;
+  width: 50%;
+  height: 180px;
+  vertical-align: top;
+  background-color: green;
+  -webkit-filter: opacity(0.75);
+  filter: opacity(0.75);
+  color: white;
+  margin-top: 50px;
+  position: relative;
+  right: -300px;
+  top: -90px;
+}
+.vid2{
+  display: inline-block;
+  padding-left: 70px;
+  margin-left: 50px;
+}
