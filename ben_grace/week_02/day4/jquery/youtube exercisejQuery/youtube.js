@@ -24,15 +24,43 @@
 //   $link.append($image)
 // };
 
+$('a').funText(30, 'candy');
+$('h2').funText(30, 'candy');
+
 var $linkArray = $('a')
 
-thumbnailify = function (){
-
-  var $link = $($linkArray[i])
+thumbnailify = function (link){
+  console.log('thumbnailify is working');
+  var $link = $($linkArray[i]);
   var thumbnail = youtube.generateThumbnailUrl($link.attr('href'));
   var $image = $('<img>').attr('src', thumbnail);
-  $link.append($image)
-  
+  // var embedUrl = youtube.generateEmbedUrl($link.attr('href')
+  $link.append($image);
+
+  $link.on('click', function(){
+
+
+
+    event.preventDefault(); //Will stop users from following the link like usual
+    console.log($link.attr('href'))
+
+    var embedUrl = youtube.generateEmbedUrl( $link.attr('href'))
+
+    var embedHTML = '<iframe width="420" height="315" src ="' + embedUrl + '" frameborder="0" allowfullscreen></iframe>';
+
+    $('#player').hide().html(embedHTML).fadeIn(200)
+    
+    // var videoEmbed = youtube.generateEmbedUrl(  )
+  })
+
+  // $('#video').on('click', function(){
+  //   debugger
+  //   console.log('click back is working');
+  //   var videoPlayer = $('<iframe></iframe>')
+
+  //   $('#video').append(videoPlayer);
+  // })
+
 
 }
 
