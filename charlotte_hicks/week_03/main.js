@@ -3,7 +3,7 @@
 // We need whether it is X or 0 at the moment
 // Where they have clicked
 
-var currentPlayer = "Player1";
+var currentPlayer = "Player2";
 var movesArray = [
   [ "_", "_", "_" ],
   [ "_", "_", "_" ],
