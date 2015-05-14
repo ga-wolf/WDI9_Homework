@@ -54,6 +54,8 @@ movesArray[row][column] = currentPlayer;
 
 });
 
+
+
 function checkIfWonVertical(){
 
   for(var i = 0; i <= 2; i++){
@@ -66,7 +68,18 @@ function checkIfWonVertical(){
 
         // function for telling the winner that they won
       console.log("the winner is " + currentPlayer);
-      sweetAlert("The Winner is " + currentPlayer);
+      sweetAlert({
+        title: currentPlayer + " wins!",
+        text: "Play again?",
+        showConfirmButton: true,
+        confirmButtonText: "sure!",
+        showCancelButton: true,
+        cancelButtonText: "no, thanks",
+      },
+      function(){
+        location.reload(); 
+      }
+      );
       return true;
     }
 
@@ -85,7 +98,18 @@ function checkIfWonHorizontal(){
 
         // function for telling the winner that they won
       console.log("the winner is " + currentPlayer);
-      sweetAlert("The Winner is " + currentPlayer);
+      sweetAlert({
+        title: currentPlayer + " wins!",
+        text: "Play again?",
+        showConfirmButton: true,
+        confirmButtonText: "sure!",
+        showCancelButton: true,
+        cancelButtonText: "no, thanks"
+      },
+      function(){
+        location.reload(); 
+      }
+      );
       return true;
     }
 
@@ -100,7 +124,18 @@ function checkIfWonDiagonal() {
   if ( diagonalOne || diagonalTwo ) {
 
     console.log("the winner is " + currentPlayer);
-    sweetAlert("The Winner is " + currentPlayer);
+    sweetAlert({
+      title: currentPlayer + " wins!",
+      text: "Play again?",
+      showConfirmButton: true,
+      confirmButtonText: "sure!",
+      showCancelButton: true,
+      cancelButtonText: "no, thanks"
+    },
+    function(){
+        location.reload(); 
+      }
+    );
     return true;
   }
 }
@@ -114,12 +149,19 @@ function draw() {
   console.log("No Wins? " + !anyWins);
 
   if ( !anyUnderscores && !anyWins ) {
-    sweetAlert("Draw");
+    sweetAlert({
+      title: "Draw!",
+      text: "Play again?",
+      showConfirmButton: true,
+      confirmButtonText: "sure!",
+      showCancelButton: true,
+      cancelButtonText: "no, thanks"
+    },
+    function(){
+        location.reload(); 
+      }
+    );
   }
-
-  // if ( !checkIfWonDiagonal() || !checkIfWonHorizontal() || !checkIfWonVertical() ) {
-  //   sweetAlert("Draw");
-  // }
 }
 
 
