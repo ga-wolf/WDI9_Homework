@@ -1,0 +1,30 @@
+
+
+body {
+ font:76% normal verdana,arial,tahoma;
+}
+
+h1, h2 {
+ margin:0px;
+ font-size:1.2em;
+}
+
+p {
+ margin:0px 0px 1em 0px;
+ padding:0px;
+}
+
+
+body #walkingCat {
+  position:absolute;
+  top:300px;
+}
+/*
+#walkingCat:hover {
+  top:10px;
+}
+
+#walkingCat:active {
+  left:0%;
+} 
+*/
