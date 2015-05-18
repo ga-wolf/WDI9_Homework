@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>ATM</title>
+  <link rel="stylesheet" href="bank.css">
+  <script src="js/jquery-1.11.3.min.js"></script>
+</head>
+
+<body>
+  <div id="content">
+  <div class="createAccount">
+    <p>Account Name</p>
+    <input type="text" id="accName">
+    <p>Check Deposit</p>
+    <input type="number" id="checkAm">
+    <p>Savings</p>
+    <input type="number" id="savingsAm">
+    <div class="clear"></div>
+    <button id="accountSubmit">Create Account</button>
+  </div>
+    <div id="nav">
+      <div id="logo"><img src="img/ga.png" alt="Bank of GA" /></div>
+      <div id="title">Bank of GA</div>
+      <select id="accountSelector">
+      </select>
+    </div>
+    <div class="account" id="checking">
+      <h1>Checking</h1>
+      <div class="balance" id="checking-balance">$0</div>
+      <input id="checking-amount" type="number" placeholder="enter an amount" />
+      <input id="checking-deposit" type="button" value="Deposit" />
+      <input id="checking-withdraw" type="button" value="Withdraw" />
+    </div>
+    <div class="account" id="savings">
+      <h1>Savings</h1>
+      <div class="balance" id="savings-balance">$0</div>
+      <input id="savings-amount" type="number" placeholder="enter an amount" />
+      <input id="savings-deposit" type="button" value="Deposit" />
+      <input id="savings-withdraw" type="button" value="Withdraw" />
+  
+    </div>
+    <input id="iTransfer" type="number" placeholder="enter an amount" />
+      <input id="c2s" type="button" value="Cheque to Savings" />
+      <input id="s2c" type="button" value="Savings to Cheque" />
+    <div class="clear"></div>
+    <div class="transferdiv">
+      <p>Account Name</p>
+      <input type="text" id="toAccount">
+      <p>Amount</p>
+      <h5>Transfers can only occur between checking accounts</h5>
+      <input type="number" id="transferAmount">
+      <div class="clear"></div>
+      <button id="transfer">Transfer Now</button>
+      <div class="clear"></div>
+      <div class="clear"></div>
+      <button id="interest">Turn on Interest</button>
+      <h5>Still in beta version. Will create problems</h5>
+      <button id="interestOff">Turn off Interest</button>
+    </div>
+  </div>
+  <script src="js/atm.js"></script>
+</body>
+
+</html>

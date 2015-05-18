@@ -1,0 +1,13 @@
+.account div,
+.amount {
+	text-align: center;
+}	
+
+.balance {
+	font-weight: bold;
+	font-size: 3em;
+}
+
+.list {
+	margin-bottom: 0;
+}

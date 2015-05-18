@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ATM</title>
+  <link rel="stylesheet" href="css/atm.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="js/jquery-1.7.2.js"></script>
+
+  <script src="js/atm.js"></script>
+  <script src="js/angular.js"></script>
+</head>
+<body>
+
+  <div id="content" ng-app="atm" ng-controller="MainController">
+
+    <div id="nav">
+      <div id="logo"><img src="img/ga.png" alt="Bank of GA"/></div>
+      <div id="title">Bank of GA</div>
+    </div>
+
+    <div class="account" id="checking" ng-controller="CheckingController">
+      <h1>Checking</h1>
+      <div class="balance">{{ checking | currency }}</div>
+      <input type="text" placeholder="enter an amount" ng-model="amount"/>
+      <input type="button" value="Deposit" ng-click="deposit('checking', amount)"/>
+      <input type="button" value="Withdraw" ng-click="withdraw('checking', amount)"/>
+    </div>
+
+    <div class="account" id="savings" ng-controller="SavingsController">
+      <h1>Savings</h1>
+      <div class="balance">{{ savings | currency }}</div>
+      <input type="text" placeholder="enter an amount" ng-model="amount"/>
+      <input type="button" value="Deposit" ng-click="deposit('savings', amount)"/>
+      <input type="button" value="Withdraw" ng-click="withdraw('savings', amount)"/>
+    </div>
+
+    <div class="clear"></div>
+
+  </div>
+</body>
+</html>
