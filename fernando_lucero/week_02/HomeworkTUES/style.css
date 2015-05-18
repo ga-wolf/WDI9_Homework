@@ -1,9 +1,64 @@
+<head>
+<link href='http://fonts.googleapis.com/css?family=Trade+Winds' rel='stylesheet' type='text/css'>
+<style>
+body {
+  margin: 0;
+  max-width: 1000px;
+  background: rgba(34,34,34,1);
+}
+
 header {
-	margin: 0 auto;
-	width: 960px;
-	background-color: blue;
+  height: 50px;
+  padding: 5px 0;
+  text-align: left;
+  background: rgba(29, 168, 219, 1);
 }
 
 header li {
-	display: inline;
+  display: inline;
+  padding-right: 50px;
+  font-size: 20px;
+  font-family: georgia, sans-serif;
+  color: white;
+}
+
+p {
+  width: 750px;
+  padding: 0 50px;
+  font-family: georgia, sans-serif;
+}
+
+h2 {
+  padding: 0 50px;
+  font-family: georgia, sans-serif;
+  font-style: italic;
+  line-height: 40px;
+  width: 750px;
+}
+
+.tagline {
+  position: relative;
+  background-color: rgba(208, 210, 211, 1);
+  height: 400px;
+}
+
+.quote {
+  color: white;
+}
+
+.description {
+  position: relative;
+  background-image: url("images/leoMessi2.jpg");
+  background-repeat: no-repeat;
+  background-color: black;
+  height: 360px;
+}
+
+.description h1 {
+  /*font-family: 'Trade Winds', cursive;*/
+  position: absolute;
+  font-size: 80px;
+  margin: 0 50px;
+  color: rgba(29, 168, 219, 1);
+  bottom: -19px;
 }

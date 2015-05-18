@@ -1,0 +1,103 @@
+
+
+body {
+  max-width: 960px;
+  margin: auto;
+  background-image: url("bobby.jpg");
+  background-repeat: no-repeat;
+  background-position: fixed;
+
+}
+
+.header {
+    background-color:transparent;
+    color:white;
+    padding:5px;
+    height: 100px;
+}
+
+.button {
+  display: block;
+  height: 19px;
+  width: 30px;
+  background: white;
+  border: none;
+}
+
+h1 {
+  text-align: left;
+}
+
+.section {
+    width:960px;
+    height: 1000px;
+    display: inline-block;
+    padding:10px; 
+    /*background-image: url("bob_dylan_live.jpeg");
+    background-repeat: no-repeat;
+    background-position: center; */
+    color: white;
+}
+.footer {
+    background-color:transparent;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px; 
+}
+
+.button {
+    display: block;
+    height: 100px;
+    width: 30px;
+    background: #34696f;
+    border: 2px solid rgba(33, 68, 72, 0.59);
+}
+
+.text {
+  width: 600px;
+  padding: 20px;
+  position: center;
+  margin: auto;
+  color: black;
+  background: rgba(225, 225, 225, .8);
+  
+}
+
+.footer {
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+}
+
+.vid {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+
+a:link, a:visited {
+    display: block;
+    width: 120px;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: transparent;
+    text-align: right; !important
+    padding: 4px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background-color: black;
+}

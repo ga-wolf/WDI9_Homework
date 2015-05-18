@@ -1,0 +1,221 @@
+/* 
+Project Name: Ecard.ly
+Client: General Assembly 
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+
+body {
+     background-image: url("../images/bg_blurb.jpg"), url("../images/bg_body.jpg");
+     background-repeat: repeat-x, repeat;
+     margin: 0px;
+     margin-top: 0px;
+}
+
+
+.nav {
+     background-image: url("../images/bg_wrapper.png");
+     background-repeat: repeat-x;
+     margin: 0px;
+     margin-top: 0px;
+     height: 250%;
+     font-family: Arial;
+}
+
+
+.nav ul {
+     margin: 0px;
+}
+
+.nav ul li {
+     margin-top: 0;
+     display: inline-block;
+}
+
+          
+.nav ul li a {
+     display: inline-block;
+     color: darkgrey;
+     text-decoration: none;
+     padding: 15px 25px;
+}
+.nav ul li:hover {
+     background-image: url("../images/bg_nav_rollover.png")
+}
+
+
+.logo {
+     margin-top: 20px;
+     text-align: left;
+     margin-left: 4%;
+     display: inline-block;
+}
+#socialMedia {
+     float: right;
+}
+
+#socialMedia ul li {
+      display:inline-block;
+      width:60px;
+      height:60px;
+      background:blue;   
+      text-indent:-9999em;
+}
+
+#socialMedia ul li.linkedIn {
+     background:url(../images/socialNav.png) 0px 64px;
+}
+#socialMedia ul li.twitter {
+     background:url(../images/socialNav.png) -60px 64px; 
+}
+
+#socialMedia ul li.facebook {
+     background:url(../images/socialNav.png) -120px 64px; 
+}
+
+#socialMedia ul li.rss {
+     background:url(../images/socialNav.png) -180px 64px; 
+}
+
+
+
+#socialMedia ul li.linkedIn:hover {
+     background:url(../images/socialNav.png) 0px 0px; 
+}
+
+#socialMedia ul li.twitter:hover {
+     background:url(../images/socialNav.png) -60px 0px; 
+}
+
+#socialMedia ul li.facebook:hover {
+     background:url(../images/socialNav.png) -120px 0px; 
+}
+
+#socialMedia ul li.rss:hover {
+     background:url(../images/socialNav.png) -180px 0px; 
+}
+
+.content {
+     margin:0px auto;
+     text-align: center;
+
+}
+
+#midPicture {
+     width: 75%;
+     margin:0px auto;
+}
+
+.textbox {
+     max-width: 75%;
+     margin: 0px auto;
+     border-style:groove;
+     border-width: 3px;
+     border-top-color: lightgrey;
+     border-left-color: lightgrey;
+     border-bottom-color: white;
+     border-right-color: white;
+}
+.textbox .text {
+     display: inline-block;
+     text-align: left;
+     width: 70%;
+}
+
+.textbox .rquote {
+     background: #87e0fd; /* Old browsers */
+     background: -moz-linear-gradient(top,  #87e0fd 0%, #53cbf1 40%, #0697db 100%); /* FF3.6+ */
+     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#87e0fd), color-stop(40%,#53cbf1), color-stop(100%,#0697db)); /* Chrome,Safari4+ */
+     background: -webkit-linear-gradient(top,  #87e0fd 0%,#53cbf1 40%,#0697db 100%); /* Chrome10+,Safari5.1+ */
+     background: -o-linear-gradient(top,  #87e0fd 0%,#53cbf1 40%,#0697db 100%); /* Opera 11.10+ */
+     background: -ms-linear-gradient(top,  #87e0fd 0%,#53cbf1 40%,#0697db 100%); /* IE10+ */
+     background: linear-gradient(to bottom,  #87e0fd 0%,#53cbf1 40%,#0697db 100%); /* W3C */
+     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#0697db',GradientType=0 ); /* IE6-9 */
+     display:inline-block;
+     width: 150px;
+     height: 40px;
+     border-radius:5px;
+     color: white;
+     margin-bottom: 0px;
+     border:1px solid black;
+}
+
+.rquote {
+     color: white;
+     text-decoration: none;
+}
+.rquote span {
+     font-size: 70%;
+     margin-top: 6px;
+}
+.rquote p {
+     font-size: 40%;
+     margin-top: 3px;
+}
+
+.threebox {
+     max-width: 100%;
+}
+
+.box {
+     padding: 0px 15px 0px 15px;
+     max-width: 270px;
+     display: inline-block;
+     font-family: Arial;
+}
+.box h3 {
+     text-align: left;
+     margin-top: 30px;
+     margin-bottom: 10px;
+}
+.box img {
+     margin-top: 0px;
+     max-width: 250px;
+     border: 1px solid white;
+     outline: 3px solid #D9D9D9;
+}
+.box p {
+     font-size: 70%;
+     text-align: left;
+}
+.box a {
+     font-size: 70%;
+     text-decoration: none;
+     float: left;
+}
+
+footer {
+     background-color: #000000;
+     display:inline-table;
+     width: 100%;
+     color:#C1C1C1;
+     font-size: 70%;
+     font-family: arial;
+}
+footer h2 {
+     color:#C1C1C1;
+}
+footer a {
+     color:#C1C1C1;
+     text-decoration: none;
+}
+.blogroll {
+     display:inline-block;
+     max-width: 30%;
+}
+.textwidget {
+     display:inline-block;
+     max-width: 30%;
+}
+.metawidget {
+     display:inline-block;
+     max-width: 30%;
+}

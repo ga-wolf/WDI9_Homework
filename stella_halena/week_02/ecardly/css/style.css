@@ -1,0 +1,60 @@
+/* 
+Project Name: Ecard.ly
+Client: General Assembly 
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/ 
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+/*.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}*/
+
+
+body { 
+     background-image: url("../images/background.jpg");
+     background-repeat: repeat-x;
+     background-color: #d6d6d6; 
+}
+
+#logo { 
+  position:absolute;
+  image: url("..ecardly/images/logo.png");
+  background-repeat: no-repeat;
+  width:100%;
+  height: 100px; /* Change to the height you need */
+  top:0px;
+  left:0px;
+}
+
+#post {
+     width:452px;
+     height:865px:
+     margin:10px;
+     padding:10px;
+     background-color:#FFFFFF ;
+     font-family:verdana ;
+     font-size:10px ;
+
+}
+
+
+if its an id its #(name) (happen once) / if its a class its .(name) (happesn repeatedly)
+
+
