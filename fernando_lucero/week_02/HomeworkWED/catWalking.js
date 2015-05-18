@@ -21,16 +21,31 @@ console.log("Exercises: Animation-Cat walk");
 
 
 var img = document.getElementsByTagName('img')[0];
-img.style.position = 'absolute';
-img.style.left = '0px';
-//sets the 'left' style to 0 so cat is flush against wall. try this chrome to see how it works.
+img.style.left = 0 + 'px';
+
+var moving = "right"; // Which way are we moving
+
+
+
 var catWalk = function() {
-  var oldLeft = parseInt(img.style.left);//stores '0px' into var, and converts to integer.
-  var newLeft = oldLeft + 4;//adds the value to loop the movement
-  img.style.left = newLeft + 'px';//stores value back into the attribute.
+
+  	if (parseInt(img.style.left) <= 1190 && moving === "right" ) { // If we are moving right, and we aren't at the end
+  		img.style.left = parseInt(img.style.left) + 10 + 'px'; // Move closer to the right
+  	} 
+
+  	else { // If we are moving left, or moving isnt the string "right"
+  		img.style.left = parseInt(img.style.left) - 10 + 'px';  // Move it back to the left edge
+  		moving = "left";
+  	}
 };
 
+// Instead of just an else condition, make sure that we aren't the left edge
+
 setInterval(catWalk, 31);//moves at 100 milliseconds..setInterval will call the animation to begin.
+
+
+
+
 
 
 
