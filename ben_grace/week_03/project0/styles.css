@@ -1,0 +1,171 @@
+@import url(http://fonts.googleapis.com/css?family=Rokkitt:400,700|Playball);
+
+body{
+  padding-top: 25px;
+  background-image: url('images/grass.jpg');
+  background-repeat: no-repeat;
+  background-size: fill;
+}
+
+.winnerChange{
+  opacity: 0.5;
+}
+
+h1{
+  color: #fff;
+  font-family: 'Playball';
+  word-spacing: 5px;
+  font-size: 6em; 
+  margin:auto 0;
+  margin-left:310px;
+}
+
+#winnerHidden h1{
+  margin-left: 0;
+  margin-top: 30px;
+  text-align: center;
+  color: #fff;
+  font-family: 'Playball';
+  word-spacing: 5px;
+  font-size: 4em; 
+}
+
+h2{
+  color: #fff;
+  font-family: 'Playball';
+  font-size: 2em;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+p{
+  font-family: 'Rokkitt'
+
+}
+
+#container{
+  text-align: center; 
+  max-width: 960px;
+  margin: auto;
+  padding-bottom: 50px;
+  padding-top: 20px;
+  height: auto;
+  border-radius: 10px;
+}
+
+#instruct{
+  height: 450px;
+  width: 250px;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #BBE863;
+  margin-left:0; 
+  margin-right: 60px;
+  border-radius: 20px; 
+}
+
+#board{
+  max-width: 450px;
+  height: 450px;
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 10px;
+}
+
+.square{
+  border-radius: 20px;
+  font-size: 5em;
+  width:148px;
+  height: 148px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -4px;
+  text-align: center;
+  line-height: 148px;
+  background-color: white;
+  opacity: 0.55;
+  cursor: pointer;
+}
+
+.winningSquares{
+  transition: #DCE860;
+  background-color: #DCE860;
+  color: white;
+}
+
+#instructHidden{
+  height: 450px;
+  width: 705px;
+  background-color: #BBE863;
+  border-radius: 20px;
+  margin-top: -40px;
+  z-index: 99999;
+  display: none;
+  position:absolute;
+  top: 213px;
+  left:335px;
+  text-align: left;
+  padding-left: 50px;
+}
+
+.instructLeft{
+  vertical-align: top;
+  display: inline-block;
+  width: 30%;
+}
+
+.instructRight{
+  vertical-align: top;
+  display: inline-block;
+}
+
+#winnerHidden{
+  height: 300px;
+  width: 550px;
+  background-color: #64B23E;
+  border: 10px solid white;
+  border-radius: 20px;
+  margin-top: -40px;
+  z-index: 99999;
+  display: none;
+  position: absolute;
+  top: 280px;
+  left: 440px;
+  text-align: left;
+}
+
+
+#reset{
+  color: white;
+  margin-left:40px;
+  height: 100px;
+  width: 200px;
+  font-family:'Rokkitt';
+  font-size: 1.8em;
+  background-color: transparent;
+  border:none;
+
+
+}
+
+#theme{
+  color: white;
+  margin-left:50px;
+  height: 100px;
+  width: 200px;
+  font-family:'Rokkitt';
+  font-size: 1.8em;
+  background-color: transparent;
+  border:none;
+
+}
+
+
+
+
+
+
+
+
