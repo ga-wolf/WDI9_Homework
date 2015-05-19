@@ -3,12 +3,12 @@
 require 'rainbow'
 
 def starting_line
-  puts Rainbow("What Line are you starting your journey on? N, L or Six?").red
+  print Rainbow("What Line are you starting your journey on? N, L or Six? ").red
   gets.chomp.capitalize.to_sym
 end
 
 def start_stop
-  puts Rainbow("What station are you beginning your journey at?").red
+  print Rainbow("What station are you beginning your journey at? ").red
   gets.chomp
 end
 
@@ -33,12 +33,12 @@ def destination_line_union_square_index (dest_line, lines)
 end
 
 def destination_line
-  puts Rainbow("What Line are you ending your journey on? N, L or Six?").red
+  print Rainbow("What Line are you ending your journey on? N, L or Six? ").red
   gets.chomp.capitalize.to_sym
 end
 
 def destination_stop
-  puts Rainbow("What station are you ending your journey at?").red
+  print Rainbow("What station are you ending your journey at? ").red
   final_stop = gets.chomp
 end
 
