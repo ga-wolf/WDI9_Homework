@@ -13,6 +13,7 @@
 # For example, this means the 28th stop on the N line is different than the 28th street stop on the 6 line, so you'll have to differentiate this when you name your stops in the arrays.
 
 require "pry"
+require 'rainbow'
 
 # Define the subway network
 mta = { :"N Line" => ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"],
@@ -28,27 +29,27 @@ def prompt(msg)
 end
 
 # Find the indexes of the stations needed
-def find_stations(mta, origin_station, destination_station)
+def find_stations(mta, start_station, end_station)
 
   # Find the lines the stations are on
-  lines = find_lines mta, origin_station, destination_station
+  lines = find_lines mta, start_station, end_station
 
   # Find the indexes on the found lines
-  origin_index = mta[lines[0]].index(origin_station)
+  origin_index = mta[lines[0]].index(start_station)
   origin_union_index = mta[lines[0]].index("Union Square")
   dest_union_index = mta[lines[1]].index("Union Square")
-  dest_index = mta[lines[1]].index(destination_station)
+  dest_index = mta[lines[1]].index(end_station)
 
   # Return an array of the results
   stations = [lines[0], origin_index, origin_union_index, lines[1], dest_union_index, dest_index]
 end
 
 # Find the lines the stations are on
-def find_lines mta, origin_station, destination_station
+def find_lines mta, start_station, end_station
   lines = [[],[]]
   mta.each do |line, stations|
-    lines[0].push line if stations.include?(origin_station)
-    lines[1].push line if stations.include?(destination_station)
+    lines[0].push line if stations.include?(start_station)
+    lines[1].push line if stations.include?(end_station)
   end
 
   if lines[0] & lines[1] != []
@@ -63,21 +64,21 @@ end
 def build_trip(mta, stations)
   if ( stations[0] == stations[3] )
     # Build the trip
-    trip = build_leg(mta[stations[0]], stations[1], stations[5], trip)
+    trip = build_leg(mta[stations[0]], stations[1], stations[5])
   else
     # Build the trip with the change at Union Square
-    trip = build_leg(mta[stations[0]], stations[1], stations[2], trip)
-    trip = trip[0..-2].push "Change at Union Square to the #{stations[3]} and go through:"
-    trip = build_leg(mta[stations[3]], stations[4], stations[5], trip)
+    trip = build_leg(mta[stations[0]], stations[1], stations[2])
+    trip[-1] = Rainbow("Union Square").cyan + ": change to the " + Rainbow("#{stations[3]}").cyan
+    trip.push *build_leg(mta[stations[3]], stations[4], stations[5])
   end
 
   return trip
 end
 
 # Append the stations along the trip
-def build_leg(line, start, stop, trip)
-  trip = trip || []
-  while start != stop do
+def build_leg(line, start, stop)
+  trip = []
+  until start == stop do
     start += (start < stop) ? 1 : - 1
     trip.push line[start]
   end
@@ -85,10 +86,17 @@ def build_leg(line, start, stop, trip)
 end
 
 # Display the trip and number of stations
-def display_trip(trip)
+def display_trip(trip, start_line)
+  puts "\nTrip: " + Rainbow("#{trip[0]}").green + " ==> " + Rainbow("#{trip[-1]}").red
+  puts Rainbow("********************************").yellow
+  puts Rainbow("#{trip.shift}").green + ": take the " + Rainbow("#{start_line}").green
+  trip[-1] = Rainbow(trip[-1]).red + ": destination reached"
   puts trip
-  puts "Total stations: #{trip.length}\n\n"
+  puts Rainbow("********************************").yellow
+  puts Rainbow(" Total Stations: #{trip.length} ").black.bg(:white)
+  puts "\n\n"
 end
+
 
 # Plan the requested trip
 def plan_trip (mta, start_station, end_station)
@@ -101,23 +109,21 @@ def plan_trip (mta, start_station, end_station)
     stations = find_stations mta, start_station, end_station
 
     # Build the trip
-    trip = build_trip mta, stations
+    trip = [start_station]
+    trip.push *build_trip(mta, stations)
 
     #Display the trip
-    puts "\n\nTrip: #{start_station} ==> #{end_station}: "
-    puts "********************************"
-    puts "Starting at #{start_station} on the #{stations[0]}:"
-    display_trip trip
+    display_trip trip, stations[0]
   end
 
 end
 
 # Get the trip information
-origin_station = prompt "What is the starting station?"
-destination_station = prompt "What is the destination station?"
+start_station = prompt "What is the starting station?"
+end_station = prompt "What is the destination station?"
 
 # Plan the trip
-plan_trip mta, origin_station, destination_station
+plan_trip mta, start_station, end_station
 
 
 
