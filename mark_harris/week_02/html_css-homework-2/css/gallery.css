@@ -1,0 +1,45 @@
+
+/****************************************
+  Gallery
+
+  Seperate CSS file used with '.__' prefix so that it can 
+  be plugged into another site fairly easily
+
+****************************************/
+
+.__gallery {
+  position: relative;
+  width: 700px;
+  height: 620px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.__gallery img {
+  border-radius: 15px;
+}
+
+.__gallery a {
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  border: 2px solid grey;
+  border-radius: 15px;
+}
+
+.__gallery a:hover {
+  border: 2px solid linen;
+}
+ 
+.__big {
+  position: absolute;
+  top: 265px;
+  left: 915px;
+  transition: all 0.5s linear;
+}
+
+a:hover .__big {
+  z-index: 100;
+  left: 15px;
+  transition: all 0.5ss linear;
+}
+

@@ -1,0 +1,14 @@
+.wrapper {
+  background-color: black;
+  height: 230px;
+}
+
+.wrapper ul {
+  display: inline-block;
+  text-align: right
+}
+
+/* Suggestions for ID names and classes --------------------------------------------- #wrapper #container
+#main-content #social-media .photobanner .imageshadow #blurb #home-boxes .home-box .home-box .home-box
+.box-footer .blogroll .box-footer .textwidget #copyright #companybottom */
+
