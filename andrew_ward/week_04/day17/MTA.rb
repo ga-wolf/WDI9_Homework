@@ -1,12 +1,14 @@
 # Subway
 
+require 'rainbow'
+
 def starting_line
-  puts "What line are you starting your journey on? N, L or Six?"
+  puts Rainbow("What Line are you starting your journey on? N, L or Six?").red
   gets.chomp.capitalize.to_sym
 end
 
 def start_stop
-  puts "What station are you beginning your journey at?"
+  puts Rainbow("What station are you beginning your journey at?").red
   gets.chomp
 end
 
@@ -18,12 +20,12 @@ def start_line_union_square_index (start_line, lines)
   lines[start_line].index "Union Square"
 end
 
-def trip_function (array)
-  trip = "Your trip will take you past "
+def trip_function (num,array)
+  trip = "Your #{num} trip will take you past "
   array.each do |stop|
     trip += "#{stop}, "
   end
-  puts trip.slice(0..-3) + "."
+  puts Rainbow(trip.slice(0..-3) + ".").cyan
 end
 
 def destination_line_union_square_index (dest_line, lines)
@@ -31,12 +33,12 @@ def destination_line_union_square_index (dest_line, lines)
 end
 
 def destination_line
-  puts "What line are you ending your journey on? N, L or Six?"
+  puts Rainbow("What Line are you ending your journey on? N, L or Six?").red
   gets.chomp.capitalize.to_sym
 end
 
 def destination_stop
-  puts "What station are you ending your journey at?"
+  puts Rainbow("What station are you ending your journey at?").red
   final_stop = gets.chomp
 end
 
@@ -79,7 +81,7 @@ def the_big_function
   # Index of destination
   final_index = index_of_final_stop(final_line,lines, final_stop)
 
-  puts "You will begin your journey on line #{start_line} at #{starting_stop} and end on line #{final_line} at #{final_stop}."
+  puts Rainbow("You will begin your journey on line #{start_line} at #{starting_stop} and end on line #{final_line} at #{final_stop}.").yellow
 
   # No journey
   if start_line == final_line && start_ind == final_index
@@ -100,13 +102,13 @@ def the_big_function
       only_trip = lines[start_line][start_ind..final_index]
     end
 
-    trip_function only_trip
+    trip_function "single-line", only_trip
 
     # Stop count
     if (only_trip.length - 1) > 1
-      puts "Your journey is #{only_trip.length - 1} stops long"
+      puts Rainbow("Your journey is #{only_trip.length - 1} stops long").green
     else
-      puts "Your journey is only 1 stop."
+      puts Rainbow("Your journey is only 1 stop.").green
     end
 
   # Multi-line journey
@@ -128,16 +130,17 @@ def the_big_function
     end
 
     # First trip function
-    trip_function first_trip
+    trip_function "first", first_trip
 
     # Notifies how long first line trip is
-    if starting_stop == "Union Square"
-      puts "Simply switch lines here at Union Square"
-    elsif (first_trip.length - 1) > 1
+    # if starting_stop == "Union Square"
+    #   puts "Simply switch lines here at Union Square"
+    if (first_trip.length - 1) > 1
       puts "Your trip on Line #{start_line} is #{first_trip.length - 1} stops long"
-    else
+    elsif (first_trip.length - 1 <= 1) && starting_stop != "Union Square"
       puts "Your trip on Line #{start_line} is only 1 stop."
     end
+    puts Rainbow("Switch line to Line #{final_line}.").magenta
 
     # Union Square index of second line
     dest_union_index = destination_line_union_square_index(final_line, lines)
@@ -156,7 +159,7 @@ def the_big_function
     end
 
     # Final trip function
-    trip_function final_trip
+    trip_function "final", final_trip
 
     # Notifies how long first line trip is
     if final_stop == "Union Square"
@@ -168,7 +171,7 @@ def the_big_function
     end
 
     # Stop count
-    puts "Total trip length is #{first_trip.length + final_trip.length - 2} stops."
+    puts Rainbow("Total trip length is #{first_trip.length + final_trip.length - 2} stops.").green
 
   end
 
