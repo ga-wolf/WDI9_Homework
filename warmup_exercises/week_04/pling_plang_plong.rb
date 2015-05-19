@@ -26,9 +26,24 @@ end
 def convert_string 
   number = fetch_number # Call the fetch_number method and store whatever is returned as number
 
-  # 
+  # Okay... Let's try and make this a bit clearer
 
-
+  # The && does a bunch of things.
+  #   - It evaluates to true if all pieces evaluate to true
+  #   - It returns the final true value or the first false value
+  #     - puts 4 && 8 #=> Will puts 8
+  #     - puts false && nil #=> Will puts false
+  #   - So, it will return false if nothing evaluates to true or it will return the last true value
+  #   
+  # The || does pretty much the opposite
+  #   - It evaluates to true if at least one piece evaluates to true
+  #   - It returns the first true value or the final false value
+  #     - puts 4 || 8 #=> Will puts 4
+  #     - puts false && nil #=> Will puts nil
+  #     
+  #     
+  # This is pretty bizarre though, see here for more information 
+  # http://en.wikipedia.org/wiki/Short-circuit_evaluation
 
   not_divisible = divisible_by_three?(number) && divisible_by_five?(number) && divisible_by_seven?(number)
 
