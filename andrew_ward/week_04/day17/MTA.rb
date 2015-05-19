@@ -5,10 +5,12 @@ def starting_line
   gets.chomp.capitalize.to_sym
 end
 
-def index_of_start_stop (start_line, lines)
+def start_stop
   puts "What station are you beginning your journey at?"
-  starting_stop = gets.chomp
-  puts "You will start your journey at #{starting_stop} on line #{start_line.to_s}"
+  gets.chomp
+end
+
+def index_of_start_stop (start_line, lines, starting_stop)
   lines[start_line].find_index(starting_stop)
 end
 
@@ -16,12 +18,12 @@ def start_line_union_square_index (start_line, lines)
   lines[start_line].index "Union Square"
 end
 
-def first_trip_function (array)
+def trip_function (array)
   trip = "Your trip will take you past "
   array.each do |stop|
-    trip += "#{stop} and "
+    trip += "#{stop}, "
   end
-  puts trip + "."
+  puts trip.slice(0..-3) + "."
 end
 
 def destination_line_union_square_index (dest_line, lines)
@@ -33,21 +35,15 @@ def destination_line
   gets.chomp.capitalize.to_sym
 end
 
-def index_of_final_stop (dest_line,lines)
+def destination_stop
   puts "What station are you ending your journey at?"
   final_stop = gets.chomp
-  puts "You will end your journey at #{final_stop} on line #{dest_line.to_s}"
+end
+
+
+def index_of_final_stop (dest_line,lines,final_stop)
   lines[dest_line].index(final_stop)
 end
-
-def final_trip_function (array)
-  trip = "Your trip will take you past "
-  array.each do |stop|
-    trip += " #{stop} and "
-  end
-  puts trip + "."
-end
-
 
 
 #################################################################
@@ -68,55 +64,114 @@ def the_big_function
   # Find start line
   start_line = starting_line
 
+  # Find starting stop
+  starting_stop = start_stop
+
   # Index of starting station
-  start_ind = index_of_start_stop(start_line, lines)
-
-  # Union Square index of first line
-  start_union_index = start_line_union_square_index(start_line,lines)
-
-  # Determines which direction and how far first trip is
-  first_trip_length = start_union_index - start_ind
-
-  # Array of first trip
-  if first_trip_length < 0
-    first_trip = lines[start_line][start_union_index..start_ind].reverse
-  elsif first_trip_length > 0
-    first_trip = lines[start_line][start_ind..start_union_index]
-  elsif first_trip_length == 0
-    puts "CHEERS M8"
-  end
-
-  # First trip function
-  first_trip_function first_trip
-  puts "Your trip on line #{start_line} is #{first_trip.length - 1} stops long."
+  start_ind = index_of_start_stop(start_line, lines, starting_stop)
 
   # Find final line
   final_line = destination_line
 
-  # Union Square index of second line
-  dest_union_index = destination_line_union_square_index(final_line, lines)
+  # Find destination stop
+  final_stop = destination_stop
 
   # Index of destination
-  final_index = index_of_final_stop(final_line,lines)
+  final_index = index_of_final_stop(final_line,lines, final_stop)
 
-  # Determines which direction and how far final trip is
-  final_trip_length = final_index - dest_union_index
+  puts "You will begin your journey on line #{start_line} at #{starting_stop} and end on line #{final_line} at #{final_stop}."
 
-  # Array of second trip
-  if final_trip_length < 0
-    final_trip = lines[final_line][final_index..dest_union_index].reverse
-  elsif final_trip_length > 0
-    final_trip = lines[final_line][dest_union_index..final_index]
-  elsif final_trip_length == 0
-    puts "CHEERS M8"
+  # No journey
+  if start_line == final_line && start_ind == final_index
+    puts "There is no spoon."
+
+  elsif starting_stop == "Union Square" && final_stop == "Union Square"
+    puts "You do not require a train ride."
+
+  # Same line journey
+  elsif start_line == final_line
+
+    # Determines which direction and how far the trip is
+    only_trip_length = final_index - start_ind
+
+    if only_trip_length < 0
+      only_trip = lines[start_line][final_index..start_ind].reverse
+    elsif only_trip_length > 0
+      only_trip = lines[start_line][start_ind..final_index]
+    end
+
+    trip_function only_trip
+
+    # Stop count
+    if (only_trip.length - 1) > 1
+      puts "Your journey is #{only_trip.length - 1} stops long"
+    else
+      puts "Your journey is only 1 stop."
+    end
+
+  # Multi-line journey
+  else
+
+    # Union Square index of first line
+    start_union_index = start_line_union_square_index(start_line,lines)
+
+    # Determines which direction and how far first trip is
+    first_trip_length = start_union_index - start_ind
+
+    # Array of first trip
+    if first_trip_length < 0
+      first_trip = lines[start_line][start_union_index..start_ind].reverse
+    elsif first_trip_length > 0
+      first_trip = lines[start_line][start_ind..start_union_index]
+    elsif first_trip_length == 0
+      first_trip = lines[start_line][start_ind..start_union_index]
+    end
+
+    # First trip function
+    trip_function first_trip
+
+    # Notifies how long first line trip is
+    if starting_stop == "Union Square"
+      puts "Simply switch lines here at Union Square"
+    elsif (first_trip.length - 1) > 1
+      puts "Your trip on Line #{start_line} is #{first_trip.length - 1} stops long"
+    else
+      puts "Your trip on Line #{start_line} is only 1 stop."
+    end
+
+    # Union Square index of second line
+    dest_union_index = destination_line_union_square_index(final_line, lines)
+
+
+    # Determines which direction and how far final trip is
+    final_trip_length = final_index - dest_union_index
+
+    # Array of second trip
+    if final_trip_length < 0
+      final_trip = lines[final_line][final_index..dest_union_index].reverse
+    elsif final_trip_length > 0
+      final_trip = lines[final_line][dest_union_index..final_index]
+    elsif final_trip_length == 0
+      final_trip = lines[final_line][dest_union_index..final_index]
+    end
+
+    # Final trip function
+    trip_function final_trip
+
+    # Notifies how long first line trip is
+    if final_stop == "Union Square"
+      puts "Get out at Union Square"
+    elsif (final_trip.length - 1) > 1
+      puts "Your trip on Line #{final_line} is #{final_trip.length - 1} stops long"
+    else
+      puts "Your trip on Line #{final_line} is only 1 stop."
+    end
+
+    # Stop count
+    puts "Total trip length is #{first_trip.length + final_trip.length - 2} stops."
+
   end
 
-  # Final trip function
-  final_trip_function final_trip
-  puts "Your trip on line #{final_line} is #{final_trip.length - 1} stops long."
-
-  # Stop count
-  puts "Total trip length is #{first_trip.length + final_trip.length - 2} stops."
 
 end
 
