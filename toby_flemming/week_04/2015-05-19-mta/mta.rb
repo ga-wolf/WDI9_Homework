@@ -1,3 +1,5 @@
+require 'pry'
+
 class Line
 
   def initialize name, stations
@@ -5,7 +7,28 @@ class Line
     @stations = stations
   end
 
-  def self.travel start_station, end_station
+  def travel start_station, end_station
+    start_idx = @stations.index start_station
+    end_idx = @stations.index end_station
+
+    stations_past = Array.new @stations
+
+    # If idx's are in the wrong order adjust variables to suit.  Couldn't find a
+    # way of doing a backwards selection e.g. stations_past[4..0]
+    if start_idx > end_idx
+      stations_past.reverse!
+      start_idx = stations_past.index start_station
+      end_idx = stations_past.index end_station
+    end
+
+    # Create an array of stations past by slicing @stations and excluding the
+    # start/end elements
+    stations_past = stations_past[start_idx..end_idx]
+    stations_past.shift
+    stations_past.pop
+
+    puts "Travelling From #{start_station} To #{end_station}"
+    puts "Stations Past: #{stations_past.join(", ")}"
   end
 
   # Getters
@@ -44,9 +67,6 @@ class MTA
     line1 = find_line start_line
     line2 = find_line end_line
 
-    # Validate lines
-    if !line1 || !line2
-
     if line1 == line2
       line1.travel start_line, end_station
     else
@@ -70,8 +90,13 @@ end
 
 mta = MTA.new
 
+line = Line.new("N", ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"])
+line.travel "Union Square", "Times Square"
+
 # puts mta.find_line "N"
-mta.plan_trip "N", "", "N", ""
+# mta.plan_trip "N", "", "N", ""
+# Invalid line
+# Invalid station
 
 
 
