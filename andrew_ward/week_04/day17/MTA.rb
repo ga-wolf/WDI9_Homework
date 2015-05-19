@@ -1,10 +1,5 @@
 # Subway
 
-# Union Square Index in different lines hardcoded like a nub
-# union_line_N = lines[:N].find_index "Union Square"
-# union_line_L = lines[:L].find_index "Union Square"
-# union_line_Six = lines[:Six].find_index "Union Square"
-
 def starting_line
   puts "What line are you starting your journey on? N, L or Six?"
   gets.chomp.capitalize.to_sym
@@ -93,7 +88,7 @@ def the_big_function
 
   # First trip function
   first_trip_function first_trip
-  puts "Your trip on line #{start_line} is #{first_trip.length} stops long."
+  puts "Your trip on line #{start_line} is #{first_trip.length - 1} stops long."
 
   # Find final line
   final_line = destination_line
@@ -118,11 +113,10 @@ def the_big_function
 
   # Final trip function
   final_trip_function final_trip
-  puts "Your trip on line #{final_line} is #{final_trip_length} stops long."
+  puts "Your trip on line #{final_line} is #{final_trip.length - 1} stops long."
 
-
-
-  # LENGTH OF TRIP IS first_trip.length + final_trip.length
+  # Stop count
+  puts "Total trip length is #{first_trip.length + final_trip.length - 2} stops."
 
 end
 
