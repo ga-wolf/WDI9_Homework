@@ -28,12 +28,10 @@ class Line
     stations_past.shift
     stations_past.pop
 
-    puts "Travelling From #{start_station} To #{end_station}"
+    puts Rainbow("Travelling From #{start_station} To #{end_station} (Line #{@name})").black.bg(:yellow)
 
-    if stations_past.empty?
-      puts "That Was A Short Trip..."
-    else
-      puts "Stations Past: #{stations_past.join(", ")}"
+    if !stations_past.empty?
+      puts Rainbow("Stations Past: #{stations_past.join(", ")} (#{stations_past.length})").black.bg(:yellow)
     end
   end
 
@@ -70,16 +68,14 @@ class MTA
 
   # Instance Methods
   def plan_trip start_line, start_station, end_line, end_station
-    line1 = find_line start_line
-    line2 = find_line end_line
+    # line1 = find_line start_line
+    # line2 = find_line end_line
 
-    binding.pry
-
-    if line1 == line2
-      line1.travel start_line, end_station
+    if start_line == end_line
+      start_line.travel start_station, end_station
     else
-      line1.travel start_line, "Union Square"
-      line2.travel "Union Square", end_line
+      start_line.travel start_station, "UNION SQUARE"
+      end_line.travel "UNION SQUARE", end_station
     end
   end
 
@@ -123,14 +119,21 @@ class MTA
 
   def display_menu
     system "clear"
-    puts "-----------------------"
-    puts "          MTA"
-    puts "-----------------------"
-    puts "[v]  View Train Lines"
-    puts "[p]  Plan Trip"
+    puts Rainbow("-----------------------").red
+    puts Rainbow("          MTA").red
+    puts Rainbow("-----------------------").red
+    puts Rainbow("[v]  View Train Line Info").red
+    puts Rainbow("[p]  Plan Trip").red
+    puts Rainbow("[c]  Clear Menu").red
     puts ""
-    puts "[q]  Quit Program"
-    puts "-----------------------"
+    puts Rainbow("[q]  Quit Program").red
+    puts Rainbow("-----------------------").red
+  end
+
+  def display_train_info
+    @lines.each do |line|
+      puts Rainbow("#{line.get_name} - #{line.get_stations.join(", ")}").black.bg(:yellow)
+    end
   end
 
   def main
@@ -142,6 +145,8 @@ class MTA
       option = gets.chomp.downcase
 
       receive_trip_info if option == 'p'
+      display_menu if option == 'c'
+      display_train_info if option == 'v'
     end
 
   end
@@ -151,28 +156,6 @@ end
 
 mta = MTA.new
 mta.main
-
-# line = Line.new("N", ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"])
-# line.travel "Union Square", "Times Square"
-
-# puts mta.find_line "N"
-# mta.plan_trip "N", "", "N", ""
-# Invalid line
-# Invalid station
-
-
-
-# line = new Line('N', ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th']);
-#   this.lines.push(line);
-#   line = new Line('L', ['8th', '6th', 'Union Square', '3rd', '1st']);
-#   this.lines.push(line);
-#   line = new Line('6', ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place']);
-# var MTA = {};
-# MTA.lines = [];
-# MTA.findLine = function(name) {
-# MTA.planTrip = function(startLine, startStation, endLine, endStation) {
-# MTA.loadLines = function() {
-# MTA.main = function() {
 
 
 
