@@ -1,4 +1,5 @@
 require 'pry'
+require 'rainbow'
 
 class Line
 
@@ -21,14 +22,19 @@ class Line
       end_idx = stations_past.index end_station
     end
 
-    # Create an array of stations past by slicing @stations and excluding the
+    # Create an array of stations past by slicing stations_past and excluding the
     # start/end elements
     stations_past = stations_past[start_idx..end_idx]
     stations_past.shift
     stations_past.pop
 
     puts "Travelling From #{start_station} To #{end_station}"
-    puts "Stations Past: #{stations_past.join(", ")}"
+
+    if stations_past.empty?
+      puts "That Was A Short Trip..."
+    else
+      puts "Stations Past: #{stations_past.join(", ")}"
+    end
   end
 
   # Getters
@@ -57,9 +63,9 @@ class MTA
   def initialize
     @lines = []
 
-    @lines << Line.new("N", ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"])
-    @lines << Line.new("L", ["8th", "6th", "Union Square", "3rd", "1st"])
-    @lines << Line.new("6", ["Grand Central", "33rd", "28th", "23rd", "Union Square", "Astor Place"])
+    @lines << Line.new("N", ["TIMES SQUARE", "34TH", "28TH", "23RD", "UNION SQUARE", "8TH"])
+    @lines << Line.new("L", ["8TH", "6TH", "UNION SQUARE", "3RD", "1ST"])
+    @lines << Line.new("6", ["GRAND CENTRAL", "33RD", "28TH", "23RD", "UNION SQUARE", "ASTOR PLACE"])
   end
 
   # Instance Methods
@@ -67,12 +73,42 @@ class MTA
     line1 = find_line start_line
     line2 = find_line end_line
 
+    binding.pry
+
     if line1 == line2
       line1.travel start_line, end_station
     else
       line1.travel start_line, "Union Square"
       line2.travel "Union Square", end_line
     end
+  end
+
+  def receive_trip_info
+    while true
+      print "Start Line: "
+      start_line = find_line gets.chomp.upcase
+      break if start_line
+    end
+
+    while true
+      print "Start Station: "
+      start_station = gets.chomp.upcase
+      break if start_line.get_stations.index(start_station) != nil
+    end
+
+    while true
+      print "End Line: "
+      end_line = find_line gets.chomp.upcase
+      break if end_line
+    end
+
+    while true
+      print "End Station: "
+      end_station = gets.chomp.upcase
+      break if end_line.get_stations.index(end_station) != nil
+    end
+
+    plan_trip start_line, start_station, end_line, end_station
   end
 
   def find_line name
@@ -85,13 +121,39 @@ class MTA
     result
   end
 
+  def display_menu
+    system "clear"
+    puts "-----------------------"
+    puts "          MTA"
+    puts "-----------------------"
+    puts "[v]  View Train Lines"
+    puts "[p]  Plan Trip"
+    puts ""
+    puts "[q]  Quit Program"
+    puts "-----------------------"
+  end
+
+  def main
+    option = ''
+
+    display_menu
+    while option != 'q'
+      print "> "
+      option = gets.chomp.downcase
+
+      receive_trip_info if option == 'p'
+    end
+
+  end
+
 end
 
 
 mta = MTA.new
+mta.main
 
-line = Line.new("N", ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"])
-line.travel "Union Square", "Times Square"
+# line = Line.new("N", ["Times Square", "34th", "28th", "23rd", "Union Square", "8th"])
+# line.travel "Union Square", "Times Square"
 
 # puts mta.find_line "N"
 # mta.plan_trip "N", "", "N", ""
