@@ -9,4 +9,8 @@ class Animal
     @species = species
   end
 
+  def to_s
+    "#{@name.upcase} - #{age}yo #{gender} #{species}"
+  end
+
 end

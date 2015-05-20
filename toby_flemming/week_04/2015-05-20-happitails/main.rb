@@ -47,6 +47,14 @@ class Happitails
     f.close
   end
 
+  def display_animals
+    @shelter[:animals].each { |animal| puts animal.to_s }
+  end
+
+  def display_clients
+    @shelter[:clients].each { |client| puts client.to_s }
+  end
+
   def main
     option = ""
 
@@ -55,6 +63,8 @@ class Happitails
       print "> "
       option = gets.chomp.downcase
 
+      display_animals if option == 'da'
+      display_clients if option == 'dc'
       show_menu if option == 'c'
     end
   end

@@ -8,4 +8,8 @@ class Client
     @pets = pets
   end
 
+  def to_s
+    "#{@name.upcase} - #{@age}yo with #{children} children and #{pets} pets"
+  end
+
 end
