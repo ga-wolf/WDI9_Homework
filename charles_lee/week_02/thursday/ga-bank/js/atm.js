@@ -82,11 +82,12 @@ $(document).ready(function(){
 			var $buttVal = $(this).attr('value');	
 			var $cashMonID = $(this).siblings('.amount').attr('id');
 			var $cashMoney = parseInt($(this).siblings('.amount').val());
-		
+			//check if button value is equal to withdraw or deposit
 			if($buttVal === "Withdraw"){
-				console.log("withdraw");
+				//if withdraw pass ID and Cashmoney into ATM.Withdraw();
 				ATM.Withdraw("#"+ $buttID, $cashMoney);
 			}else if($buttVal === "Deposit"){
+				//if deposit pass ID and Cashmoney into ATM.Deposit();
 				console.log("deposit");
 				ATM.Deposit("#"+ $buttID, $cashMoney);
 			}

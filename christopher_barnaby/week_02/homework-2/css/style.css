@@ -153,7 +153,6 @@ h1 {
 }
 
 .boxes-small {
-  text-align: left;
   font-family: 'Lato', sans-serif;
   height: 120px;
   width: 120px;
@@ -161,6 +160,7 @@ h1 {
   opacity: 0.8;
   margin: 0px 10px 27px 0;
   padding: 6px 6px 6px 6px;
+  line-height: 120px;
   text-align: center;
 
   -webkit-transform: translateZ(0);
@@ -174,16 +174,18 @@ h1 {
   -webkit-transition-property: transform;
   transition-property: transform;
 }
-.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
 
 .boxes-small:hover, .hvr-grow:focus, .hvr-grow:active {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   background-color: darkgrey;
   opacity: 1;
+}
+
+.boxes-small span {
+  display:inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }
 
 a {
