@@ -9,7 +9,7 @@ def main_menu
   puts "[sqr] - square"
   puts "[exp] - exponent"
   puts "[sqroot] - square root"
-  puts "[f] - functionaltiy"
+  puts "[f] - functionality"
 end
 
 def fetch_input(prompt)
@@ -32,6 +32,9 @@ end
 
 def divide(a, b)
   a / b
+  if b == 0
+    return "you broke everything!"
+  end
 end
 
 def minus(a, b)
@@ -43,7 +46,7 @@ def square(a)
 end
 
 def exponent(a, b)
-  a**b
+  a ** b
 end
 
 def sqr_root(a)
@@ -61,7 +64,7 @@ main_menu
 user_choice = fetch_input "please enter your selection: "
 
 until user_choice == 'q'
-  #put code in here ya cun'
+  #put code in here
 
   if user_choice == 'a'
     num1 = fetch_number 'Enter your first number: '
