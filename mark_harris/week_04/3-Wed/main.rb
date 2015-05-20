@@ -9,7 +9,7 @@ $shelter = {  :animals => [],
               :clients => []
             }
 
-
+# Create a new client
 def create_client
   puts "Client Creation"
   print "Enter the client's name: "
@@ -26,7 +26,7 @@ def create_client
   puts Rainbow("#{name} is looking to adopt an animal").green
 end
 
-
+# Create a new animal
 def create_animal
   puts "Animal Creation"
   print "Enter the animal's name: "
@@ -47,9 +47,9 @@ def create_animal
 end
 
 
-
+# Display the main menu
 def main_menu
-  puts "\n\n"
+  puts "\n"
   puts "[1] Display all animals"
   puts "[2] Display all clients"
   puts "[3] Create an animal"
@@ -58,62 +58,94 @@ def main_menu
   puts "[6] Put an animal up for adoption"
   puts "[0] Quit"
   print "Make a selection: "
-  user_choice = gets.to_i
+  user_choice = gets.chomp
 end
 
-
+# Display the list of clients
 def client_list
   puts "\n"
-  # create a list of the registered clients
+  # Find all clients
   $shelter[:clients].each_with_index do |client, i|
     puts "[#{i}] #{client.name}"
   end
   print "Select the client: "
-  user_choice = gets.to_i
+  user_choice = gets.chomp
 end
 
-
+# Display the list of animals in the shelter
 def animal_list
   puts "\n"
-  # create a list of animals in the shelter
+  # Find all animals
   $shelter[:animals].each_with_index do |animal, i|
     puts "[#{i}] #{animal.name}"
   end
   print "Select who is being adopted: "
-  user_choice = gets.to_i
+  user_choice = gets.chomp
 end
 
-
+# Display the list of pets a client has
 def pets_list client
-  puts "\n"
-  # create a list of pets the client has
-  $shelter[:clients][client].pets.each_with_index do |animal, i|
-    puts "[#{i}] #{animal.name}"
+  if valid_client?(client)
+    if $shelter[:clients][client.to_i].pets.length == 0
+      puts Rainbow("\nNo pets to put up for adoption").magenta
+      ""
+    else
+    puts "\n"
+      # create a list of pets the client has
+      $shelter[:clients][client.to_i].pets.each_with_index do |animal, i|
+        puts "[#{i}] #{animal.name}"
+      end
+      print "Select who is being left: "
+      user_choice = gets.chomp
+    end
+  else
+    ""
   end
-  print "Select who is being left: "
-  user_choice = gets.to_i
 end
 
-
+# Transfer an animal from shelter => client
 def adopt_animal client, animal
-  
-  puts Rainbow("\n#{$shelter[:animals][animal].name} has been adopted by #{$shelter[:clients][client].name}").magenta
-
-  # add the animal to the clients list of pets
-  $shelter[:clients][client].pets << $shelter[:animals][animal]
-  # remove animal from the list in the shelter
-  $shelter[:animals].delete_at(animal)
+  unless valid_client?(client) && valid_animal?(animal)
+    puts Rainbow("\nSelection not valid, please try again").magenta
+  else
+    puts Rainbow("\n#{$shelter[:animals][animal.to_i].name} has been adopted by #{$shelter[:clients][client.to_i].name}").magenta
+    # add the animal to the clients list of pets
+    $shelter[:clients][client.to_i].pets << $shelter[:animals][animal.to_i]
+    # remove animal from the list in the shelter
+    $shelter[:animals].delete_at(animal.to_i)
+  end
 end
 
-
+# Transfer an animal from client => shelter
 def leave_animal client, animal
+  unless valid_client?(client) && valid_animal?(animal)
+    puts Rainbow("\nSelection not valid, please try again").magenta
+  else
+    puts Rainbow("\n#{$shelter[:clients][client.to_i].pets[animal.to_i].name} has been given up by #{$shelter[:clients][client.to_i].name}").blue
 
-  puts Rainbow("\n#{$shelter[:clients][client].pets[animal].name} has been given up by #{$shelter[:clients][client].name}").blue
+    # add the animal to the list in the shelter
+    $shelter[:animals] << $shelter[:clients][client.to_i].pets[animal.to_i]
+    # remove the animal from the client's list of animals
+    $shelter[:clients][client.to_i].pets.delete_at(animal.to_i)
+  end
+end
 
-  # add the animal to the list in the shelter
-  $shelter[:animals] << $shelter[:clients][client].pets[animal]
-  # remove the animal from the client's list of animals
-  $shelter[:clients][client].pets.delete_at(animal)
+# Confirm the animal selection is in the valid range
+def valid_animal? animal
+  if animal == "" || (animal.to_i < 0 && animal.to_i >= $shelter[:animals].length)
+    false
+  else
+    true
+  end
+end
+
+# Confirm the client selection is in the valid range
+def valid_client? client
+  if  client == "" || (client.to_i < 0 && client.to_i >= $shelter[:clients].length) 
+    false
+  else
+    true
+  end
 end
 
 
@@ -131,29 +163,28 @@ $shelter[:clients] << c1 << c2 << c3
 system "clear"
 user_choice = main_menu
 
-until user_choice == 0 
+until user_choice == "0" 
 
   case user_choice
-  when 1
+  when "1"
     puts "\n\n"
     puts $shelter[:animals]
-  when 2
+  when "2"
     puts "\n\n"
     puts $shelter[:clients]
-  when 3
+  when "3"
     puts "\n\n"
     create_animal
-  when 4
+  when "4"
     puts "\n\n"
     create_client
-  when 5
+  when "5"
     adopt_animal client_list, animal_list
-  when 6
+  when "6"
     client = client_list
     leave_animal client, pets_list(client)
   end
 
-  #binding.pry
   user_choice = main_menu
 
 end
