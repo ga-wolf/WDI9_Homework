@@ -29,7 +29,7 @@ def plan_trip(line1, start, line2, stop)
     puts "You travel along these stops:"
     p travel(line1[:stops], find_index(line1, start), find_index(line1, "Union Square"))
     puts "changing at Union Square you continue along:"
-    p travel(line2[:stops], find_index(line2, "Union Square"), find_index(line2, stop))
+    p ( travel(line2[:stops], find_index(line2, "Union Square"), find_index(line2, stop)) )[1..-1]
   end
 end
 
