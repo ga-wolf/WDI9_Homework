@@ -1,4 +1,6 @@
 require 'pry'
+require 'yaml'
+
 require_relative 'animal'
 require_relative 'client'
 
@@ -30,14 +32,19 @@ class Happitails
     puts "[aa]  Adopt Animal"
     puts "[ga]  Give Up Animal"
     puts ""
+    puts "[c]   Clear Screen"
     puts "[q]   Quit"
     puts "------------------------"
   end
 
   def load_data
+    f = File.open "data"
   end
 
   def save_data
+    f = File.new "data", "w"
+    f.puts @shelter.to_yaml
+    f.close
   end
 
   def main
@@ -47,6 +54,8 @@ class Happitails
     while option != 'q'
       print "> "
       option = gets.chomp.downcase
+
+      show_menu if option == 'c'
     end
   end
 
@@ -72,4 +81,5 @@ happitails.shelter[:animals] << Animal.new("Goldy", 15, "M", "Fish")
 happitails.shelter[:clients] << Client.new("Toby", 0, 22, 0)
 happitails.shelter[:clients] << Client.new("Crazy Cat Lady", 0, 85, 100)
 
+# binding.pry
 happitails.main
