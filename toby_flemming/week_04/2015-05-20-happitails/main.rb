@@ -39,12 +39,20 @@ class Happitails
 
   def load_data
     f = File.open "data"
+    
+    if f && f.size > 0
+      @shelter = YAML.load f.read
+      f.close
+    end
   end
 
   def save_data
     f = File.new "data", "w"
-    f.puts @shelter.to_yaml
-    f.close
+
+    if f
+      f.puts @shelter.to_yaml
+      f.close
+    end
   end
 
   def display_animals
@@ -96,6 +104,8 @@ class Happitails
   def main
     option = ""
 
+    load_data
+
     show_menu
     while option != 'q'
       print "> "
@@ -108,6 +118,8 @@ class Happitails
 
       show_menu if option == 'c'
     end
+
+    save_data
   end
 
 end
@@ -123,14 +135,14 @@ end
 happitails = Happitails.new
 
 # Animals
-happitails.shelter[:animals] << Animal.new("Ruby", 10, "F", "Cat")
-happitails.shelter[:animals] << Animal.new("Jasper", 7, "M", "Cat")
-happitails.shelter[:animals] << Animal.new("Sally", 1, "F", "Dog")
-happitails.shelter[:animals] << Animal.new("Goldy", 15, "M", "Fish")
+# happitails.shelter[:animals] << Animal.new("Ruby", 10, "F", "Cat")
+# happitails.shelter[:animals] << Animal.new("Jasper", 7, "M", "Cat")
+# happitails.shelter[:animals] << Animal.new("Sally", 1, "F", "Dog")
+# happitails.shelter[:animals] << Animal.new("Goldy", 15, "M", "Fish")
 
-# Clients
-happitails.shelter[:clients] << Client.new("Toby", 0, 22)
-happitails.shelter[:clients] << Client.new("Crazy Cat Lady", 0, 85)
+# # Clients
+# happitails.shelter[:clients] << Client.new("Toby", 0, 22)
+# happitails.shelter[:clients] << Client.new("Crazy Cat Lady", 0, 85)
 
-# binding.pry
 happitails.main
+
