@@ -19,6 +19,19 @@ class Happitails
   end
 
   def show_menu
+    system "clear"
+    puts "------------------------"
+    puts "    Animal  Shelter"
+    puts "------------------------"
+    puts "[da]  Display All Animals"
+    puts "[dc]  Display All Clients"
+    puts "[ca]  Create An Animal"
+    puts "[cc]  Create A Client"
+    puts "[aa]  Adopt Animal"
+    puts "[ga]  Give Up Animal"
+    puts ""
+    puts "[q]   Quit"
+    puts "------------------------"
   end
 
   def load_data
@@ -27,8 +40,14 @@ class Happitails
   def save_data
   end
 
-  # Start of Program
   def main
+    option = ""
+
+    show_menu
+    while option != 'q'
+      print "> "
+      option = gets.chomp.downcase
+    end
   end
 
 end
@@ -53,4 +72,4 @@ happitails.shelter[:animals] << Animal.new("Goldy", 15, "M", "Fish")
 happitails.shelter[:clients] << Client.new("Toby", 0, 22, 0)
 happitails.shelter[:clients] << Client.new("Crazy Cat Lady", 0, 85, 100)
 
-binding.pry
+happitails.main
