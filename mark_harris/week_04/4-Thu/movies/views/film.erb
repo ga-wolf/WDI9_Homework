@@ -1,0 +1,34 @@
+
+
+
+
+<%
+  @title
+  @year
+  @rated
+  @released
+  @runtime
+  @genre
+  @director
+  @actors
+  @plot
+  @poster
+%>
+
+
+<div class="movie-wrapper">
+  <div class="poster">
+    <img src="<%= @poster %>">
+  </div>
+  <div class="info">
+    <p><%= @title %></p>
+    <p><%= @year %></p>
+    <p><%= @rated %></p>
+    <p><%= @released %></p>
+    <p><%= @runtime %></p>
+    <p><%= @genre %></p>
+    <p><%= @director %></p>
+    <p><%= @actors %></p>
+    <p><%= @plot %></p>
+  </div>
+</div>
