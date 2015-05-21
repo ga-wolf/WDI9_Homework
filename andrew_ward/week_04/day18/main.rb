@@ -113,9 +113,7 @@ def adopt_animal
 
   response = gets.to_i
 
-  adopter = $shelter[:clients].index
-
-  # binding.pry
+  adopter = $shelter[:clients][response]
 
   puts "Which animal would #{adopter.name} like to adopt?"
 
@@ -123,13 +121,17 @@ def adopt_animal
     puts "[#{index}] -- #{client.name}"
   end
 
-  adoptee = $shelter[:animals].index
+  input = gets.to_i
 
-  p adoptee
+  adoptee = $shelter[:animals][input]
 
   adopter.pets << adoptee
 
+  $shelter[:animals].delete_at(input)
+
   p adopter.pets
+
+  p $shelter[:animals]
 
   main_menu
 
@@ -138,6 +140,8 @@ end
 def deposit_animal
 
 end
+
+# binding.pry
 
 $shelter[:animals] << Animal.new('George', 28, 'Male', 'Dog')
 $shelter[:animals] << Animal.new("Jerry", 88, 'male', 'cat')
@@ -148,11 +152,11 @@ $shelter[:clients] << Client.new("Rand", 0, 24)
 $shelter[:clients] << Client.new('Groucho', 3, 76)
 
 
+# binding.pry
+
 binding.pry
 
-
-
-
+puts 'test'
 
 
 
