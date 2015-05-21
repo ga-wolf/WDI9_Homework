@@ -21,3 +21,9 @@ end
 ##### TO GET MOVIES WITH SPACES IN IT YOU HAVE TO INSERT A PLUS WHEN THERE SHOULD BE A SPACE
 
 ##### TO GET MULTIPLE TITLES SEARCH WITH 'S' RATHER THAN 'T' IN THE URL
+
+# <ul>
+# <% @search_results.each do |results| %> 
+# <li><%= result %> </li>
+# <%end%>
+# </ul>
