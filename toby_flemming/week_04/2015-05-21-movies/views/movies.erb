@@ -1,23 +1,26 @@
 <% if @search_str %>
 
+
     <% if @movies.length == 1 %>
-      
       <% @movie = @movies.first %>
-      <div class="media">
-        <div class="media-left">
-          <a href="">
-            <img class="media-object" src="<%= @movie["Poster"] %>" alt="...">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Media heading</h4>
-          ...
-        </div>
-      </div>
+      
+      
 
     <% elsif @movies.length > 1 %>
-      
-      
+
+        <% @movies.each do |movie| %>
+          <div class="media">
+            <div class="media-left">
+              <a href="/movie/<%= movie["imdbID"] %>">
+                <img class="media-object" src="<%= movie["Poster"] %>" alt="...">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"><%= movie["Title"] %> (<%= movie["Runtime"] %>)</h4>
+              <%= movie["Plot"] %>
+            </div>
+          </div>
+        <% end %>
 
     <% end %>
 

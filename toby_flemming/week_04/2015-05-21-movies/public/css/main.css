@@ -14,3 +14,10 @@ body {
 form {
   display: table-row; /*Bootstrap search breaks otherwise*/
 }
+
+img {
+  height: 150px;
+  width: 100px;
+  background-color: grey;
+  padding: 4px;
+}
