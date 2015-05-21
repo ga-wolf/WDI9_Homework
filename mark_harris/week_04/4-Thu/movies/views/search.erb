@@ -1,0 +1,20 @@
+
+
+
+
+
+
+
+<%# @search_data %>
+
+
+<br>Search<br>
+
+<%# @search_data["Search"][0] %>
+
+
+<% @search_data["Search"].each do |film| %>
+
+<a href="/film?title=<%= film["Title"] %>"><%= film["Title"] %> (<%= film["Year"] %> - <%= film["Type"] %>)</a><br>
+
+<% end %>
