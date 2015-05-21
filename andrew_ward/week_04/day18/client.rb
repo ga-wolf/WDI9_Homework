@@ -1,12 +1,12 @@
 class Client
 
-  attr_accessor :name, :number_of_children, :age, :number_of_pets
+  attr_accessor :name, :number_of_children, :age, :number_of_pets, :pets
 
-  def initialize name, number_of_children, age, number_of_pets
+  def initialize name, number_of_children, age
     @name = name
     @number_of_children = number_of_children
     @age = age
-    @number_of_pets = number_of_pets
+    @number_of_pets = 0
     @pets = []
   end
 
