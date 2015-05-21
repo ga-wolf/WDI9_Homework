@@ -124,25 +124,7 @@ class Happitails
 
 end
 
-
-
-
-
-
-
-
 # Create Program Instance
 happitails = Happitails.new
-
-# Animals
-# happitails.shelter[:animals] << Animal.new("Ruby", 10, "F", "Cat")
-# happitails.shelter[:animals] << Animal.new("Jasper", 7, "M", "Cat")
-# happitails.shelter[:animals] << Animal.new("Sally", 1, "F", "Dog")
-# happitails.shelter[:animals] << Animal.new("Goldy", 15, "M", "Fish")
-
-# # Clients
-# happitails.shelter[:clients] << Client.new("Toby", 0, 22)
-# happitails.shelter[:clients] << Client.new("Crazy Cat Lady", 0, 85)
-
 happitails.main
 
