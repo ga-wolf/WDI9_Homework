@@ -1,25 +1,170 @@
 
 
+/*************************************
+    Layout
+*************************************/
+body {
+  background: url("../images/bg2.jpg");
+  background-size: cover;
+  font-family: Helvetica Neue,Arial,Helvetica,sans-serif;
+}
 
 .container {
   max-width: 960px;
   margin: 15px auto;
-  border: 1px solid black;
+  position: relative;
+  box-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+header {
+  position: relative;
+  height: 100px;
+  background: url("../images/header.png");
+  background-size: contain; 
+}
+
+.logo {
+  background: url("../images/mymdb_logo.png") no-repeat center;
+  width: 148px;
+  height: 57px;
+  display: inline-block;
+  position: absolute;
+  top: 21px;
+  left: 21px;
 }
 
 .search {
-  max-width: 400px;
-  margin: 15px auto;
-  text-align: center;
-}
-
-.poster {
-  max-width: 300px;
+  position: absolute;
+  top: 30px;
+  right: 21px;
   display: inline-block;
 }
 
-.info {
+
+
+/*************************************
+    Pages
+*************************************/
+.content-wrapper {
+  background: -moz-linear-gradient(top,rgba(0,0,0,0.3) 0,rgba(0,0,0,0) 7px);
+  background: -webkit-linear-gradient(top,rgba(0,0,0,0.3) 0,rgba(0,0,0,0) 7px);
+  background: -ms-linear-gradient(top,rgba(0,0,0,0.3) 0,rgba(0,0,0,0) 7px);
+  background: linear-gradient(top,rgba(0,0,0,0.3) 0,rgba(0,0,0,0) 7px);
+  background-repeat: no-repeat;
+  background-size: 100% 7px;
+  background-color: #FFF;
+  padding: 15px;
+  display: flex;
+}
+
+
+.content {
+  background-color: rgb(255,255,255);
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 15px;
+  padding: 30px;
+  flex: 1;
+}
+
+/*************************************
+    Films
+*************************************/
+.poster { 
+  display: inline-block; 
+  width: 300px; 
+  text-align: center;
+}
+.poster img { width: 250px;}
+
+.film-info, .search-info {
   max-width: 600px;
   display: inline-block;
   vertical-align: top;
+  margin: auto;
 }
+
+.film-title { vertical-align: bottom; }
+
+.title {
+  line-height: 27px;
+  font-size: 2.5em;
+  margin-right: 10px;
+}
+
+.details ul {
+  padding: 0;
+  list-style-type: none;
+}
+.details li {
+  display: inline-block;
+  border-right: 1px solid #cccccc;
+  padding: 8px 12px 8px 8px;
+}
+
+.details li:last-child { border-right: 0 }
+
+.plot {
+  text-align: justify;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  padding: 30px 20px;
+}
+
+/*************************************
+    Search
+*************************************/
+.search-info {
+  margin: 15px auto;
+  min-height: 400px;
+  color: #000000;
+}
+
+.search-info ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.search-info li { padding: 5px; }
+
+.search-info li:hover {
+  color: #ffffff;
+  background-color: #555555;
+}
+
+.search-info a { 
+  color: #555555;
+  text-decoration: none;
+}
+
+.error-wrapper {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.error-wrapper img {
+  max-width: 100%;
+}
+
+
+
+
+footer {
+  height: 80px;
+  background-color: #999999;
+}
+
+input {
+  font-size: 1.1em;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+button {
+  font-size: 1.1em;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+
+

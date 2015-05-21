@@ -12,23 +12,36 @@
   @director = @film_data["Director"]
   @actors = @film_data["Actors"]
   @plot = @film_data["Plot"]
-  @poster = @film_data["Poster"]
+
+  if @film_data["Poster"] == "N/A"
+    @poster = "images/film-roll.png"
+  else
+    @poster = @film_data["Poster"]
+  end
 %>
 
 
-<div class="movie-wrapper">
-  <div class="poster">
-    <img src="<%= @poster %>">
-  </div>
-  <div class="info">
-    <p><%= @title %></p>
-    <p><%= @year %></p>
-    <p><%= @rated %></p>
-    <p><%= @released %></p>
-    <p><%= @runtime %></p>
-    <p><%= @genre %></p>
-    <p><%= @director %></p>
-    <p><%= @actors %></p>
-    <p><%= @plot %></p>
+<div class="poster">
+  <img src="<%= @poster %>">
+</div>
+
+ <div class="content"> 
+  <div class="film-info">
+    <div class="film-title">
+      <span class="title"><%= @title %></span> (<%= @year %>)
+    </div>
+    
+    <div class="details">
+      <ul>
+        <li><%= @rated %></li>
+        <li><%= @runtime %></li>
+        <li><%= @genre %></li>
+        <li><%= @released %></li>
+      </ul>
+    </div>
+
+    <div class="plot"><%= @plot %></div>
+    <p><strong>Director:</strong> <%= @director %></p>
+    <p><strong>Stars:</strong> <%= @actors %></p>
   </div>
 </div>

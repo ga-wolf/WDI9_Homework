@@ -4,8 +4,6 @@ require "httparty"
 
 
 
-
-
 get "/" do
   erb :home
 end
@@ -15,6 +13,7 @@ end
 get "/search" do
   @film = params[:title]
 
+  # Search for films
   url = "http://www.omdbapi.com/?s=#{ @film }"
   @search_data = HTTParty.get(url)
 
@@ -27,21 +26,19 @@ get "/search" do
   if @search_data.has_key?("Search")
 
     if @search_data["Search"].length == 1
-   
-      url = "http://www.omdbapi.com/?t=#{ @search_data["Search"][0]["Title"] }"
+      # Find the search results from OMDB Api
+      url = "http://www.omdbapi.com/?i=#{ @search_data["Search"][0]["imdbID"] }"
       @film_data = HTTParty.get(url)
+
+      # Display the film page
       erb :film
- 
     else
- 
+      # Display the search results
       erb :search
- 
     end
-
   else
-
+    # Display an error page
     erb :error
-  
   end
 
 end
@@ -50,12 +47,18 @@ end
 
 get "/film" do
 
-  @film = params[:title]
-  url = "http://www.omdbapi.com/?t=#{ @film }"
+  # Find the film information
+  @film = params[:id]
+  url = "http://www.omdbapi.com/?i=#{ @film }"
   @film_data = HTTParty.get(url)
 
+  # Test that a film was found
   if @film_data["Response"]
+    # Display the film page
     erb :film
+  else
+    # Display the error page
+    erb :error
   end
 
 end

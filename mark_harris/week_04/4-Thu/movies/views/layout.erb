@@ -12,16 +12,25 @@
 
   <div class="container">
 
-    <div class="search">
-      <form action="/search">
+    <header>
+    
+      <div class="logo"></div>
+      <div class="search">
+        <form action="/search">
+          <input type="text" name="title" size="40" placeholder="Search for a film" autofocus>
+          <button>Search</button>
+        </form>
+      </div>
 
-        <input type="text" name="title" placeholder="Search for a film" autofocus>
-        <button>Search</button>
+    </header>
 
-      </form>
-    </div>
+    
 
-    <%= yield %>
+    <section class="content-wrapper">
+        <%= yield %>
+    </section>
+
+    <footer></footer>
 
   </div>
 </body>
