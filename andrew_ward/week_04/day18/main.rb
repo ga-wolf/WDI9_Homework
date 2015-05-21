@@ -117,8 +117,8 @@ def adopt_animal
 
   puts "Which animal would #{adopter.name} like to adopt?"
 
-  $shelter[:animals].each_with_index do |client, index|
-    puts "[#{index}] -- #{client.name}"
+  $shelter[:animals].each_with_index do |animal, index|
+    puts "[#{index}] -- #{animal.name}"
   end
 
   input = gets.to_i
@@ -129,9 +129,7 @@ def adopt_animal
 
   $shelter[:animals].delete_at(input)
 
-  p adopter.pets
-
-  p $shelter[:animals]
+  puts Rainbow("#{adopter.name} has adopted #{adoptee.name}.").cyan
 
   main_menu
 
@@ -139,9 +137,31 @@ end
 
 def deposit_animal
 
-end
+  puts "Which client no longer wants their animal?"
 
-# binding.pry
+  $shelter[:clients].each_with_index do |client,index|
+    puts "[#{index}] -- #{client.name}"
+  end
+
+  response = gets.to_i
+
+  depositer = $shelter[:clients][response]
+
+  puts "Which animal does #{depositer.name} no longer want?"
+
+  depositer.pets.each_with_index do |animal,index|
+    puts "[#{index}] -- #{animal.name}"
+  end
+
+  input = gets.to_i
+
+  depositee = depositer.pets[input]
+
+  $shelter[:animals] << depositee
+
+  puts Rainbow("#{depositer.name} has abandoned #{depositee.name} with us.").cyan
+
+end
 
 $shelter[:animals] << Animal.new('George', 28, 'Male', 'Dog')
 $shelter[:animals] << Animal.new("Jerry", 88, 'male', 'cat')
@@ -150,9 +170,6 @@ $shelter[:animals] << Animal.new('Tom', 24, 'male', 'mouse')
 $shelter[:clients] << Client.new('Josh', 24124, 19)
 $shelter[:clients] << Client.new("Rand", 0, 24)
 $shelter[:clients] << Client.new('Groucho', 3, 76)
-
-
-# binding.pry
 
 binding.pry
 
