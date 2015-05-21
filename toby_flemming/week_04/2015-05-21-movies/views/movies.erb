@@ -1,0 +1,44 @@
+<% if @movies %>
+
+    <% if @movies.length == 1 %>
+      <% movie = @movies.first %>
+      <div class="media">
+        <div class="media-left">
+            <img class="media-object" src="<%= movie["Poster"] %>" alt="...">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading"><%= movie["Title"] %> (<%= movie["Runtime"] %>)</h4>
+          <h5>Rated  <%= movie["imdbRating"] %> (IMDb)</h5>
+          <i><%= movie["Genre"] %></i>
+          <p><%= movie["Plot"] %><p>
+
+          <h4>Actors</h4>
+          <p><%= movie["Actors"] %></p>
+
+          <h4>Awards</h4>
+          <p><%= movie["Awards"] %></p>
+
+          <h4></h4>
+        </div>
+      </div>
+      
+
+    <% elsif @movies.length > 1 %>
+
+      <% @movies.each do |movie| %>
+        <div class="media">
+          <div class="media-left">
+            <a href="/movie/<%= movie["imdbID"] %>">
+              <img class="media-object" src="<%= movie["Poster"] %>" alt="...">
+            </a>
+          </div>
+          <div class="media-body">
+            <h4 class="media-heading"><%= movie["Title"] %> (<%= movie["Runtime"] %>)</h4>
+            <%= movie["Plot"] %>
+          </div>
+        </div>
+      <% end %>
+      <center><h6>Results Found: <%= @movies.length %></h6></center>
+    <% end %>
+
+<% end %>
