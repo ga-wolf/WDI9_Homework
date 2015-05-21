@@ -25,5 +25,21 @@ end
 
 
 get '/movie/:id' do
+  id = params[:id]
 
+  unless !id || id.empty?
+    url = "http://omdbapi.com/?i=#{id}"
+    complete_data = HTTParty.get(url)
+
+    @movies = [complete_data]
+  end
+
+  erb :movies
 end
+
+
+
+
+
+
+
