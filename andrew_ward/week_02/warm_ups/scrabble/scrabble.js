@@ -1,7 +1,7 @@
 // Letter Values
 
 // You'll need these:
-
+  
 // Letter                           Value
 // A, E, I, O, U, L, N, R, S, T       1
 // D, G                               2
@@ -84,26 +84,24 @@ var group10 = {
   value: 10
 };
 
-
-
 letters = [group1,group2,group3,group4,group5,group8,group10];
 
-var scrabbleScore = function (str) {
-  var score = 0; // total score
-  str.toUpperCase(); // makes upper case to match letters in the objects
-  for (var i = 0; i < str.length; i++) { // cycles through letters in string
-    for (var x = 0; x < letters.length; x++) { // cycles through letters array
-      for (var y = 0; y < letters[x].length; y++) { // cycles through letters key in objects within letters array
-        if (str[i] === letters[x].y) {
-          score = score + letters[x]['value'];
-          console.log(score);
-        }
-      }
-    }
+// var scrabbleScore = function (str) {
+//   var score = 0; // total score
+//   str.toUpperCase(); // makes upper case to match letters in the objects
+//   for (var i = 0; i < str.length; i++) { // cycles through letters in string
+//     for (var x = 0; x < letters.length; x++) { // cycles through letters array
+//       for (var y = 0; y < letters[x].length; y++) { // cycles through letters key in objects within letters array
+//         if (str[i] === letters[x].y) {
+//           score = score + letters[x]['value'];
+//           console.log(score);
+//         }
+//       }
+//     }
 
-  }
-  return score;
-};
+//   }
+//   return score;
+// };
 
 var scrabble = function (str) {
   var score = 0; // score to return at end

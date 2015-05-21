@@ -1,0 +1,10 @@
+body {
+  background-color: brown;
+  text-align: right;
+  border: 30px solid blue;
+}
+.chicken {
+  background-image: url(http://www.motherearthnews.com/~/media/Images/MEN/Editorial/Articles/Online%20Articles/2010/07-01/Barred%20Plymouth%20Rock%20Chickens%20Heritage%20Poultry%20Breeds/barred-rock-chicken.jpg);
+  height: 800px;
+  width: 600px;
+}
