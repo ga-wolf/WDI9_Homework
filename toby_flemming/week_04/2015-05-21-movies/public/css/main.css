@@ -1,28 +1,16 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+/*@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
 
 body {
   font-family: 'Roboto', sans-serif;
-}
+}*/
 
-h1, h2 {
-  margin: 0;
-}
-
-#container {
-  text-align: center;
+.wrapper {
   border: 2px solid black;
-  width: 600px;
-  margin: 0 auto;
   border-radius: 15px;
-  padding: 15px;
+  padding: 0 15px 15px 15px;
+  margin-top: 50px;
 }
 
 form {
-  margin-top: 15px;
-  text-align: center;
-}
-
-label, input, button {
-  display: block;
-  margin: 0 auto;
+  display: table-row; /*Bootstrap search breaks otherwise*/
 }

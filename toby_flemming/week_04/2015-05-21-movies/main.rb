@@ -5,7 +5,8 @@ require 'httparty'
 get '/' do
   @search_str = params[:search_str]
   url = "http://omdbapi.com/?s=#{@search_str}"
-  @movies = HTTParty.get(url)["Search"]
+
+  @movies = HTTParty.get(url)["Search"] unless !@search_str
 
   # 's' option giving a compact result for each movie.  We want the full thing...
   if @movies

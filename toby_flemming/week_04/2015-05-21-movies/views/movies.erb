@@ -1,13 +1,25 @@
-<form action="/">
-<input type="text" name="search_str" placeholder="Please Enter A Movie...">
-<button>Submit</button>  
-</form>
-
 <% if @search_str %>
-  <h1>Results</h1>
-  <% if @movies.length == 1 %>
-    Only Found 1
-  <% elsif @movies.length > 1 %>
-    Found multiple
-  <% end %>
+
+    <% if @movies.length == 1 %>
+      
+      <% @movie = @movies.first %>
+      <div class="media">
+        <div class="media-left">
+          <a href="">
+            <img class="media-object" src="<%= @movie["Poster"] %>" alt="...">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Media heading</h4>
+          ...
+        </div>
+      </div>
+
+    <% elsif @movies.length > 1 %>
+      
+      
+
+    <% end %>
+
+    <center><h6>Results Found: <%= @movies.length %></h6></center>
 <% end %>
