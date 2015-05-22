@@ -1,0 +1,16 @@
+
+
+<p>Movie Title: <%= @name %></p>
+<p>Released: <%= @released %></p>
+<p>Run Time: <%= @run_time %></p>
+<p>Plot: <%= @plot %> </p>
+
+<% if @movie_d["Poster"] != "N/A" %>
+<img id="poster" src= <%= @poster %> alt="poster here" >
+
+<% else %>
+<p>Poster Picture: Unavailable :( </p>
+<% end %>
+
+
+
