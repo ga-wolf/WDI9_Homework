@@ -3,11 +3,12 @@ var app = app || {};
 app.btnClick = function() {
   var status = app.checkStatus();
 
-  if (status === 'connected') {
-    FB.logout();
-  } else {
+  if (status !== 'connected') {
     FB.login();
   }
+
+  var qs = '?token=' + app.token;
+  window.location.href = '/friends' + qs;
 };
 
 app.checkStatus = function() {
