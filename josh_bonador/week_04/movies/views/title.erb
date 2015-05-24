@@ -1,0 +1,15 @@
+<h1><a href="http://localhost:4567/movies">The Everything Database</a></h1>
+
+<p>Input movie title</p>
+
+<form action="/movies">
+  <input type="text" name="movietitle" placeholder="Enter Movie Here">
+  <button>Search</button>
+</form>
+
+<li>Title: <%= @movie_data['Title'] %></li>
+<li>Year: <%= @movie_data['Year'] %></li>
+<li>Director: <%= @movie_data['Director'] %></li>
+<li>Plot: <%= @movie_data['Plot'] %></li>
+<li>Poster:</li>
+<img src="<%= @movie_data['Poster']%>">
