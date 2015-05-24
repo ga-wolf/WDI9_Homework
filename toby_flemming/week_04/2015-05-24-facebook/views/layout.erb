@@ -4,42 +4,17 @@
   <meta charset="UTF-8">
   <title>Movie Database</title>
 
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <script src="/js/facebook.js"></script>
+  <script src="/js/main.js"></script>
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 
   <div id="fb-root"></div>
-  <script>
-  // Ensures FB object has been created before using it.  fbAsyncInit will be 
-  // called by the above code.
-  window.fbAsyncInit = function() {
-    
-    FB.init({
-      appId      : '885063518206716',
-      status     : true,
-      version    : 'v2.3'
-    });
-
-    getAccessToken = function(response) {
-      console.log(FB.getAccessToken());
-    }
-
-    FB.Event.subscribe('auth.authResponseChange', getAccessToken);
-  };
-
-
-  // App Setup
-  (function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-   js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-  </script>
-
   <%= yield %>
 
 </body>
