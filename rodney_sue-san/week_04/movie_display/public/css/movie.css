@@ -1,0 +1,41 @@
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+
+body{
+  color : rgb(228, 241, 254);
+  background-color: rgb(82,179,217);
+  display: center;
+  margin-top: 0;
+}
+
+.container{
+  position: relative;
+  display: center;
+  background-color: rgb(25,181,254);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  border: 1px solid black;
+  padding-bottom: 5%;
+}
+
+h1{
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 2em;
+  text-shadow: 2px 2px black;
+}
+
+p:first-of-type{
+  margin-top: 1em;
+}
+
+#poster{
+  
+  width: 33%;
+  margin-top: 3em;
+  margin-left: 33%;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.movies{
+  display: block;
+}
