@@ -4,9 +4,21 @@
     Layout
 *************************************/
 body {
-  background: url("../images/bg2.jpg");
-  background-size: cover;
+  background-color: #000000;
   font-family: Helvetica Neue,Arial,Helvetica,sans-serif;
+}
+
+body::after {
+  content: ""; 
+  background: #000000 url("../images/bg2.jpg");
+  background-size: cover;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
 
 .container {
@@ -77,7 +89,7 @@ header {
 }
 .poster img { width: 250px;}
 
-.film-info, .search-info {
+.film-info {
   max-width: 600px;
   display: inline-block;
   vertical-align: top;
@@ -86,7 +98,7 @@ header {
 
 .film-title { vertical-align: bottom; }
 
-.title {
+.title, .search-title {
   line-height: 27px;
   font-size: 2.5em;
   margin-right: 10px;
@@ -114,10 +126,17 @@ header {
 /*************************************
     Search
 *************************************/
+.results {
+  display: inline-block;
+  width: 300px;
+  vertical-align: top;
+  text-align: left;
+}
 .search-info {
   margin: 15px auto;
   min-height: 400px;
   color: #000000;
+  text-align: center;
 }
 
 .search-info ul {
@@ -137,6 +156,11 @@ header {
   text-decoration: none;
 }
 
+.search-title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cccccc;
+}
+
 .error-wrapper {
   margin: 0 auto;
   text-align: center;
@@ -148,10 +172,13 @@ header {
 
 
 
+section {
+  min-height: 65vh;
+}
 
 footer {
   height: 80px;
-  background-color: #999999;
+  background-color: #777;
 }
 
 input {

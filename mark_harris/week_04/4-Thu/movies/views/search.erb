@@ -5,13 +5,67 @@
 
 
 <div class="search-info">
-<span class="title">Search Results</span>
-<ul>
-<% @search_data["Search"].each do |film| %>
-  <a href="/film?id=<%= film["imdbID"] %>">
-    <li><%= film["Title"] %> (<%= film["Year"] %>) - <%= film["Type"] %></li>
-  </a>
+<div class="search-title">Search Results</div>
+
+<% 
+  movies = []
+  series = []
+  games = []
+
+  @search_data["Search"].each do |result|
+    case result["Type"]
+    when "movie"
+      movies << result
+    when "series"
+      series.push result
+    when "game"
+      game.push result
+    end
+  end
+%>
+
+  
+<div class="results-panel">
+<% if !movies.empty? %>
+  <div class="results">
+    <h3>Movies</h3>
+    <ul>
+    <% movies.each do |item| %>
+       <a href="/film?id=<%= item["imdbID"] %>">
+        <li><%= item["Title"] %> (<%= item["Year"] %>)</li>
+      </a>
+    <%  end %>
+    </ul>
+  </div>
 <% end %>
-</ul>
+
+<% if !series.empty? %>
+  <div class="results">
+    <h3>Series</h3>
+    <ul>
+    <% series.each do |item| %>
+       <a href="/film?id=<%= item["imdbID"] %>">
+        <li><%= item["Title"] %> (<%= item["Year"] %>)</li>
+      </a>
+    <%  end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if !games.empty? %>
+  <div class="results">
+    <h3>Games</h3>
+    <ul>
+    <% games.each do |item| %>
+       <a href="/film?id=<%= item["imdbID"] %>">
+        <li><%= item["Title"] %> (<%= item["Year"] %>)</li>
+      </a>
+    <%  end %>
+    </ul>
+  </div>
+<% end %>
+</div>
+
+
 </div>
 
