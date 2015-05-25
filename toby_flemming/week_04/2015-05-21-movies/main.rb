@@ -41,24 +41,20 @@ def db_add_search search_str, data
   end
 end
 
-get '/' do
-  erb :home
+def db_get_search search_str
+  prev_search = Search.where(:search_str => search_str).first
+  prev_search = prev_search[:data] if prev_search
+
+  JSON.parse prev_search unless !prev_search
 end
 
-# New movie search - store results in db
-get '/movies' do
-  search_str = params[:search_str].strip.downcase
+def omdb_fetch search_str
   url = "http://omdbapi.com/?s=#{search_str}"
-
-  # Have we previously searched for this?
-  prev_search = Search.where(:search_str => search_str).first[:data]
-  @movies = JSON.parse prev_search
-
-  @movies = HTTParty.get(url)["Search"]
-  redirect to '/' if search_str.empty? || !@movies
+  movies = HTTParty.get(url)["Search"]
+  redirect to '/' if search_str.empty? || !movies
 
   # 's' option giving a compact result for each movie.  We want the full thing...
-  @movies.map! do |movie|
+  movies.map! do |movie|
     id = movie["imdbID"]
     url = "http://omdbapi.com/?i=#{id}"
 
@@ -68,7 +64,35 @@ get '/movies' do
     complete_data
   end
 
-  db_add_search search_str, @movies
+  db_add_search search_str, movies
+  movies
+end
+
+
+
+
+
+
+
+
+
+
+
+get '/' do
+  erb :home
+end
+
+get '/movies' do
+  search_str = params[:search_str].strip.downcase
+
+  # Have we previously searched for this?
+  prev_search = db_get_search search_str
+
+  if prev_search
+    @movies = prev_search
+  else
+    @movies = omdb_fetch search_str
+  end
 
   if @movies.length == 1
     movie = @movies.first
