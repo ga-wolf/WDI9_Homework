@@ -1,0 +1,18 @@
+<h1>This is a calculator</h1>
+
+<% if @result %>
+
+<p>x: <%= @x %> </p>
+<p><%= params[:operator] %></p>
+<p>y: <%= @y %> </p>  
+The result is <strong><%= @result%></strong>
+
+<% end %>
+
+<form action="/calc">
+  <input type="number" name="x" placeholder="x value">
+  <input type="text" name="operator" placeholder="operator (+ - * /)">
+  <input type="number" name="y" placeholder="y value">
+
+  <button>Calculate!</button>
+</form>

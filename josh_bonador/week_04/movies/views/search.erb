@@ -1,0 +1,15 @@
+<h1><a href="http://localhost:4567/movies">The Everything Database</a></h1>
+
+<p>Input movie title</p>
+
+<form action="/movies">
+  <input type="text" name="movietitle" placeholder="Enter Movie Here">
+  <button>Search</button>
+</form>
+
+<% if @movie_data %>
+  <% @movie_data.each do |m| %>
+  <li><a href="/movies/<%= m['Title']%>"> <%= m['Title'] %> (<%= m['Year'] %>) </a></li>
+  <% end %>
+<% end %>
+

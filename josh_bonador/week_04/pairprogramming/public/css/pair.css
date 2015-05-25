@@ -1,0 +1,77 @@
+body {
+  background-image:url(sinatra.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: "Arial";
+  max-width: 960px;
+  margin: auto;
+  color: white;
+}
+
+h1 {
+  font-family: 'Dancing Script', cursive;;
+  text-shadow: 300px;
+}
+
+.container {
+  position: absolute;
+  top: 300px;
+  left: 400px;
+}
+
+.container p {
+  display: inline;
+  padding: 70px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.done {
+  position: absolute;
+  top: 10px;
+  left: 100px;
+}
+
+.pass {
+  padding-left: 60px;
+}
+
+.test {
+  padding-left: 105px;
+}
+
+.refactor {
+  padding-left: 65px;
+}
+
+.do_refactor {
+  padding-left: 80px;
+}
+
+.inspiration {
+  font-family: 'Dancing Script', cursive;
+  font-size: 20px;
+  position: absolute;
+  top: 650px;
+}
+
+.quote {
+  font-size: 40px;
+  width: 500px;
+}
+
+.continue {
+  position: absolute;
+  top: 10px;
+  left: 100px;
+}
+
+#restart {
+  padding: 200px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
