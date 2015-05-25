@@ -1,10 +1,20 @@
-<h2><%= @butterfly['name'] %></h2>
-<h2><%= @butterfly['family'] %></h2>
 
-<% if @butterfly['image'] %>
-  <img src="<%= @butterfly['image'] %>">
+<div class="textContent">
+  <h2><%= @butterfly['name'] %></h2>
+  <h2><%= @butterfly['family'] %></h2>
+  <% if @butterfly.plant %>
+  <h2>Larval plant: <a href="/plants/<%= @butterfly.plant.id %>">
+    <%= @butterfly.plant.name %>
+  </a></h2>
 <% end %>
-<p>
-  <a href="/butterflies/<%= @butterfly['id'] %>/delete">Delete yo butterfly you jerk!</a>
-  <a href="/butterflies/<%= @butterfly['id'] %>/edit">Edit yo butterfly son!</a>
-</p>
+  <div>
+    <a href="/butterflies/<%= @butterfly.id %>/delete">Delete yo butterfly you jerk!</a>
+    <a href="/butterflies/<%= @butterfly.id %>/edit">Edit yo butterfly son!</a>
+  </div>
+</div>
+
+<div class="imageContent">
+  <% if @butterfly['image'] %>
+    <img src="<%= @butterfly['image'] %>">
+  <% end %>
+</div>

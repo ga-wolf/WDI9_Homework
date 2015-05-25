@@ -1,5 +1,3 @@
-
-
 <form action="/movies">
   <input type="text" name="title" placeholder="Enter a movie title">
   <button>Enter movie title</button>
@@ -11,11 +9,9 @@
 </form>
 
 
-<h1> <%= @title %> </h1>
-<p> <%= @plot %><p>
-<p> <%= @id %></p>
+<h1> <%= @movie.title %> </h1>
+<p> <%= @movie.plot %><p>
+<!-- <p> <%= @id %></p> -->
 <div>
-  <img src=<%="#{@poster}"%>>
+  <img src=<%="#{@movie.poster}"%>>
 <div>
-
-

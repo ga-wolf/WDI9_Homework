@@ -1,16 +1,101 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Slab:400,700,300italic);
+
+*{
+  box-sizing: border-box;
+}
+
 html, body{
-  background-color: lightslategray;
   color: white;
 }
 
+h1 {
+  font-family: 'Josefin Slab';
+  border-bottom: solid 2px white;
 
-.container{
-  max-width: 960px;
-  margin: auto;
 }
 
-label {
+h2 {
+  font-family: 'Josefin Slab';
+  font-weight: 700;
+  border-bottom: 2px solid white;
+}
+
+nav a{
+  font-family: 'Josefin Slab';
+  font-weight: 700;
+  font-size: .8em;
+  text-transform: uppercase;
+  color: rgba(12, 49, 68, 0.9);
+  line-height: 30px;
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+  margin: 10px 50px 10px 50px;
+  text-decoration: none;
+  width: 200px;
+  height: 30px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0px 3px 0px rgba(12, 49, 68, 0.9);
+}
+
+li{
+  font-family: 'Josefin Slab';
+  font-weight: 300;
+  min-width: 150px;
+  background-color: white;
+  text-align: center;
+}
+
+li a{
+  text-decoration: none;
+}
+
+
+
+
+.container{
+  height: 100vh;
+  padding: 10px 20px 10px 20px;
+  max-width: 960px;
+  margin: auto;
+  background-color: rgba(84, 134, 148, 1);
+}
+
+nav{
+  margin:auto;
+  display: inline-block;
+}
+
+form {
   display: inline-block;
   min-width: 50px;
   text-align: right;
+}
+
+.content {
+  min-width: 500px;
+  height: auto;
+  display: inline-block;
+}
+
+.textContent{
+  vertical-align: top;
+  display: inline-block;
+  height:200px;
+  width: 200px;
+  margin-right: 150px;
+}
+
+.imageContent{
+  vertical-align: top;  
+  display: inline-block;
+  min-width: 200px;
+  max-width: 400px;
+  height: auto;
+}
+
+.imageContent img{
+  display:inline-block;
+  max-width: 100%;
 }
