@@ -1,6 +1,7 @@
 body {
   text-align: center;
   font-family: courier;
+  margin: 0px;
 }
 
 h1 {
@@ -11,7 +12,7 @@ h1 {
 }
 
 h2 {
-  margin: 2px;
+  margin: 0px 2px 2px 2px;
   font-weight: 100;
 
 }
@@ -67,16 +68,16 @@ h3 {
   text-align: center;
 }
 .title {
-  padding: 0px 0px 0px 105px;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 0px;
 /*  border-width: 1px;
   border-style: solid;
   border-color: black;*/
   max-width: 100%;
   color: black;
-  text-align: left;
+  text-align: center;
 }
+
 input, button {
   padding: 10px;
   margin: 5px;

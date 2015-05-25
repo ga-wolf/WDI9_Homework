@@ -25,6 +25,10 @@
     <div class="box">
 
       <% @movie_data.each do |movie| %>
+          <div class="title">
+            <h2><%=movie["Title"] %></h2>
+            <h3>(<%=movie["Year"] %>)</h3>
+            <hr>
           <p><strong>Category:</strong> <%= movie["Type"] %></p>
           <p><strong>Genre:</strong> <%= movie["Genre"] %></p>
           <p><strong>Director:</strong> <%= movie["Director"] %></p>
@@ -39,6 +43,7 @@
       <p><a href="/movies?i=<%= movie['imdbID'] %>"><%= movie["Title"] %></a></p>
     <% end %>  
   <% elsif @url %>
+    <br>
     <h1>That's not even a real movie, dickhead.<br> Try something else.</h1>
 
 
