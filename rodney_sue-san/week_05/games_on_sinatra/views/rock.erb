@@ -1,0 +1,29 @@
+<h1>Rock Paper Scissors</h1>
+
+<h2 class="result fadeSlow"> <%= @result %> </h2>
+
+<div class="gameChoice">
+
+<div class="gameChoice">
+  <div id="cont1" class="cont">
+  <a href="/games/rps2"> 
+    <img class="pic rpsChoice dissolve" src="/rock.png"> 
+    <img class="pic fade fadeFast rpsResult" src="/rock.png">
+  </a>
+  </div>
+
+  <div id="cont2" class="cont">
+    <a href="/games/rps2">
+    <img class="pic rpsChoice dissolve" src="/paper.png"> 
+    <img class="pic fade fadeMedium rpsResult" src="/vs.png"> 
+    </a>
+  </div>
+
+  <div id="cont3" class="cont">
+  <a href="/games/rps2">
+    <img class="pic rpsChoice dissolve" src="/scissors.png">
+    <img class="pic fade fadeSlow rpsResult" src="<%= @cpu_pic %>"> 
+   </a>
+  </div>
+
+</div>

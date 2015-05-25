@@ -1,0 +1,19 @@
+a {
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  color: white;
+  background-color: #4B77BE;
+  font-family: "Arial";
+  max-width: 960px;
+  margin: auto;
+}
+
+li {
+  padding: 10px;
+}
+
+.container {
+}
