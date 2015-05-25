@@ -17,7 +17,7 @@ after do
   ActiveRecord::Base.connection.close
 end
 
-def update_db data
+def db_add_movie data
   imdb_id = data["imdbID"]
   movie = Movie.where(:imdb_id => imdb_id)
 
@@ -47,13 +47,26 @@ get '/movies' do
       url = "http://omdbapi.com/?i=#{id}"
 
       complete_data = HTTParty.get(url)
-      update_db complete_data
+      db_add_movie complete_data
 
       complete_data
     end
   end
 
+  if @movies.length == 1
+    movie = @movies.first
+    redirect to "/movies/#{movie["imdbID"]}"
+  end
+
   erb :movies_index
+end
+
+
+get '/movies/:id' do
+  movie_record = Movie.where(:imdb_id => params[:id]).first
+  @movie = YAML.load movie_record[:data]
+
+  erb :movies_show
 end
 
 
