@@ -1,47 +1,34 @@
 
 
-
-
 <%
-  @title = @film_data["Title"]
-  @year = @film_data["Year"]
-  @rated = @film_data["Rated"]
-  @released = @film_data["Released"]
-  @runtime = @film_data["Runtime"]
-  @genre = @film_data["Genre"]
-  @director = @film_data["Director"]
-  @actors = @film_data["Actors"]
-  @plot = @film_data["Plot"]
-
-  if @film_data["Poster"] == "N/A"
-    @poster = "images/film-roll.png"
-  else
-    @poster = @film_data["Poster"]
+  # If there is no poster, replace with a defaut image
+  if @movie.poster == "N/A"
+    @movie.poster = "../images/film-roll.png"
   end
 %>
 
 
 <div class="poster">
-  <img src="<%= @poster %>">
+  <img src="<%= @movie.poster %>">
 </div>
 
  <div class="content"> 
   <div class="film-info">
     <div class="film-title">
-      <span class="title"><%= @title %></span> (<%= @year %>)
+      <span class="title"><%= @movie.title %></span> (<%= @movie.year %>)
     </div>
     
     <div class="details">
       <ul>
-        <li><%= @rated %></li>
-        <li><%= @runtime %></li>
-        <li><%= @genre %></li>
-        <li><%= @released %></li>
+        <li><%= @movie.rated %></li>
+        <li><%= @movie.runtime %></li>
+        <li><%= @movie.genre %></li>
+        <li><%= @movie.released %></li>
       </ul>
     </div>
 
-    <div class="plot"><%= @plot %></div>
-    <p><strong>Director:</strong> <%= @director %></p>
-    <p><strong>Stars:</strong> <%= @actors %></p>
+    <div class="plot"><%= @movie.plot %></div>
+    <p><strong>Director:</strong> <%= @movie.director %></p>
+    <p><strong>Stars:</strong> <%= @movie.actors %></p>
   </div>
 </div>

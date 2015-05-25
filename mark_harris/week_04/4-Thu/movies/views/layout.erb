@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Movie Database</title>
+  <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/movies.css">
 </head>
 
@@ -16,7 +17,7 @@
     
       <a href="/"><div class="logo"></div></a>
       <div class="search">
-        <form action="/search">
+        <form action="/search" method="post">
           <input type="text" name="title" size="40" placeholder="Search for a film" autofocus>
           <button>Search</button>
         </form>

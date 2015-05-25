@@ -19,7 +19,7 @@
     when "series"
       series.push result
     when "game"
-      game.push result
+      games.push result
     end
   end
 %>
@@ -31,7 +31,7 @@
     <h3>Movies</h3>
     <ul>
     <% movies.each do |item| %>
-       <a href="/film?id=<%= item["imdbID"] %>">
+       <a href="/film/<%= item["imdbID"] %>">
         <li><%= item["Title"] %> (<%= item["Year"] %>)</li>
       </a>
     <%  end %>
@@ -44,7 +44,7 @@
     <h3>Series</h3>
     <ul>
     <% series.each do |item| %>
-       <a href="/film?id=<%= item["imdbID"] %>">
+       <a href="/film/<%= item["imdbID"] %>">
         <li><%= item["Title"] %> (<%= item["Year"] %>)</li>
       </a>
     <%  end %>
@@ -57,7 +57,7 @@
     <h3>Games</h3>
     <ul>
     <% games.each do |item| %>
-       <a href="/film?id=<%= item["imdbID"] %>">
+       <a href="/film/<%= item["imdbID"] %>">
         <li><%= item["Title"] %> (<%= item["Year"] %>)</li>
       </a>
     <%  end %>
