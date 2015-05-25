@@ -20,9 +20,8 @@ end
 
 def db_add_movie data
   imdb_id = data["imdbID"]
-  movie = Movie.where(:imdb_id => imdb_id)
 
-  if movie.empty?
+  if !Movie.exists?(imdb_id)
     movie = Movie.new
     movie.imdb_id = imdb_id
     movie.data = data.to_json
