@@ -1,0 +1,15 @@
+<%= @butterfly %>
+
+<h2>Name: <%= @butterfly['name']%></h2>
+<h3>Family: <%= @butterfly['family']%></h3>
+<% if @butterfly['image'] %>
+<img src="<%= @butterfly['image']%> " alt="">
+<% end %> 
+<% if @butterfly['plant_id']%>
+<h3><a href="/plants/<%=@butterfly.plant.id%>">
+		Larval Plant: <%= @butterfly.plant.name %>
+	</a>
+</h3>
+<%end%>
+<a href="/butterflies/<%= @butterfly['id']%>/delete">Delete Entry</a>
+<a href="/butterflies/<%= @butterfly['id']%>/edit">Edit Entry</a>

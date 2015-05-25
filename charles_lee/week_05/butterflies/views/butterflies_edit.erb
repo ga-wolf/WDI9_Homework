@@ -1,0 +1,18 @@
+<form action="/butterflies/<%=@butterfly['id']%>" method='post'>
+	<label for="name">Name</label>
+	<input type="text" id="name" name="name" value="<%= @butterfly['name']%>">
+	<label for="family">Family</label>
+	<input type="text" id="family" name="family" value="<%= @butterfly['family']%>">
+	<label for="image">Image</label>
+	<label for="plant_id">Larval Plant</label>
+	<select name = "plant_id" id="plant_id">
+		<option></option>
+		<% Plant.all.each do |plant|%>	
+			<option value="<%= plant.id %>"<%="selected" if plant.id == @butterfly.plant.id%>>
+				<%= plant.name%>
+			</option>
+		<% end %>
+	</select>
+	<input type="url" id='image' name="image" value="<%= @butterfly['image']%>">
+	<button>Update Butterfly</button>
+</form>
