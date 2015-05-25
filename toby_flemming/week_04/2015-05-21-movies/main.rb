@@ -105,8 +105,10 @@ end
 
 get '/movies/:id' do
   movie_record = Movie.where(:imdb_id => params[:id]).first
-  @movie = JSON.parse movie_record[:data]
 
+  redirect to '/' if !movie_record
+
+  @movie = JSON.parse movie_record[:data]
   erb :movies_show
 end
 
