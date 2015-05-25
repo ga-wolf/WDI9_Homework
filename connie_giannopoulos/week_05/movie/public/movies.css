@@ -1,0 +1,13 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:100);
+body {
+    font-family: Roboto;
+    font-weight: 100;
+    max-width: 600px;
+    margin: auto;
+    text-align: centre;
+}
+
+input {
+    font-family: Roboto;
+    font-weight: 100;
+}

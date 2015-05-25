@@ -1,0 +1,24 @@
+<form action="/movies">
+  <label for="title"> Enter a movie title: </label>
+  <input type="text" name="title" placeholder=" search for a movie.. ">
+  <input type="submit" value="?">
+</form>
+
+<% if @movie_data %>
+
+<!-- 
+  # write a loop to check how many movies of the same title exist.
+  then show them as a list
+   -->
+
+  <h2> Title: <%= @movie_data["Title"] %> </h2>
+  <h4> Date of release: <%= @movie_data["Released"] %> </h4>
+  <h4> Director: <%= @movie_data["Director"] %> </h4>
+  <img src=<%= @movie_data["Poster"] %></img>
+  <p>Actors: <%= @movie_data["Actors"] %></p>
+  <p>Plot: <%= @movie_data["Plot"] %></p>
+
+
+    <!-- <p><%= @movie_data %></p> -->
+
+<% end %>
