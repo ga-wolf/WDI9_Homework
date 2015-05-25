@@ -12,12 +12,12 @@ body::after {
   content: ""; 
   background: #000000 url("../images/bg2.jpg");
   background-size: cover;
-  opacity: 0.7;
+  opacity: 0.6;
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  position: absolute;
   z-index: -1;   
 }
 
@@ -35,14 +35,15 @@ header {
   background-size: contain; 
 }
 
-.logo {
-  background: url("../images/mymdb_logo.png") no-repeat center;
-  width: 148px;
-  height: 57px;
-  display: inline-block;
+.movies-logo {
   position: absolute;
-  top: 21px;
-  left: 21px;
+  top: -30px;
+  left: -50px;
+  z-index: 50;
+  background: url("../images/TheMovies.gif") no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 180px;
 }
 
 .search {
@@ -51,8 +52,6 @@ header {
   right: 21px;
   display: inline-block;
 }
-
-
 
 /*************************************
     Pages
@@ -68,7 +67,6 @@ header {
   padding: 15px;
   display: flex;
 }
-
 
 .content {
   background-color: rgb(255,255,255);
@@ -86,6 +84,7 @@ header {
   display: inline-block; 
   width: 300px; 
   text-align: center;
+  margin-top: 20px;
 }
 .poster img { width: 250px;}
 
