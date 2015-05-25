@@ -1,0 +1,17 @@
+<h1>Jerk Stock</h1>
+
+<% if @symbol %>
+
+
+<p class="name"><%= @name %> </p>
+<p><%= params[:operator] %></p>
+
+<p>The last trading price was: <strong><%= @last_trade %></strong>. You Jerk</p>
+
+
+<% end %>
+
+<form action="/calc">
+  <input type="text" name="symbol" placeholder = "Enter required stock">
+  <button>Calculate</button>
+</form>
