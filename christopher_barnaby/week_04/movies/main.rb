@@ -1,29 +1,33 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'httparty'
+require 'active_record'
+
+ActiveRecord::Base.establish_connection(
+  :adapter => 'sqlite3',
+  :database => 'database.db'
+)
+
+# after do
+#   ActiveRecord::Base.connection.close
+# end
 
 get '/movies' do 
 
   @title = params[:title]
 
-  if @title 
-    
-    
-    @url = "http://omdbapi.com/?t=#{@title}"
-    @movie_data = HTTParty.get @url
+# Determine whether the movie is in the local database
+ # ##########
 
-    @pretty_title = @movie_data["Title"]
-    @year = @movie_data["Year"]
-    @poster = @movie_data["Poster"]
-    @type = @movie_data["Type"]
-    @genre = @movie_data["Genre"]
-    @director = @movie_data["Director"]
-    @plot = @movie_data["Plot"]
-    @cast = @movie_data["Actors"]
-    @awards = @movie_data["Awards"]
-    @metascore = @movie_data["Metascore"]
-  end
 
+  url = "http://omdbapi.com/?s=#{ params["title"] }" if params[:title]
+  url = "http://www.omdbapi.com/?i=#{ params["i"] }" if params[:i]
+  @movie_data = HTTParty.get url if url
+
+  @movie_data = @movie_data["Search"] if params[:title]
+  @movie_data = [@movie_data] if params[:i]
+
+  @movie_data = @movie_data || []
+  
   erb :movies
-
 end

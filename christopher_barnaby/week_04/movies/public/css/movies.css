@@ -1,5 +1,6 @@
 body {
-
+  text-align: center;
+  font-family: courier;
 }
 
 h1 {
@@ -21,8 +22,7 @@ h3 {
 .container {
   max-width: 960px;
   margin: auto;
-  text-align: center;
-  font-family: courier;
+
 
 }
 
@@ -36,15 +36,7 @@ h3 {
   color: black;
 }
 
-.search {
-  padding: 10px;
-  margin: 0 auto;
- /* border-width: 1px;
-  border-style: solid;
-  border-color: black;*/
-  max-width: 400px;
-  color: black;
-}
+
 
 .top {
   padding: 10px;
@@ -54,11 +46,27 @@ h3 {
   border-color: black;*/
   max-width: 100%;
   color: black;
+}
 
+.wrapper {
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 100%;
+  background-color: lightgrey;
+  color: black;
+  vertical-align: center;
+}
+
+.search {
+  max-width: 200px;
+  margin: 0 auto;
+  vertical-align: center;
+  text-align: center;
 }
 .title {
   padding: 0px 0px 0px 105px;
   margin: 0 auto;
+  margin-top: 20px;
 /*  border-width: 1px;
   border-style: solid;
   border-color: black;*/
@@ -72,6 +80,8 @@ input, button {
   border: 1px solid black;
   border-radius: 5px;
   color: black;
+  background-color: white;
+  font-weight: 700;
 }
 
 .container p {
@@ -88,6 +98,7 @@ p {
 
 .italic {
   font-style:italic;
+  text-align: center;
 }
 
 img {

@@ -1,41 +1,45 @@
 
-<div class="top">
-  <h1>M.F.M</h1>
-  <p>Motherfucking Movies</p>
-  <form action="/movies">
-    <input type="text" name="title" id="title" placeholder="Enter a movie title" autofocus>
-    <button>get that mfm</button>
-  </form>
-</div>
-<div class="title">
-  <% if @title %> 
-    <% if @movie_data["Response"] == "False" %>
-      <p class= "italic">That's not even a real movie. Try something else.</p>
-    <% else %> 
-      <h2><%= @pretty_title %></h2>  
-      <p>(<%= @year %>)</p>
-    <% end %>
-    </div>
-    <div class="top">
-      <div class="box">
-        <% if @poster == "N/A"%>
-          <p class = "italic">Sorry, there is no poster available for this movie</p>
-          <p>Search <a href="https://www.google.nl/search?tbm=isch&q=<%= @title%>">Google Images for </a> <%=@pretty_title%>'s movie poster.</p>
-        <% else %>
-          <img src=<%= @poster%>/>
-        <% end %>
-      </div>
-      <div class="box">
-        <p><strong>Category:</strong> <%= @type %></p>
-        <p><strong>Genre:</strong> <%= @genre %></p>
-        <p><strong>Director:</strong> <%= @director %></p>
-        <p><strong>Plot:</strong> <span class="italic"><%= @plot %></span></p>
-        <p><strong>Cast:</strong> <%= @cast %></p>
-        <p><strong>Metascore:</strong> <%= @metascore %></p>
-
-        <p><strong>Awards:</strong> <%= @awards %></p>
-
-    <% end %>
+<div class="wrapper">
+  <div class="search">
+    <h1>M.F.M</h1>
+    <p>Motherfucking Movies</p>
+    <form action="/movies">
+      <input type="text" name="title" id="title" placeholder="Enter a movie title" autofocus>
+      <button>get that mfm</button>
+    </form>
   </div>
 </div>
+<div class="container">
+<div class="title">
+<% require 'pry'%>
+<%binding.pry%>
+  <% if @movie_data.length == 1 %>
+    <div class="box">
+    <% if movie['Poster'] == "N/A"%>
+      <p class = "italic">Sorry, there is no poster available for this movie</p>
+      <p>Search <a href="https://www.google.nl/search?tbm=isch&q=<%= movie["Title"]%>">Google Images for </a><%=movie["Title"]%></p>
+    <% else %>
+      <img src="<%=movie["Poster"]%>">
+    <% end %>
+    </div>
+    <div class="box">
+      <% @movie_data.each do |movie| %>
+          <p><strong>Category:</strong> <%= movie["Type"] %></p>
+          <p><strong>Genre:</strong> <%= movie["Genre"] %></p>
+          <p><strong>Director:</strong> <%= movie["Director"] %></p>
+          <p><strong>Plot:</strong> <span class="italic"><%= movie["Plot"]%></span></p>
+          <p><strong>Cast:</strong> <%= movie["Actors"] %></p>
+          <p><strong>Metascore:</strong> <%= movie["Metascore"]%></p>
+          <p><strong>Awards:</strong> <%= movie["Awards"] %></p>
+        </div>
+      <% end %>
+    <% elsif @movie_data.length > 1 %>
+    <% @movie_data.each do |movie| %>
+      <p><a href="/movies?i=<%= movie['imdbID'] %>"><%= movie["Title"] %></a></p>
+    <% end %>  
+  <% else %>
+    <h1>That's not even a real movie, dickhead. Try something else.</h1>
+  <% end %>
+</div>
+
 
