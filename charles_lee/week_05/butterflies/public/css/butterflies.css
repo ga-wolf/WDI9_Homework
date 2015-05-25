@@ -1,0 +1,14 @@
+html, body{
+	background: #aaa;
+	font-family: Helvetica, Arial, sans-serif;
+}
+.container{
+	max-width:980px;
+	margin: 0 auto;
+	color: #2c2c2c;
+}
+label{
+	display:inline-block;
+	min-width:5px;
+	text-align:right;
+}

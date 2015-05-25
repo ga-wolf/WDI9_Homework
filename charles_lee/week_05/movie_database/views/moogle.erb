@@ -1,0 +1,24 @@
+<form action="/moogle" method="get">
+	<input type="text" name="title" placeholder="title">
+	<button>Find Movie</button>
+</form>
+
+
+<% if @title %>
+	<% if @title.length <= 0 %>
+		<p>You haven't entered a movie title</p>
+	<% else %>
+		<ul>
+			<% @search_result.each do |result|%>
+				<li>
+					<p>
+						<a href="/moogle/movie/<%=result['imdbID']%>">
+							<%=result['Title']%>
+						</a>
+					</p>
+				</li>
+			<%end%>
+		</ul>
+	<%end%>
+<% end %>
+

@@ -1,0 +1,13 @@
+<p><%=@id%></p>
+<p><%=@single_movie%></p>
+<%= @movie %>
+<h2><%=@movie['title']%></h2>
+<img src="<%=@movie['poster']%>">
+
+ <form action="/moogle">
+	<input type="text" name="title" placeholder="movie title">
+	<button>Find Movie</button>
+</form>
+<!-- <img src="<%= @movie_poster %>"> -->
+<%= @movie_search%>
+
