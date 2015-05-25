@@ -10,19 +10,20 @@
   </div>
 </div>
 <div class="container">
-<div class="title">
-<% require 'pry'%>
-<%binding.pry%>
+
+
   <% if @movie_data.length == 1 %>
     <div class="box">
-    <% if movie['Poster'] == "N/A"%>
+
+    <% if @movie_data[0]['Poster'] == "N/A"%>
       <p class = "italic">Sorry, there is no poster available for this movie</p>
-      <p>Search <a href="https://www.google.nl/search?tbm=isch&q=<%= movie["Title"]%>">Google Images for </a><%=movie["Title"]%></p>
+      <p>Search <a href="https://www.google.nl/search?tbm=isch&q=<%= @movie_data[0]["Title"]%>">Google Images for </a><%=@movie_data[0]["Title"]%></p>
     <% else %>
-      <img src="<%=movie["Poster"]%>">
+      <img src="<%=@movie_data[0]["Poster"]%>">
     <% end %>
     </div>
     <div class="box">
+
       <% @movie_data.each do |movie| %>
           <p><strong>Category:</strong> <%= movie["Type"] %></p>
           <p><strong>Genre:</strong> <%= movie["Genre"] %></p>
@@ -37,8 +38,10 @@
     <% @movie_data.each do |movie| %>
       <p><a href="/movies?i=<%= movie['imdbID'] %>"><%= movie["Title"] %></a></p>
     <% end %>  
-  <% else %>
-    <h1>That's not even a real movie, dickhead. Try something else.</h1>
+  <% elsif @url %>
+    <h1>That's not even a real movie, dickhead.<br> Try something else.</h1>
+
+
   <% end %>
 </div>
 
