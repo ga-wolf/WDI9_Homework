@@ -1,0 +1,8 @@
+<h2>Rocketry Database</h2>
+
+<% @rockets.each do |rock| %>
+  <div class="block">
+    <img src="<%= rock[:image] %>" alt="">
+    <p class="mainpagerock"><%= link_to(rock.name, rocket_path(rock.id)) %></p>
+  </div>
+<% end %>

@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+
+  root :to => 'rockets#index'
+  get '/rockets' => 'rockets#index'
+
+  get '/rockets/new' => 'rockets#new'
+
+  post '/rockets' => 'rockets#create'
+
+  get '/rockets/:id' => 'rockets#show', :as => 'rocket'
+
+  post '/rockets/:id/delete' => 'rockets#destroy', :as => 'rocket_delete'
+
+  get '/rockets/:id/edit' => 'rockets#edit', :as => 'rocket_edit'
+  post '/rockets/:id' => 'rockets#update'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
