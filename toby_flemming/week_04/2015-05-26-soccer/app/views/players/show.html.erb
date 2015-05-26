@@ -6,3 +6,5 @@
   <li>Postion: <%= @player[:position] %></li>
   <li>Foot: <%= @player[:foot] %></li>
 </ul>
+<%= button_to "DELETE", delete_player_path(@player), :method => :delete %>
+<%= button_to "EDIT", edit_player_path(@player), :method => :get %>
