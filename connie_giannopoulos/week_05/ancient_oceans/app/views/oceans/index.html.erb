@@ -1,0 +1,16 @@
+<h3>Ancient Oceans Index</h3>
+
+<!-- Need to cycle through all the oceans.name -->
+<% @oceans.each do |ocean| %> 
+  <p>
+    <%= link_to(ocean.name, ocean_path(ocean.id)) %>
+
+
+<!-- <%= ocean.name %> <br> -->
+
+  </p>
+
+
+<% end %>
+
+

@@ -1,0 +1,8 @@
+<h2> <%= @author.name %></h2>
+<ul>
+  <li><%= image_tag(@author.image, :class => 'main') %></li>
+  <li>Age: <%= @author.age %></li>
+  <li>Bio: <%= @author.bio %></li>
+  <li><%= link_to 'Edit', edit_author_path(@author) %></li>
+  <li><%= link_to 'Delete', @author, :method => 'delete', :data => { :confirm => "Are you sure?" } %></li>
+</ul>

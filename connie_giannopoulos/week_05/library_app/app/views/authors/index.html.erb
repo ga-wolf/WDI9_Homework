@@ -1,0 +1,8 @@
+<h1>Authors Index</h1>
+
+
+<% @authors.each do |author| %>
+  <p><%= link_to(author.name, author) %></p>
+  <li><%= image_tag(author.image, :class => 'thumb') %></li>
+
+<% end %>

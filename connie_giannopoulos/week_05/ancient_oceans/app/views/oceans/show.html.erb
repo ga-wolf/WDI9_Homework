@@ -1,0 +1,14 @@
+<h2><%= @ocean.name %></h2>
+
+<p>Name: <%= @ocean.name %></p>
+<p><%= image_tag @ocean.image %></p>
+<p>Depth: <%= @ocean.depth %></p>
+<p>Location: <%= @ocean.location %></p>
+<p>Climate: <%= @ocean.climate %></p>
+<p>Life Forms: <%= @ocean.life_forms %></p>
+<p>Time Period: <%= @ocean.time_period %></p>
+
+
+
+<%= link_to('Edit Ocean', ocean_edit_path(@ocean.id)) %>
+<%= button_to('Destroy Ocean', ocean_delete_path(@ocean.id)) %>

@@ -1,0 +1,7 @@
+<h1>Books Index</h1>
+
+<% @books.each do |book| %>
+  <p><%= link_to(book.title, book) %></p>
+  <li><%= image_tag(book.image, :class => 'thumb') %></li>
+
+<% end %>

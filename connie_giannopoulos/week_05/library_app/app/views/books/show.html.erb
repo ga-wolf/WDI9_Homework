@@ -1,0 +1,10 @@
+<h2><%= @book.title %></h2>
+<ul>
+  <li><%= image_tag(@book.image, :class => 'main') %></li>
+  <li>ISBN: <%= @book.isbn %></li>
+  <li>Publication Date: <%= @book.pub_date %></li>
+  <li>Synopsis: <%= @book.blurb %></li>
+  <li>Category: <%= @book.category %></li>
+  <li><%= link_to 'Edit', edit_book_path(@book) %></li>
+  <li><%= link_to 'Delete', @book, :method => 'delete', :data => { :confirm => "Are you sure?" } %></li>
+</ul>

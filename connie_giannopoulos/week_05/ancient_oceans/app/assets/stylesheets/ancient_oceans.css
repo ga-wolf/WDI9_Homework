@@ -1,0 +1,14 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400);
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+}
+
+label {
+  display: block;
+}
+
+img {
+  width: 300px;
+}
