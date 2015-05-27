@@ -1,0 +1,14 @@
+<!-- This page is listing out each of the butterflies that has been added to the database.
+The main take aways from this page is the '@butterflies.each do' and the '@butterfly['id']' -->
+
+<!-- The @butterflies.each do is referencing the instance variable we set on the main.rb page. On that page we set @butterflies to be all of the butterflies within the database. So this .each is essentially cycling through each of the butterflies in the database. While it does that, it is placing each of the received butterflies with <li>(list tags) and presenting them on the page.
+
+The key to the link in the href is the butterfly['id']. This is returning only the id of each butterfly in the database and then adding that to the url as a way to seperate each of the butterflies onto their own distinct pages. Clever as fuck.-->
+
+<% @butterflies.each do |butterfly| %>
+  <li>
+    <a href="/butterflies/<%= butterfly['id'] %>">
+      <%= butterfly['name'] %>
+    </a>
+  </li>
+<%end%>

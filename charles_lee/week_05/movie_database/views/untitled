@@ -1,0 +1,8 @@
+	<ul>
+		<%=@search_result.each do |result|%>
+			<li><a href="/moogle/<%=result['imdbID']%>">
+				<%=result['Title']%>
+				</a>
+			</li>
+		<%end%>
+	</ul>

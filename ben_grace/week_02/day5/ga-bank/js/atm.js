@@ -50,10 +50,12 @@ $('#savings-deposit').on('click', function(){
 });
 
 $('#savings-withdraw').on('click', function(){
-  debugger; 
+  // debugger; 
   console.log('click is working');
-  var $withdraw = +$('#savings-amount').val(); //Saves the value entered into the input area
+  $withdraw = +$('#savings-amount').val(); //Saves the value entered into the input area
+  console.log( $withdraw )
   isSavingsOverdrawing($withdraw);
+  debugger;
   var currentAmount = $savingsBalance -= +$withdraw; //Adds the deposit amount to the saved amount already in the account
   $('#savings-balance.balance').text('$' + currentAmount);//reproduces the current amount for the user.
   isAccountEmpty();
@@ -86,12 +88,12 @@ isAccountEmpty = function(){
   };
 };
 
-isSavingsOverdrawing = function($withdraw){
+isSavingsOverdrawing = function(){
   if($withdraw > $savingsBalance){
     $withdraw = 0;
     alert('You have insuffcient funds');
   };
-
+  // return $withdraw;
 };
 
 

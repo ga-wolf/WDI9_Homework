@@ -131,6 +131,7 @@ var planTrip = function(lineOne, stationOne, lineTwo, stationTwo){
 	
 }
 
+lineNMove('8th_N', 'Times_Square_N')
 
 
 

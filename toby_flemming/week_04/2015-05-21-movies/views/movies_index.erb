@@ -1,0 +1,14 @@
+<% @movies.each do |movie| %>
+  <div class="media">
+    <div class="media-left">
+      <a href="/movies/<%= movie["imdbID"] %>">
+        <img class="media-object" src="<%= movie["Poster"] %>" alt="...">
+      </a>
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading"><%= movie["Title"] %> (<%= movie["Runtime"] %>)</h4>
+      <%= movie["Plot"] %>
+    </div>
+  </div>
+<% end %>
+<center><h6>Results Found: <%= @movies.length %></h6></center>

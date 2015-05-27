@@ -1,0 +1,3 @@
+soup, 22, male
+groucho, 45, female
+mike, 29, male

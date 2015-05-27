@@ -1,0 +1,23 @@
+
+
+<h1>Find Your Movie!</h1>
+
+<form action='/'>
+
+  <label for="movie_finder">Enter a movie title</label>
+
+  <input type="text" id="movie_finder" name="title" placeholder="ENTER HERE" autofocus>
+
+  <button>Find movie</button>
+
+  <% if @title %>
+
+  <p>Title: <%=@title_proper%></p>
+  <p>Release date: <%=@released%></p>
+  <p>Plot: <%=@plot%></p>
+  <p>IMDB rating: <%=@imdbRating%></p>
+  <img src="<%=@poster%>">
+
+  <% end %>
+
+</form>
