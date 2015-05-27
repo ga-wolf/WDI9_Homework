@@ -1,0 +1,12 @@
+
+<div id="riverList">
+<h2>List of Rivers</h2>
+
+<% @rivers.each do |river| %>
+  <p>
+   <%= link_to(river.name, river_path(river.id)) %> is located in <%= river.location %>
+  </p>
+
+<% end %>
+
+</div>
