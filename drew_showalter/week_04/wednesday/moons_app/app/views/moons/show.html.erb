@@ -1,0 +1,16 @@
+<div class="lightener">
+<h2><%= @moon.name %></h2>
+
+<p>This sattelite is <%= @moon.planet %> from its planet.</p>
+
+<p>It has a <%= @moon.radius %> km radius.</p>
+
+<% if @moon.image %>
+  <%= image_tag(@moon.image, size: "960") %>
+<% else %>
+  <%= image_tag('crest.jpg', size: "960") %>
+<% end %>
+
+<li><%= link_to 'Edit', edit_moon_path(@moon) %></li>
+<li><%= link_to('Delete', @moon, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
+</div>
