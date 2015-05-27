@@ -1,0 +1,17 @@
+<h2><%= @author.name %></h2>
+<%= link_to('Edit', edit_author_path(@author.id)) %>
+|
+<%= link_to('Delete', author_path(@author.id), :method => 'delete') %>
+<ul>
+<li>Nationality: <%= @author.nationality %></li>
+<li>Born on: <%= @author.dob.strftime('%b %d, %Y') %></li>
+</ul>
+<div class="profilediv">
+<%= image_tag(@author.image, :class => 'profile') %>
+</div>
+<div class="booksdiv">
+<% @author.books.each do |book| %>
+  <%= link_to(image_tag(book.cover, :title => book.title), book) %>
+<% end %>
+</div>
+

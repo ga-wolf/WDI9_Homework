@@ -28,7 +28,7 @@ end
 get '/movies/:id' do
   @id = params[:id] 
 
-  @movie = Movie.where(:imdbID => params[:id])
+  @movie = Movie.where(:imdbID => params[:id]).first
 
   if @movie.empty?
     url = "http://omdbapi.com/?i=#{ @id }"
@@ -40,8 +40,6 @@ get '/movies/:id' do
     @movie.poster = movie_data['Poster']
     @movie.imdbID = movie_data['imdbID']
     @movie.save
-  else 
-    @movie = @movie.first
   end
 
   erb :movies_show # Finally, update this view to use @movie.title, @movie.plot etc.
