@@ -1,0 +1,28 @@
+<h2>Name: <%= @mountain.name %></h2>
+<div class="mainImg">
+  <%= image_tag @mountain.image %>
+</div>
+
+<div class="mainText">
+  <ul>
+    <li>
+      Country: <%= @mountain.country %>
+    </li>
+
+    <li>
+    Climbers killed: Approximately <%= @mountain.climbers_killed %>
+    </li>
+
+    <li>
+    Elevation: <%= @mountain.height %> Meters.
+    </li> 
+  </ul>
+</div> 
+
+
+<p>
+<%= link_to('Edit Mountain', mountain_edit_path(@mountain.id)) %>
+</p>
+<p>
+<%= button_to('Destroy Mountain', mountain_delete_path(@mountain.id)) %>
+</p>

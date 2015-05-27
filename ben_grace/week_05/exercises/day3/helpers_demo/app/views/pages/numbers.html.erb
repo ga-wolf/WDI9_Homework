@@ -1,0 +1,11 @@
+<h1>Number helpers</h1>
+<p>Find me in app/views/pages/numbers.html.erb</p>
+
+<!-- Number to currency will layout your number with specific currency notation -->
+<p>The stock price is <%= number_to_currency(@amount) %></p> 
+
+<!-- number_to_human changes the length of the number into words that a human can understand -->
+<p>The large number is <%= number_to_human@large_number %></p>
+
+<!-- number_to_phone will turn the number into a phone number. :area_code will add an area code -->
+<p>The phone number is <%= number_to_phone(@phone, :area_code => true) %></p>

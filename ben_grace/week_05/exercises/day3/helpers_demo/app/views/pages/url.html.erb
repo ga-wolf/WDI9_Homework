@@ -1,0 +1,31 @@
+<h1>Pages#url</h1>
+<p>Find me in app/views/pages/url.html.erb</p>
+
+
+<p>
+  <a href="/">Home</a>
+</p>
+
+<p>
+  <%= link_to('Home', root_path) %>
+</p>
+
+<p>
+  <%= link_to('Text', text_path) %>
+</p>
+
+<p>
+  <%= link_to('Also Numbers', '/numbers')  %>
+  <!-- Use the bottom one. It is dynamic -->
+  <%= link_to('Numbers', numbers_path) %>
+</p>
+
+<p>
+  <%= link_to('Assets', assets_path) %>
+</p>
+
+<p>
+  <%= link_to('Url', url_path) %>
+</p>
+
+<%= button_to('Test', root_path, method: 'get') %>

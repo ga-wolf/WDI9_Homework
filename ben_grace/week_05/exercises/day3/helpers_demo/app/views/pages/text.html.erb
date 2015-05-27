@@ -1,0 +1,19 @@
+<h1>Text Helpers</h1>
+<p>Find me in app/views/pages/text.html.erb</p>
+
+<p>You killed <%= pluralize(@person_count, 'person')  %>.</p>
+
+<!-- PLuralize will sort out the plural of whatever word you're using. It is broken with some words like goose and virus  -->
+<p>You didn't kill <%= pluralize(@people_count, 'person')  %>.</p>
+
+<p><%= truncate(@story, :length => 50) %></p>
+
+
+
+<!-- Cycle will cycle through the paramters listed within the paramaters -->
+<ul>
+  <% @numbers.each do |num| %>
+    <li style="background-color:<%= cycle('red', 'green', 'blue', 'orange', 'purple', 'brown') %>"><%= num %></li>
+  <% end %>
+</ul>
+

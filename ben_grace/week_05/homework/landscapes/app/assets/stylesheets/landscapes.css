@@ -1,0 +1,45 @@
+*{
+box-sizing: border-box;
+}
+
+body{
+}
+
+.container{
+  margin: auto;
+  max-width: 960px;
+  padding: 20px;
+}
+
+.indexImg img{
+  max-width: 100px;
+}
+
+.mainImg img{
+  display: inline-block;
+  vertical-align: top;
+  max-width: 500px;
+  min-width: 500px;
+}
+
+.mainImg{
+  display: inline-block;
+  vertical-align: top;
+  max-width: 500px;
+  margin:0;
+}
+
+.mainText{
+  display: inline-block;
+  vertical-align: top;
+}
+
+li{
+  display: inline-block;
+  vertical-align: top;
+}
+
+label{
+  display: block;
+}
+
