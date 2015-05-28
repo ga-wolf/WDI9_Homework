@@ -1,0 +1,114 @@
+header, nav {
+	display: block;
+}
+
+
+body {
+	color: #666666;
+	background-image: url("http://graliv.com/images/rand/old_book_library_ladder_bookshelf_widescreen_desktop_1920x1200_hd-wallpaper-7274.jpg.pagespeed.ce.9LSULD1sjj.jpg");
+	font-family: Georgia, Times, serif;
+	line-height: 1.4em;
+	margin: 0px;
+}
+
+header {
+	height: 110px;
+	background-color: rgba(79, 33, 42, 1);
+	margin-bottom: 45px;
+	padding-top: 20px;
+}
+
+h1 {
+	text-indent: 30px;
+	width: 940px;
+	height: 30px;
+	margin: 50px 0px;
+}
+
+h3 {
+	margin-left: 30px;
+}
+
+nav {
+	clear: both;
+	color: #ffffff;
+	background-color: #aeaca8;
+	height: 30px;
+}
+
+nav ul {
+	margin: 0px;
+	padding: 5px 0px 5px 30px;
+}
+
+nav li {
+	display: inline;
+	margin-right: 40px;
+}
+
+nav li a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+nav li a:hover, nav li a.current {
+	color: #000000;
+}
+
+form {
+  text-align: left;
+  display: inline-table;
+  margin-left: 35px;
+  margin-bottom: 35px;
+  margin-top: -15px;
+}
+
+
+.myList {
+	clear: both;
+	color: rgba(79, 33, 42, 1);
+	height: 30px;
+	margin-bottom: 10px;
+}
+
+.myList ul {
+	margin: -30px 0px;
+	padding: 5px 0px 5px 30px;
+}
+
+.myList li {
+	display: inline;
+	margin-right: 50px;
+}
+
+.myList li a {
+	color: rgba(79, 33, 42, 1);
+	text-decoration: none;
+}
+
+.myList li a:hover, .myList li a.current {
+	color: rgba(89, 151, 106, 1);
+}
+
+.container {
+	width:940px;
+	margin: 20px auto 20px auto;
+	background-color: #ffffff;
+}
+
+.bigHeading {
+	font-size: -webkit-xxx-large;
+	color: white;
+	text-indent: 10px;
+	width: 940px;
+	height: 60px;
+	margin: 20px;
+}
+
+.thumb {
+	width: 500px;
+	height: 500px;
+	border: 1px solid #d6d6d6;
+	margin-left: 30px;
+	margin-bottom: 60px;
+}
