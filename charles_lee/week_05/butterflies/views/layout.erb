@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/css/butterflies.css">
+</head>
+<body>
+	<nav>
+		<ul>
+
+				<% @families.each do |type| %>
+					<li>
+						<a href="/butterflies/family/<%= type.family %>">
+							<%= type.family %>
+						</a>
+					</li>
+				<% end %>
+			<li><a href="/">Home</a></li>
+			<li><a href="/butterflies">View Butterflies</a></li>
+			<li><a href="/butterflies/new">Create a Butterfly</a></li>
+			<li><a href="/plants">View Plants</a></li>
+			<li><a href="/plants/new">Create a Plant</a></li>
+		</ul>
+	</nav>
+	<div class="container">
+		<%= yield %>
+	</div>
+</body>
+</html>

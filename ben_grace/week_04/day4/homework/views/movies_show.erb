@@ -1,0 +1,17 @@
+<form action="/movies">
+  <input type="text" name="title" placeholder="Enter a movie title">
+  <button>Enter movie title</button>
+</form>
+
+<form action="/movies/search">
+  <input type="text" name="title" placeholder="Enter a movie title">
+  <button>Search for movie</button>
+</form>
+
+
+<h1> <%= @movie.title %> </h1>
+<p> <%= @movie.plot %><p>
+<!-- <p> <%= @id %></p> -->
+<div>
+  <img src=<%="#{@movie.poster}"%>>
+<div>

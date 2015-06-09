@@ -18,6 +18,6 @@
 
 <% @search_array.each do |result| %>
 
-<li><%= result['Title'] %></li>
+<li><a href="/movies/<%= result['imdbID'] %>"><%= result['Title'] %></li></a>
 
 <%end%>

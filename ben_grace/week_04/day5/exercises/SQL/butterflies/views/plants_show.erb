@@ -1,0 +1,26 @@
+<div class="textContent">
+  <h2><%= @plants.name %></h2>
+  <!-- <h2><%= @plants.image %></h2> -->
+  <p> This is a plant and it does plant things. It can't do moth things because it isn't a moth. It is a plant and will always be a plant. Get over it.</p>
+  <div>
+    <a href="/plants/<%= @plants['id'] %>/delete">Delete yo beaut plant you jerk!</a>
+    <a href="/plants/<%= @plants['id'] %>/edit">Edit yo plant son!</a>
+    <ul>
+    <% @plants.butterflies.each do |butterfly| %>
+    <li>
+        <a href="/butterflies/<%= butterfly.id %>">
+        <%= butterfly.name %>
+        </a>
+    </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
+
+
+
+<div class="imageContent">
+  <% if @plants.image %>
+    <img src="<%= @plants.image %>">
+  <% end %>
+</div>

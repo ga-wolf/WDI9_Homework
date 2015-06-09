@@ -6,14 +6,19 @@
   <link rel="stylesheet" href="/css/butterflies.css">
 </head>
 <body>
-
-  <nav>
-    <a href="/">Home</a>
-    <a href="/butterflies">All butterflies and soup</a>
-    <a href="/butterflies/new">Create soupy butterflies</a>
-  </nav>
-
   <div class="container">
+    <div>
+     <nav>
+      <% @families.each do |type| %>
+          <a href="/butterflies/family/<%= type.family %>"><%= type.family %></a>
+        <% end %>
+        <a href="/">Home</a>
+        <a href="/butterflies">All butterflies and soup</a>
+        <a href="/butterflies/new">Create soupy butterflies</a>
+        <a href="/plants">All plants</a>
+        <a href="/plants/new">New plant</a>
+      </nav>
+    </div>
     
     <%= yield %>
 
