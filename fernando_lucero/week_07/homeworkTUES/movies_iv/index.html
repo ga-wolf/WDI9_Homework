@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/movies.js"></script>
+    <link rel="stylesheet" href="css/movies.css">
+</head>
+
+<body>
+    <form action="http://omdbapi.com/">
+        <input type="query" name="t" id="t">
+        <input type="submit" name="Search">
+    </form>
+
+    <div class="movieDescription">
+	    <h2 id="title"></h2>
+	    <span id="year"></span>
+	    <br>
+	    <span id="rated"></span>
+	    <br>
+	    <span id="runtime"></span>
+	    <br>
+	    <span id="starring"></span>
+	    <h3 id="plotHeading"></h3>
+	    <p id="plot"></p>
+
+	    <p id="poster"><img src=""></p>
+
+    </div>
+</body>
+
+</html>
