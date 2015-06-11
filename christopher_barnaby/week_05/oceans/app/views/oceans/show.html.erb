@@ -1,0 +1,24 @@
+
+
+<img class="backgroundOcean" src="<%=@ocean.image%>">
+<div class="box">
+<h2>The <%=@ocean.name%> Ocean</h2>
+
+<p> 
+  <strong>Hemisphere: </strong><%=@ocean.hemisphere%>
+</p>
+<p> 
+  <strong>Volume: </strong><%=@ocean.volume%> km<sup>3</sup>
+</p>
+<p> 
+  <strong>Maximum depth: </strong><%=@ocean.maximum_depth%> meters
+</p>
+<p> 
+  <strong>Deepest point: </strong><%=@ocean.deepest_point%>
+</p>
+<%= button_to("Destroy Ocean", ocean_delete_path(@ocean.id)) %>  
+<%= button_to("Edit Ocean", ocean_edit_path(@ocean.id)) %> 
+</div>
+
+
+

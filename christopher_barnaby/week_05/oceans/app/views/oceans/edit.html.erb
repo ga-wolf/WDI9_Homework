@@ -1,0 +1,19 @@
+<h2>Update the <%=@ocean.name%> Ocean</h2>
+
+<form action="/oceans/<%=@ocean.id%>" method="post">
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="ocean[name]" value="<%=@ocean.name%>"><br>
+  <label for="image">Image:</label>
+  <input type="url" id="image" name="ocean[image]" value="<%=@ocean.image%>"><br> 
+  <label for="hemisphere">Hemisphere:</label>
+  <input type="text" id="Hemisphere" name="ocean[hemisphere]"  value="<%=@ocean.hemisphere%>"><br> 
+  <label for="volume">Volume:</label>
+  <input type="float" id="volume" name="ocean[volume]" value="<%=@ocean.name%>"> ><span>km<sup>3</sup></span><br>
+  <label for="maximum_depth">Maximum depth:</label>
+  <input type="float" id="maximum_depth" name="ocean[maximum_depth]" value="<%=@ocean.maximum_depth%>"><span><br>meters</span>
+  <label for="deepest_point">Deepest point:</label>
+  <input type="text" id="deepest_point" name="ocean[deepest_point]" value="<%=@ocean.deepest_point%>"><br>
+
+  <button>Update Ocean</button>
+</form>

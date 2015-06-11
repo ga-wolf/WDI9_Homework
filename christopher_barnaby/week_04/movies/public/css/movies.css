@@ -1,0 +1,112 @@
+body {
+  text-align: center;
+  font-family: courier;
+  margin: 0px;
+}
+
+h1 {
+  opacity: 0.6;
+  font-weight: 100;
+  margin: 0px 0px 10px 0px;
+  text-align: center;
+}
+
+h2 {
+  margin: 0px 2px 2px 2px;
+  font-weight: 100;
+
+}
+
+h3 {
+  opacity: 0.6;
+  font-weight: 100;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  margin-top: 30px;
+
+
+}
+
+.box {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  padding: 10px;
+  margin: 0px;
+  max-width: 420px;
+  color: black;
+}
+
+
+
+.top {
+  padding: 10px;
+  margin: 0 auto;
+ /* border-width: 1px;
+  border-style: solid;
+  border-color: black;*/
+  max-width: 100%;
+  color: black;
+}
+
+.wrapper {
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 100%;
+  background-color: lightgrey;
+  color: black;
+  vertical-align: center;
+}
+
+.search {
+  max-width: 200px;
+  margin: 0 auto;
+  vertical-align: center;
+  text-align: center;
+}
+.title {
+  margin: 0 auto;
+  margin-top: 0px;
+/*  border-width: 1px;
+  border-style: solid;
+  border-color: black;*/
+  max-width: 100%;
+  color: black;
+  text-align: center;
+}
+
+input, button {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+  background-color: white;
+  font-weight: 700;
+}
+
+.container p {
+  padding: 5px, 10px, 5px, 10px;
+}
+
+strong {
+}
+
+p {
+  font-weight: 100;
+  margin: 0px 0px 10px 0px;
+}
+
+.italic {
+  font-style:italic;
+  text-align: center;
+}
+
+img {
+  border: 1px solid black;
+  border-radius: 5px;
+
+}
