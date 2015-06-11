@@ -1,0 +1,94 @@
+body{
+  background-color: rgba(10,100,100,1);
+  color: #F39C12;
+  background-image: url("http://www.nps.gov/olym/learn/nature/images/Elwha-River-log-Scott-Church-copy.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 0;
+  margin-bottom: 0;
+
+
+}
+
+#container{
+  margin: 0 auto;
+  margin-top: 0;
+  width: 960px;
+  height: 100vh;
+  display: center;
+  text-align: center;
+  
+}
+
+label{
+  display: block;
+}
+
+#newRiver{
+  margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#modify{
+    margin-top: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img{
+  width: 400px;
+  margin: 20px auto;
+  border: 3px solid rgba(255, 255, 255, .5);
+}
+
+.link_to{
+  margin: 0 auto;
+  display: block;
+}
+
+#riverList{
+  margin-top: 10%;
+}
+
+p{
+  position: relative;
+  left:40%;
+  margin: 0px 2px;
+  display:block;
+  text-align: left
+}
+
+body p:last-of-type{
+  margin-bottom: 20px;
+}
+
+span{
+  color: #D35400;
+}
+
+
+a:link {
+    color: #FDE3A7;
+}
+
+/* visited link */
+a:visited {
+    color: #FDE3A7;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FDE3A7;
+}
+
+/* selected link */
+a:active {
+    color: #FDE3A7;
+}
+
+img{
+  display: block;
+}
