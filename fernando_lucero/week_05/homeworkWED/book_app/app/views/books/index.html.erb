@@ -1,0 +1,13 @@
+<h1>Books to read</h1>
+
+<% @books.each do |book| %>
+	<div class="myList">
+		<ul>
+			<li><%= link_to(book.title, book) %></li>
+			<li><%= book.isdn %></li>
+			<li><%= book.publication %></li>
+			<li><%= book.genre %></li>
+		</ul>
+	</div>
+	<%= image_tag(book.image, :class => 'thumb') %>
+<%end%>

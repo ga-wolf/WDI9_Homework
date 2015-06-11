@@ -1,0 +1,14 @@
+<h1><%= @book.title %></h1>
+	<div class="myList">
+		<ul>
+		  <li><%= @book.isdn %></li>
+		  <li><%= @book.publication %></li>
+		  <li><%= @book.genre %></li>
+		  <% if @book.author %>
+		    <li><%= link_to(@book.author.name, @book.author) %></li>
+		  <% end %>
+		  <li><%= link_to('Edit', edit_book_path(@book)) %></li>
+		  <li><%= link_to('Delete', @book, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
+		</ul>
+	</div>
+<%= image_tag(@book.image, :class => 'thumb') %>

@@ -1,0 +1,26 @@
+<div class="lightener">
+<h2><%= @planet.name %></h2>
+
+<p>This planet is <%= @planet.orbit %>, from the sun.</p>
+
+<p>It weighs <%= @planet.mass %> kg, and has a <%= @planet.radius %> km radius.</p>
+
+<%= image_tag(@planet.image, size: '960', :id => 'mainplan') %>
+
+<li><%= link_to 'Edit', edit_planet_path(@planet) %></li>
+<li><%= link_to('Delete', @planet, :method => 'delete', :data => {:confirm => 'Are you sure?'}) %></li>
+
+<h3>Moons:</h3>
+<p>Sized according to a sliding scale where the planet size is 960px, and the minimum size is 20px.</p>
+</div>
+
+<% @moons.each do |moon| %>
+  <% if moon['planet'].upcase == @planet.name.upcase %>
+    <% moon_size = ( (920 * (moon["radius"].to_f - @min) / (@max - @min)) + 40 ).to_f.ceil %>
+    <% if moon.image %>
+      <%= link_to(image_tag(moon.image, size: "#{moon_size}", :class => 'thumb', :title => moon.name), moon) %>
+    <% else %>
+      <%= link_to(image_tag('crest.jpg', size: "#{moon_size}", :class => 'thumb', :title => moon.name), moon) %>
+    <% end %>
+  <% end %>
+<% end %>

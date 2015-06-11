@@ -1,0 +1,10 @@
+<h1>The <%= @rocket.name %></h1>
+
+
+<%= image_tag @rocket.image %>
+
+<h3><%= @rocket.description %></h3>
+<p>First launched in <%= @rocket.year %>, the <%= @rocket.name %>,</p>
+
+<%= link_to('Edit Rocket Info', rocket_edit_path(@rocket.id)) %>
+<%= button_to('Delete Rocket', rocket_delete_path(@rocket.id)) %>

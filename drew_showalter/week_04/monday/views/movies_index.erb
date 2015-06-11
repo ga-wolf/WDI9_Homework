@@ -1,0 +1,11 @@
+<h2>All* Movies</h2>
+<ul>
+  <% @movies.each do |mov| %>
+    <li>
+      <a href="/movies/<%= mov['title'] %>">
+        <img class="thumb" src="<%= mov['poster'] %>">
+        <%= mov['title'] %>
+      </a>
+    </li>
+  <% end %>
+</ul>

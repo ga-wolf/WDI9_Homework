@@ -1,0 +1,45 @@
+<h2>Edit Movie</h2>
+<form action="/movies/<%= @movie['id'] %>" method="post">
+
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" value="<%= @movie['title'] %>"><br>
+
+  <label for="year">Year:</label>
+  <input type="number" id="year" name="year" value="<%= @movie['year'] %>"><br>
+
+  <label for="runtime">Runtime (mins):</label>
+  <input type="number" id="runtime" name="runtime" value="<%= @movie['runtime'] %>"><br>
+
+  <label for="genre">Genre:</label>
+  <input type="text" id="genre" name="genre" value="<%= @movie['genre'] %>"><br>
+
+  <label for="director">Director:</label>
+  <input type="text" id="director" name="director" value="<%= @movie['director'] %>"><br>
+
+  <label for="actors">Actors:</label>
+  <input type="text" id="actors" name="actors" value="<%= @movie['actors'] %>"><br>
+
+  <label for="plot">Plot:</label>
+  <input type="text" id="plot" name="plot" value="<%= @movie['plot'] %>"><br>
+
+  <label for="language">Language:</label>
+  <input type="text" id="language" name="language" value="<%= @movie['language'] %>"><br>
+
+  <label for="poster">Poster:</label>
+  <input type="url" id="poster" name="poster" value="<%= @movie['poster'] %>"><br>
+
+  <label for="imdbID">IMDB ID:</label>
+  <input type="text" id="imdbID" name="imdbID" value="<%= @movie['imdbID'] %>"><br>
+
+  <label for="imdbRate">IMDB Rating:</label>
+  <input type="number" id="imdbRate" name="imdbRate" value="<%= @movie['imdbRate'] %>"><br>
+
+  <label for="myRate">My weighted rating:</label>
+  <input type="number" id="myRate" name="myRate" value="<%= @movie['myRate'] %>"><br>
+
+  <label for="rounds">Number of rounds voted on:</label>
+  <input type="number" id="rounds" name="rounds" value="<%= @movie['rounds'] %>"><br> 
+
+  <button>Update movie</button>
+
+</form>

@@ -1,0 +1,31 @@
+<h2>Input a new spacecraft: </h2>
+
+<form action="/rockets" method="post">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="rocket[name]" placeholder="Saturn V">
+  <label for="image">Image:</label>
+  <input type="url" id="image" name="rocket[image]">
+  <label for="designer">Designed By:</label>
+  <input type="text" id="designer" name="rocket[designer]">
+  <label for="year">Year of first launch:</label>
+  <input type="text" id="year" name="rocket[year]">
+  <label for="height">Height (m):</label>
+  <input type="text" id="height" name="rocket[height]">
+  <label for="mass">Mass (kg):</label>
+  <input type="text" id="mass" name="rocket[mass]">
+  
+  <label for="thrust">Thrust (kN):</label>
+  <input type="text" id="thrust" name="rocket[thrust]">
+  <label for="delV">Maxiumum delta-V (km/hr):</label>
+  <input type="text" id="delV" name="rocket[delV]">
+  <label for="crew">Maximum Crew:</label>
+  <input type="text" id="crew" name="rocket[crew]">
+  <label for="payload">Payload (kg):</label>
+  <input type="text" id="payload" name="rocket[payload]">
+  <label for="cost">Total Program Cost (USD):</label>
+  <input type="text" id="cost" name="rocket[cost]">
+  <label for="description">Description:</label>
+  <input type="text" id="description" name="rocket[description]"><br>
+
+  <button>Add Rocket</button>
+</form>

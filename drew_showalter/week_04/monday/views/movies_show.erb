@@ -1,0 +1,12 @@
+<h2>Name: <%= @movie['title'] %></h2>
+<h3>Family: <%= @movie['title'] %></h3><br>
+<h3><a href="//imdb.com/title/<%= @movie.imdbID %>">IMDB Page</a></h3>
+
+<% if @movie['poster'] %>
+  <img class="main" src="<%= @movie['poster'] %>">
+<% end %>
+
+<p>
+  <a href="/movies/<%= @movie['id'] %>/edit">Edit</a>
+  <a href="/movies/<%= @movie['id'] %>/delete">Delete</a>
+</p>

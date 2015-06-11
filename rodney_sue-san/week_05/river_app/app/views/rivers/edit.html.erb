@@ -1,0 +1,20 @@
+<h2>Edit River</h2>
+
+<form action="/rivers/<%= @river.id %>" method="post">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="river[name]" placeholder="Nile" value="<%= @river.name %>">
+  <label for="image">Image:</label>
+  <input type="url" id="image" name="river[image]" value="<%= @river.image %>">
+  <label for="mouth">Mouth:</label>
+  <input type="text" id="mouth" name="river[mouth]" placeholder="Pacific ocean" value="<%= @river.mouth %>">
+  <label for="source">Source:</label>
+  <input type="text" id="source" name="river[source]" placeholder="XY river" value="<%= @river.source %>">
+  <label for="location">Location:</label>
+  <input type="text" id="location" name="river[location]" value="<%= @river.location %>">
+  <label for="length">Length km:</label>
+  <input type="text" id="length" name="river[length]" value="<%= @river.length %>">
+  <label for="width">Width km:</label>
+  <input type="text" id="width" name="river[width]" value="<%= @river.width %>">
+
+  <button id="modify">Modify River</button>
+</form>
