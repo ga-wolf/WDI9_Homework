@@ -1,0 +1,21 @@
+<h2> Greek Gods Index </h2>
+  <p><strong>Alignment Filter</strong></p>
+  <div class="button-group filters-button-group">
+    <button class="button is-checked" data-filter="*">Show All</button>
+    <button class="button" data-filter=".Olympian">Olympians</button>
+    <button class="button" data-filter=".Titans">Titans</button>
+    <button class="button" data-filter=".Oceanic">Oceanic</button>
+  </div>
+  <div class="grid">
+  <% @gods.each do |god| %>
+    <div class="element-item godbox <%= god.faction %>">
+      <% unless god.image.present? %>
+        <%= link_to((image_tag "http://upload.wikimedia.org/wikipedia/commons/7/72/No_God.svg"), god_path(god.id)) %>
+      <% else %>
+        <%= link_to((image_tag god.image), god_path(god.id)) %>
+      <% end %>
+      <p><%= god.name %></p>
+    </div>
+  <% end %>
+  </div>
+

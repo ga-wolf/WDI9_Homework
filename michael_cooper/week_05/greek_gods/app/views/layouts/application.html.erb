@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GreekGods</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Kreon|Raleway:300' rel='stylesheet' type='text/css'>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.0/isotope.pkgd.min.js"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="header">
+    <div class="container">
+    <nav>
+      <a href="/gods">Index</a> | 
+      <a href="/gods/new">New God</a>
+    </nav>
+    </div>
+  </div>
+    
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+</html>

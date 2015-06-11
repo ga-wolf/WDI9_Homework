@@ -1,0 +1,31 @@
+.container {
+  max-width: 960px;
+  margin: auto;
+}
+
+.profile {
+  max-height: 500px;
+}
+
+.profilediv {
+  vertical-align: top;
+  display: inline-block;
+}
+
+.booksdiv {
+  margin-left: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.booksdiv img {
+  -webkit-filter: saturate(0%); 
+  display: inline-block;
+  max-height: 150px;
+  margin: 4px;
+}
+
+.booksdiv img:hover {
+  -webkit-filter: saturate(100%);
+
+}

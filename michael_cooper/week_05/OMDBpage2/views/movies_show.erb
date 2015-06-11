@@ -1,0 +1,9 @@
+   <form action="/movies">
+  <input name='movieinput' placeholder="Enter Movie Title...">
+  <button>Submit</button>
+</form>
+
+  <p class="movietitle"><%= @movie.title %></p>
+  <p>was released in <%= @movie.year %></p>
+  <p>Plot: <%= @movie.plot %></p>
+  <p><img src=<%= @movie.poster %>></p>

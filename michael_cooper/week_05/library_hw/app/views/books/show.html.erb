@@ -1,0 +1,11 @@
+<h1><%= @book.title %></h1>
+<%= link_to('Edit', edit_book_path) %> |
+<%= link_to('Delete', book_path, :method => 'delete') %>
+
+<p>Genre: <%= @book.genre %></p>
+<p>Released in: <%= @book.year %></p>
+<% if @book.author.present? %>
+  <p>Written by: <%= link_to(@book.author.name, @book.author) %></p>
+<% end %>
+
+<%= image_tag(@book.cover, :class => 'profile') %>
