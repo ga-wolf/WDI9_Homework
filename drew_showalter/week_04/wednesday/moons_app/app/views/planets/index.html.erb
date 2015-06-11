@@ -1,0 +1,18 @@
+<div class="lightener">
+<h1>Every known planet!</h1>
+<p>Sized according to a sliding scale where the max size is 960px, and the minimum size is 20px.</p>
+
+<div class="sphere">
+<% @planets.each do |planet| %>
+  <% planet_size = ( (920 * (planet.radius.to_f - @min) / (@max - @min)) + 40 ).to_f.ceil %>
+  <a href="/planets/<%=planet.id%>">
+  <% if planet.image %>
+    <%= image_tag(planet.image, size: "#{planet_size}", :title => planet.name) %>
+  <% else %>
+    <%= image_tag('crest.jpg', :size => "#{planet_size}", :title => planet.name) %>
+  <% end %>
+  </a>
+
+<% end %>
+
+</div>

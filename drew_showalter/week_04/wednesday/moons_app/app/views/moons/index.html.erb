@@ -1,0 +1,17 @@
+<div class="lightener">
+<h1>Every known moon!</h1>
+<p>Sized according to a sliding scale where the max size is 960px, and the minimum size is 20px.</p>
+
+<div class="sphere">
+<% @moons.each do |moon| %>
+  <% moon_size = ( (920 * (moon.radius.to_f - @min) / (@max - @min)) + 40 ).to_f.ceil %>
+  <a href="/moons/<%=moon.id%>">
+  <% if moon.image %>
+    <%= image_tag(moon.image, size: "#{moon_size}", :title => moon.name) %>
+  <% else %>
+    <%= image_tag('crest.jpg', size: "#{moon_size}", :title => moon.name) %>
+  <% end %>
+  </a>
+
+<% end %>
+</div>
