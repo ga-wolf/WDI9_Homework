@@ -1,0 +1,90 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.thumbnail{
+  box-sizing: border-box;
+  height: 200px;
+  margin-left: 5px;
+  margin-right:5px;
+
+}
+
+span{
+    margin-left: 5px;
+  margin-right:5px;
+}
+
+#manyPhotos{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+img{
+  border: 2px solid white;
+
+}
+
+#bigPic{
+  position:fixed;
+  top:10px;
+  left:50%;
+  transform: translate(-50%);
+  transition: top 2s;
+
+}
+
+
+.addDark{
+  position: fixed;
+  left:0;
+  top:0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+
+}
+
+
+
+#flickLink{
+  display:block;
+  position: relative;
+  bottom: 26px;
+  background-color: rgba(137, 196, 244, 0.7);
+  color: white;
+  border: 2px solid white;
+}
+
+#flickLink:hover{
+  color: #1F3A93;
+}
+
+a{
+  text-decoration: none;
+}
+
+body{
+  text-align: center;
+  background: #3498DB;
+}
+
+h1{
+  color: #2C3E50;
+}
+
+#toTop{
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  font-size: 3em;
+  color: rgba(225, 239, 253, 0.3);
+}
+
+#toTop:hover{
+  color: red;
+}
+
+
