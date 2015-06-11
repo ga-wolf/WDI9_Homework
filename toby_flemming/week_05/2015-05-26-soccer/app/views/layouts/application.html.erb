@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Soccer</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav>
+  <a href="<%= players_path %>">Player List</a> |
+  <a href="<%= new_player_path %>">Create Player</a>
+</nav>
+
+<%= yield %>
+
+</body>
+</html>

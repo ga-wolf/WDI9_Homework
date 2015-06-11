@@ -1,0 +1,10 @@
+<h2><%= "#{@player[:first_name]} #{@player[:last_name]}" %></h2>
+<ul>
+  <li>Age: <%= @player[:age] %></li>
+  <li>Height: <%= @player[:height] %></li>
+  <li>Weight: <%= @player[:weight] %></li>
+  <li>Postion: <%= @player[:position] %></li>
+  <li>Foot: <%= @player[:foot] %></li>
+</ul>
+<%= button_to "DELETE", delete_player_path(@player), :method => :delete %>
+<%= button_to "EDIT", edit_player_path(@player), :method => :get %>
