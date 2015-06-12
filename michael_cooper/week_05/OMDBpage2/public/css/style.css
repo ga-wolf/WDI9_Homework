@@ -1,0 +1,14 @@
+body {
+  background-color: lightblue;
+}
+
+#container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.movietitle {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: arial, sans-serif;
+}

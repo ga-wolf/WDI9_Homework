@@ -1,0 +1,31 @@
+<form action="/movies">
+  <input name='movieinput' placeholder="Enter Movie Title...">
+  <button>Submit</button>
+</form>
+
+<% if @results_length > 1 %>
+  
+  <h1>Search results: </h1>
+
+  <% @list_of_names.each do |title| 
+    link = title.split(' ').map(&:capitalize).join("%20")
+    title_actual = title
+    %>
+
+<p>Title: 
+<a href= <%= "/movies?i=" + link %> >
+<%= title_actual %>
+</a></p>
+<% end %>
+
+<% end %>
+
+<% if @title && !(@list_of_names.length > 1) %>
+    
+<h1> Search for <%= @input %>:</h1>
+
+    <p><%= @title %> was released in <%= @year %></p>
+    <p><img src=<%= @poster %>></p>
+
+ <% end %>
+

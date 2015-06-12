@@ -1,0 +1,133 @@
+body {
+    background: #343d46;
+}
+
+h1 {
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+    font-size: 54px;
+    font-weight: 300;
+    line-height: 58px;
+    margin: 0 0 58px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.form-holder {
+    margin: 0 auto;
+    max-width: 960px;
+}
+
+.box {
+    width: 80%;
+    height: 50px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.search-bar {
+    overflow: hidden;
+    width: 100%;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.search-bar input#search {
+    width: 90%;
+    height: 50px;
+    background: #2b303b;
+    border: none;
+    font-size: 10pt;
+    float: left;
+    color: #fff;
+    padding-left: 15px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.search-bar input#search::-webkit-input-placeholder {
+    color: #65737e;
+}
+
+.search-bar input#search:-moz-placeholder {
+    /* Firefox 18- */
+    
+    color: #65737e;
+}
+
+.search-bar input#search::-moz-placeholder {
+    /* Firefox 19+ */
+    
+    color: #65737e;
+}
+
+.search-bar input#search:-ms-input-placeholder {
+    color: #65737e;
+}
+
+.search-bar button.icon {
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    background: #232833;
+    height: 50px;
+    width: 10%;
+    color: #4f5b66;
+    font-size: 10pt;
+    -webkit-transition: all .55s ease;
+    -moz-transition: all .55s ease;
+    -ms-transition: all .55s ease;
+    -o-transition: all .55s ease;
+    transition: all .55s ease;
+}
+
+.search-bar:hover button.icon {
+    outline: none;
+    opacity: 1;
+    background: #B4CDCD;
+}
+
+.search-bar:active button.icon {
+    outline: none;
+    background: #388E8E;
+}
+
+.container {
+    width: 924px;
+    margin: 0 auto;
+}
+
+.thumbnail {
+    margin: 2px;
+    margin-bottom: 0px;
+    align: center;
+    -webkit-box-shadow: 0px 0px 8px 0px #000000;
+    -moz-box-shadow: 0px 0px 8px 0px #000000;
+    box-shadow: 0px 0px 8px 0px #000000;
+}
+
+.thumbnail {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: all .55s ease;
+    -moz-transition: all .55s ease;
+    -ms-transition: all .55s ease;
+    -o-transition: all .55s ease;
+    transition: all .55s ease;
+}
+
+.thumbnail:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
