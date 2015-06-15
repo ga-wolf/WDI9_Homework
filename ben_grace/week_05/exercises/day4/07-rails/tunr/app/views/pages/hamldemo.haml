@@ -1,0 +1,16 @@
+%h1 Hello World from HAML
+
+%p This is a paragraph! Woo!
+
+%span= 3 ** 99
+
+%div.content
+  %h2 Soupy soup soup
+  %h3 More soup
+  %p
+    %span span1
+    %span span2
+
+- numbers = (0..10).to_a
+- numbers.each do |number|
+  %h6= number 

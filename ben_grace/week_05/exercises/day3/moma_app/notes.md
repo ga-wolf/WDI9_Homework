@@ -1,4 +1,4 @@
-rails new book_app -T Makes the new directory (the -T means don't add the test files)
+`rails new book_app -T Makes the new directory (the -T means don't add the test files)
 
 add and bundle the gems
 

@@ -1,0 +1,16 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+label{
+  min-width: 150px;
+  display: inline-block;
+  text-align: right;
+}
+
+.field_with_errors{
+  display: inline-block;
+}
+
+.field_with_errors input{
+  border-color: red;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="nav">
+  <h1>Image Search</h1>
+    <form id="image_search">
+      <%= text_field_tag 'search' , nil, :autofocus => true %>
+      <%= button_tag 'Search Images', :id => 'search_flickr' %>
+    </form>
+  </div>
+
+  <div class="imgContainer">
+  </div>
+
+  
+</body>
+</html>
+

@@ -1,0 +1,17 @@
+
+html{
+  font-family: monospace;
+  background-color: #020;
+  color: #0f0;
+}
+
+.box{
+  width: 4em;
+  height: 4em;
+  // border: 1px solid black;
+  display: inline-block;
+  margin: 0.5em;
+  text-align: center;
+  line-height: 4em;
+  overflow: hidden;
+}
