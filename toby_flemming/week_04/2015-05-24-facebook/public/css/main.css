@@ -1,0 +1,24 @@
+/*@import url(http://fonts.googleapis.com/css?family=Roboto:400,700);
+
+body {
+  font-family: 'Roboto', sans-serif;
+}*/
+
+.wrapper {
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 0 15px 15px 15px;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+form {
+  display: table-row; /*Bootstrap search breaks otherwise*/
+}
+
+img {
+  height: 150px;
+  width: 100px;
+  background-color: grey;
+  padding: 4px;
+}

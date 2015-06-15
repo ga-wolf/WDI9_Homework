@@ -1,0 +1,19 @@
+<h2>Create an Ocean</h2>
+
+<form action="/oceans" method="post">
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="ocean[name]" placeholder="eg Pacific"><br> 
+  <label for="image">Image:</label>
+  <input type="url" id="image" name="ocean[image]" placeholder="Enter a URL"><br>
+  <label for="hemisphere">Hemisphere:</label>
+  <input type="text" id="Hemisphere" name="ocean[hemisphere]" placeholder="eg Northern, Southern"><br>
+  <label for="volume">Volume:</label>
+  <input type="float" id="volume" name="ocean[volume]" placeholder="eg 140000"><span>km<sup>3</sup></span><br>
+  <label for="maximum_depth">Maximum depth:</label>
+  <input type="float" id="maximum_depth" name="ocean[maximum_depth]" placeholder="eg 1800"><span>meters</span><br>
+  <label for="deepest_point">Deepest point:</label>
+  <input type="text" id="deepest_point" name="ocean[deepest_point]" placeholder="eg Challenger Deep"><br>
+
+  <button>Create Ocean</button>
+</form>

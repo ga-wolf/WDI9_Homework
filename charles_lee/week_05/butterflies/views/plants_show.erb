@@ -1,0 +1,14 @@
+<h2><%=@plant.name%></h2>
+<% if @plant.image %>
+	<img src="<%= @plant.image %>" alt="<%@plant.name%>">
+
+<% end %>
+<ul>
+<% @plant.butterflies.each do |butterfly| %>
+	<li><a href="/butterflies/<%=butterfly.id%>"><%=butterfly.name%></a></li>
+<% end %>
+</ul>
+<ul>
+	<li><a href="/plants/<%=@plant.id%>/edit">Edit</a></li>
+	<li><a href="/plants/<%=@plant.id%>/delete">Delete</a></li>
+</ul>

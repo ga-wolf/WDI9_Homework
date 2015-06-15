@@ -1,0 +1,31 @@
+<%= form_for @planet do |f| %> <!-- f is for form -->
+  
+
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label "How far out does it orbit?" %>
+    <%= f.number_field :orbit %>
+  </p>
+
+  <p>
+    <%= f.label "Radius (km)?" %>
+    <%= f.text_field :radius %>
+  </p>
+
+  <p>
+    <%= f.label "Mass (kg)?" %>
+    <%= f.text_field :mass %>
+  </p>
+
+  <p>
+    <%= f.label :image %>
+    <%= f.url_field :image %>
+  </p>
+
+  <%= f.submit %>
+
+<% end %>

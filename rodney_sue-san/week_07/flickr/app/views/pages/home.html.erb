@@ -1,0 +1,23 @@
+
+
+  <h1>Image Search <i id="camera" class="fa fa-camera-retro"></i></h1>
+
+
+  <div>
+    <form id="image_search">
+      <%= text_field_tag 'search', nil, :autofocus => true %>
+      <%= button_tag 'Search Images', :id => 'search_flickr' %>
+    </form>
+  </div>
+
+
+
+
+  <div id="manyPhotos"></div>
+
+  <div id="toTop" hidden> <i class="fa fa-arrow-circle-o-up"></i> </div>
+
+<div id="darken">
+</div>
+
+<div id="bigPic"></div>

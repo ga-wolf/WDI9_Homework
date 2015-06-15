@@ -1,0 +1,12 @@
+body {
+  background-color: purple;
+}
+
+h1 {
+  color: yellow;
+}
+
+#container {
+  width: 960px;
+  margin: 0 auto;
+}

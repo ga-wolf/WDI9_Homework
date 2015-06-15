@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LibraryHw</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+  <nav>
+    <a href="/authors">Authors</a> |
+    <a href="/books">Books</a> |
+    <a href="/authors/new">New Author</a> |
+    <a href="/books/new">New Book</a>
+  </nav>
+
+<%= yield %>
+
+</div>
+</body>
+</html>

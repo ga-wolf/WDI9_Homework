@@ -1,0 +1,14 @@
+<form action="/movies">
+  <input name='movieinput' placeholder="Enter Movie Title...">
+  <button>Submit</button>
+</form>
+  
+  <h1>Search results: </h1>
+
+  
+<% @search_results.each do |movie| %>
+  <p>Title: 
+  <a href="/movies/<%= movie['imdbID'] %>">
+  <%= movie['Title'] %>
+  </a></p>
+<% end %>

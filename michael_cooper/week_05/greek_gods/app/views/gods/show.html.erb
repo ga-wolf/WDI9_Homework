@@ -1,0 +1,20 @@
+<div class="showpage">
+  <h2><%= @god.name %></h2>
+  <div id="profile">
+    <br>
+    <% if !@god.image.present? %>
+      <img src="http://upload.wikimedia.org/wikipedia/commons/7/72/No_God.svg">
+    <% else %>
+      <%= image_tag @god.image %>
+    <% end %>
+  </div>
+  <div id="info">
+    <p><strong>More information:</strong> <%= @god.description %> <%= "#{@god.name} has #{pluralize(@god.children, 'child')}." %></p>
+    <p><strong>Alignment:</strong> <%= @god.faction %></p>
+    <p><strong>Symbol:</strong> <%= @god.symbol %></p>
+    <br>
+  </div>
+  <br>
+    <%= link_to('Edit God', god_edit_path(@god.id)) %>
+    <%= button_to('Destroy God!', god_delete_path(@god.id)) %>
+</div>

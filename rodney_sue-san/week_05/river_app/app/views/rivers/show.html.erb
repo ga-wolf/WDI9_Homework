@@ -1,0 +1,23 @@
+<h2>River Details</h2>
+
+<p> <span>Name:</span> <%= @river.name %> </p>
+
+<p> <span>Location:</span> <%= @river.location %> </p>
+<p> <span>Source:</span> <%= @river.source %> </p>
+<p> <span>Mouth:</span> <%= @river.mouth %> </p>
+
+<% if @river.length %>
+<p> <span>Length:</span> <%= @river.length.to_i %> km</p>
+<% end %>
+
+<% if @river.width %>
+<p> <span>Width:</span> <%= @river.width.to_i %> km</p>
+<% end %>
+<%= link_to('Edit river', river_edit_path(@river.id)) %>
+
+
+
+<%= image_tag @river.image %>
+
+
+ <%= button_to('Cause a drought', river_destroy_path(@river.id), data: { confirm: "Are you sure you want to delete river?" }) %>

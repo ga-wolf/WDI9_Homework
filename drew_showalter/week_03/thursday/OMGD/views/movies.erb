@@ -1,0 +1,15 @@
+<h1>Welcome to the Movie Matcher</h1>
+
+<% @the_movies.each do |mov|%>
+  <% if mov['Title'] %>
+
+    <h2><%= mov['Title'] %></h2>
+    <img src=<%= mov['Poster'] %> alt=""> 
+
+  <% end %>
+<% end %>
+
+<form action= "/">
+  <input type="text" name="movie" placeholder="Insert movie title">
+  <button>Find Movie</button>
+</form>

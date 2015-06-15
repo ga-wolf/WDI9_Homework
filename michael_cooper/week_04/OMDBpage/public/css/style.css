@@ -1,0 +1,8 @@
+body {
+  background-color: lightblue;
+}
+
+#container {
+  max-width: 800px;
+  margin: auto;
+}

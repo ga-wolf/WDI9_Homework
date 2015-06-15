@@ -1,0 +1,28 @@
+
+
+body {
+	background-color: pink;
+}
+
+h3 {
+	margin-bottom: 0px;
+}
+
+p {
+	margin-top: 0px;
+}
+
+#t {
+padding: 0 10px;
+font-size: 20px;
+width: 300px;
+height: 25px;
+border: 1px solid #006;
+background: white;
+border-radius: 10px;
+margin-bottom: 20px;
+}
+
+.movieDescription {
+	width: 40%;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pirate Movie Database</title>
+  <link rel="stylesheet" href="/css/movies.css">
+</head>
+<body>
+
+  <div class="container">
+    <nav>
+      <% @genres.each do |gen| %>
+        <a href="/movies/genre/<%= gen.genre %>"><%= gen.genre %></a>
+      <% end %>
+      |
+      <a href="/">Home</a>
+      |
+      <a href="/movies">All Movies</a>
+      |
+      <a href="/movies/new">New Movie</a>
+      |
+    </nav>
+  </div>
+
+  <div class="container">
+
+    <%= yield %>
+
+  </div>
+
+</body>
+</html>
