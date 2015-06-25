@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Airplanes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Row</th>
+      <th>Column</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @airplanes.each do |airplane| %>
+      <tr>
+        <td><%= airplane.name %></td>
+        <td><%= airplane.row %></td>
+        <td><%= airplane.column %></td>
+        <td><%= link_to 'Show', airplane %></td>
+        <td><%= link_to 'Edit', edit_airplane_path(airplane) %></td>
+        <td><%= link_to 'Destroy', airplane, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Airplane', new_airplane_path %>

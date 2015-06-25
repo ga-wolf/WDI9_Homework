@@ -11,6 +11,11 @@ var movesArray = [
 ]
 
 
+var player1Name = prompt("Player 1's name:");
+var player1Name = prompt("Player 1's name:");
+
+
+
 var changePlayer = function () {
   console.log("Current Letter is: " + currentPlayer);
   if ( currentPlayer === "Player1" ) {
@@ -22,7 +27,6 @@ var changePlayer = function () {
 }
 
 $("body").on("click", ".box", changePlayer);
-
 
 $("body").on("click", ".box", function () {
 

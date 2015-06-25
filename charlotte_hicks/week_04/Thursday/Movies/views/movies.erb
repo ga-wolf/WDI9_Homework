@@ -1,0 +1,38 @@
+<!--   <style>
+  body {
+     background-image: url(<%= @movie_data['Poster'] %>);
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+    -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px)
+  }
+  </style> -->
+
+<h1>Movie search</h1>
+
+
+<form action="/">
+
+  <input type="text" id="movietitle" name="movie_title" placeholder="Enter movie title here" autofocus>
+
+  <button>Search</button>
+
+  <div class="line"></div>
+
+  <div class="main">
+  <img class="poster" src="<%= @movie_data['Poster'] %>">
+  <div class="plot">  <h2><%= @movie_title %></h2>
+  <%= @movie_data['Plot'] %></div>
+
+
+  </div>
+
+
+</form>
+
+

@@ -2,15 +2,25 @@
 
 h1 {
   text-align: center;
-  font-size: 25px;
+  font-size: 35px;
   font-family: "Montserrat", sans-serif;
   color: #fff;
   margin-top: 30px;
+  margin-bottom: -20px;
+  letter-spacing: 2.5px;
 }
 
 body {
   background-image: url("testimg.jpg");
   background-color: #2F323A;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #5D3D62;
+  width: 100%;
+  height: 45px;
 }
 
 #board {
@@ -19,7 +29,6 @@ body {
   height: 498px;
   width: 498px;
   margin: 50px auto;
-/*  border: 2px solid #2F323A;*/
 }
 
 .box {
@@ -34,10 +43,10 @@ body {
 }
 
 .Player1 {
-  background-color: #88B7B5
+  background-color: #DE3CA0;
 }
 
 .Player2 {
-  background-color: #DCB8CB
+  background-color: #FC8E9B;
 }
 
