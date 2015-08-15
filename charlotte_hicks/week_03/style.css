@@ -1,0 +1,52 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+h1 {
+  text-align: center;
+  font-size: 35px;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  margin-top: 30px;
+  margin-bottom: -20px;
+  letter-spacing: 2.5px;
+}
+
+body {
+  background-image: url("testimg.jpg");
+  background-color: #2F323A;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #5D3D62;
+  width: 100%;
+  height: 45px;
+}
+
+#board {
+  display: flex;
+  flex-wrap: wrap;
+  height: 498px;
+  width: 498px;
+  margin: 50px auto;
+}
+
+.box {
+  width: 146px;
+  height: 146px;
+  margin: 10px;
+  background-color: #fff;
+}
+
+.box:hover {
+  opacity: 0.5;
+}
+
+.Player1 {
+  background-color: #DE3CA0;
+}
+
+.Player2 {
+  background-color: #FC8E9B;
+}
+

@@ -1,0 +1,45 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+body, html {
+  background-image: url("http://orig10.deviantart.net/e113/f/2010/234/1/8/space_stock___background_by_avmorgan.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2 {
+  text-align: center;
+  color: #fff;
+  margin-top: 100px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+#spacepeeps {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 570px;
+}
+
+.majortom {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  padding: 70px 0;
+  opacity: 0.5;
+}
+
+.drew {
+  display: flex;
+  margin: auto;
+}

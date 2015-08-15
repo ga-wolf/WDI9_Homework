@@ -1,0 +1,64 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: green;
+}
+
+input {
+  position: fixed;
+  top: 10px;
+  left: 250px;
+  height: 49px;
+  width: 600px;
+  font-size: 16px;
+  border-radius: 2px;
+  border: 0px;
+}
+
+button {
+  position: fixed;
+  top: 10px;
+  left: 880px;
+  height: 50px;
+  width: 220px;
+  font-size: 16px;
+  border-radius: 2px;
+  border: 0px;
+}
+
+h1 {
+  position: fixed;
+  top: 0px;
+  left: 20px;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1050px;
+  height: 550px;
+  margin: 120px auto;
+}
+
+.poster {
+  width: 40%;
+}
+
+.plot {
+  width: 50%;
+  margin-left: 20px;
+}
+
+.line {
+  position: absolute;
+  top: 450px;
+  left: 545px;
+  width: 525px;
+  height: 2px;
+  border-bottom: solid 2px black;
+}
+
+
