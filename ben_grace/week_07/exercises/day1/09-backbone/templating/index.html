@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Templating Demo</title>
+  <script src="js/jquery.js"></script>
+  <script src="js/underscore.js"></script>
+  <script src="js/template.js"></script>
+</head>
+<body>
+
+  <div id="main"></div>
+  <!-- you need to put this in script tags or the browser will try and read them. Set the type to "text/template when doing this mother fucker" -->
+  <script id="brotherTemplate" type="text/template"> 
+    <div>
+      <h3>Introducing......</h3>
+      <p>{{ name }}! who plays the <strong>{{ instrument }}</strong>....</p>
+      <!-- This lets you store the html version of your javascript in html. Interpolation motherfucker --> 
+    <div>
+    <hr>
+  </script>
+  
+</body>
+</html>

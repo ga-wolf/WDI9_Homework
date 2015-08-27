@@ -1,4 +1,4 @@
-# [9] pry(main)> @title = 'Jaws' # @title = params[:title]
+  # [9] pry(main)> @title = 'Jaws' # @title = params[:title]
 # => "Jaws"
 # [10] pry(main)> url = "http://omdbapi.com/?t=#{@title}"
 # => "http://omdbapi.com/?t=Jaws"
@@ -61,7 +61,7 @@ end
 get '/movies/:id' do
   @id = params[:id]
   #Checking whether the movie is in the database
-  @movie = Movie.where(:imdbID => params[:id])
+  @movie = Movie.where(:imdbID => params[:id]).first
   binding.pry
  
   #If not in the database it grabs it from the site
@@ -75,9 +75,7 @@ get '/movies/:id' do
     @movie.plot = movie_data['Plot']
     @movie.poster = movie_data['Poster']
     @movie.imdbID = movie_data['imdbID']
-    @movie.save
-  else
-  @movie = @movie.first 
+    @movie.save 
   end
   erb :movies_show # Finally, update this view to use @movie.title, @movie.plot etc.
 end

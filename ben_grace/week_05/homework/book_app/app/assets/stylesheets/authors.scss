@@ -1,0 +1,59 @@
+@import url(http://fonts.googleapis.com/css?family=Questrial);
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Questrial';
+  // background-image:
+}
+// .container{
+//   max-width: 960px;
+//   margin: auto;
+// }
+
+.indexAuthor{
+ height: 300px;
+ padding: 20px;
+ background-color: lightslategray
+}
+
+.authorThumb{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  display: inline-block;
+}
+
+.authorPic{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.authorInfo{
+  display: inline-block;
+  vertical-align: top;
+  font-size: 30px;
+  line-height: 50px;
+}
+
+nav{
+  background-color: lightslategray;
+  height: 50px;
+}
+
+nav li{
+  text-transform: uppercase;
+  display: inline-block;
+  margin: 0px 0px 0px 25px;
+  line-height: 50px;
+  width: 20%;
+  height: 50px;
+  text-align: center;
+}
+
+li{
+  list-style: none;
+  margin: auto;
+}

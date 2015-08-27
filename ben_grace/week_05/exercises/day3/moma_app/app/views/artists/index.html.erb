@@ -1,0 +1,13 @@
+<h2>All Artists</h2>
+
+<% @artists.each do |artist| %>
+  <ul>
+    <li><%= image_tag(artist.image, :class => 'thumb') %></li>
+    <li><%= link_to(artist.name, artist) %></li>
+    <li><%= artist.nationality %></li>
+
+    <!-- .strftime will format dates will the help of some crazy computer science symbols. Use this http://www.strfti.me/ -->
+    <li><%= artist.dob.strftime '%A %e %B, %Y'  %></li>
+    <li><%= artist.period %></li>
+  </ul>
+<% end %>

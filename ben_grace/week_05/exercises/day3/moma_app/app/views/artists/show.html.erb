@@ -1,0 +1,16 @@
+<h2><%= @artist.name %></h2>
+
+  <ul>
+    <li><%= image_tag(@artist.image, :class => 'main') %></li>
+    <li><%= @artist.nationality %></li>
+    <!-- .strftime will format dates will the help of some crazy computer science symbols. Use this http://www.strfti.me/ -->
+    <li><%= @artist.dob.strftime '%A %e %B, %Y' %></li>
+    <li><%= @artist.period %></li>
+    <li><%= link_to 'Edit', edit_artist_path(@artist) %></li>
+    <li><%= link_to 'Delete', @artist, :method => 'delete' %></li>
+  </ul>
+
+<h3>Works</h3>
+<% @artist.works.each do |work| %>
+  <%= link_to(image_tag(work.image, :class => 'thumb', :title => work.title), work) %>
+  <% end %>

@@ -1,0 +1,9 @@
+<h1><%= @book.title %></h1>
+<ul>
+  <li><%= image_tag(@book.image) %></li>
+  <li><%= @book.genre %></li>
+  <li><%= @book.release_date.strftime '%A %e %B %Y' %></li>
+  <li><%= @book.blurb %></li>
+  <li><%= link_to 'Edit', edit_book_path(@book) %></li>
+  <li><%= link_to'Delete', @book, :method => 'delete', :data => {:confirm => 'Are you sure you want to destroy this book?'} %></li>
+</ul>

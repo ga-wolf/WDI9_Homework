@@ -1,0 +1,104 @@
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Lato';
+}
+
+.BgImage{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  background-image: url(/images/background.jpg);
+  height:2000px;
+  width:2000px;
+  -webkit-filter: saturate(0.4);
+  filter: saturate(0.4);
+}
+
+.container{
+  max-width: 1280px;
+  min-width: 960px;
+  margin: 0 auto;
+  margin-left: 200px;
+  position: relative;
+  height: auto;
+  padding-bottom: 100px;
+}
+
+.contentContainer{
+  padding-top: 200px;
+}
+
+.imageContainer{
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+  text-align: right;
+}
+
+.infoContainer{
+  display: inline-block;
+  vertical-align: top;
+  width: 49%;
+  color:white;
+  text-align: left;
+}
+
+#title{
+  font-size: 5em;
+  border-bottom: 2px solid white;
+  margin-bottom: 10px;
+  margin: 0;
+}
+
+#actors{
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+#synopsis{
+  margin: 0 auto;
+}
+
+img{
+  border: 10px solid white;
+  width: 400px;
+  height: 400px;
+}
+
+#searchArea{
+  font-size: 1.3em;
+  color: white;
+  min-width: 200px;
+  border: none;
+  background: none;
+  border-bottom: 4px dashed white;
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+input{
+  margin-top: 50px;
+  background-color: red;
+  font-size: 2em;
+  color: white;
+  min-width: 200px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 2px 2px 0px maroon;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+input:active{
+  box-shadow: none;
+}
+
+
+input:focus{
+  outline: 0;
+}

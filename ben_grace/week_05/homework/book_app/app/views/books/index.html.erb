@@ -1,0 +1,12 @@
+<h1>All Books</h1>
+
+<% @books.each do |book| %>
+  <ul>
+    <li><%= link_to(book.title, book) %></li>
+    <li><%= book.genre %></li>
+    <li><%= book.release_date.strftime '%A %e %B %Y' %></li>
+    <li><%= book.blurb %></li>
+    <li><%= image_tag(book.image, :class => 'bookThumb') %></li>
+  </ul>
+
+<% end %>

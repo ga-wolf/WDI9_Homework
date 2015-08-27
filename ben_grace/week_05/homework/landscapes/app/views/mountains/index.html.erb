@@ -1,0 +1,9 @@
+
+<h2>Mountains bruh!</h2>
+<% @mountains.each do |mount| %>
+  <ul>
+    <li class="indexIcons">
+      <%= link_to(mount.name, mountain_path(mount.id)) %> has killed approximately <%= mount.climbers_killed %> climbers. <div class="indexImg"><%= image_tag mount.image %></div>
+    </li>
+  </ul>
+<% end %>
